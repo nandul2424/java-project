@@ -1,0 +1,29 @@
+.travel-tools-sub-menu-container{
+    -fx-background-color: #6BC1FF;
+}
+
+.travel-tools-inside-container{
+    -fx-spacing: 22;
+    -fx-alignment: center;
+}
+
+.travel-tools-inside-container Button{
+    -fx-pref-height: 52px;
+    -fx-pref-width: 286px;
+    -fx-background-color: #5862ED;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Poppins";
+    -fx-font-size: 20px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.0, 1, 1);
+}
+
+.travel-tools-inside-container Button:hover{
+    -fx-cursor: hand;
+}
+
+.travel-tools-inside-container Button:focused{
+    -fx-background-color: #2733E6;
+    -fx-text-fill: #000000;
+}
