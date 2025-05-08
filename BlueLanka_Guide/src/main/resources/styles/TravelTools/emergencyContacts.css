@@ -1,0 +1,18 @@
+.emergency_contacts_container{
+    -fx-background-color: #ABDCFF;
+}
+
+.emergency_contacts_container Text{
+    -fx-font-family: "Poppins";
+    -fx-font-size: 30px;
+    -fx-font-weight: 600;
+}
+
+.back_button{
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.back_button:hover{
+    -fx-cursor: hand;
+}
