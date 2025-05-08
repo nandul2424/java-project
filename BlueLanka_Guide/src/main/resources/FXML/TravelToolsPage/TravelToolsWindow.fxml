@@ -8,10 +8,10 @@
         xmlns="http://javafx.com/javafx/23.0.1"
         xmlns:fx="http://javafx.com/fxml/1" >
     <left>
-        <fx:include source="TravelToolsSubMenu.fxml"/>
+        <fx:include source="TravelTools.fxml"/>
     </left>
 
-    <center>
-        <fx:include source="CurrencyConverter.fxml"/>
-    </center>
+<!--    <center>-->
+<!--        <fx:include source="CurrencyConverter.fxml"/>-->
+<!--    </center>-->
 </BorderPane>

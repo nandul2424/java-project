@@ -6,6 +6,7 @@ import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class ViewFactoryTravelTools {
@@ -17,6 +18,8 @@ public class ViewFactoryTravelTools {
     private AnchorPane unitConverterView;
     private AnchorPane weatherView;
     private AnchorPane travelToolsSubMenuView;
+    private BorderPane travelToolsWindowView;
+
 
     public ViewFactoryTravelTools(){
         this.toolSelectedMenuItem = new SimpleStringProperty("");
@@ -24,6 +27,17 @@ public class ViewFactoryTravelTools {
 
     public StringProperty getToolSelectedMenuItem() {
         return toolSelectedMenuItem;
+    }
+
+    public BorderPane getTravelToolsWindow(){
+        try{
+            if(travelToolsWindowView == null){
+                travelToolsWindowView = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/TravelToolsWindow.fxml")).load();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return travelToolsWindowView;
     }
 
     public AnchorPane getTravelToolsSubMenuView(){
