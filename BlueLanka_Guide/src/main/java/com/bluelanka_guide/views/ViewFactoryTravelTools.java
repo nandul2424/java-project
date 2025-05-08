@@ -1,19 +1,41 @@
 package com.bluelanka_guide.views;
 
+import com.bluelanka_guide.controller.TravelToolsPage.TravelToolsWindowController;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class ViewFactoryTravelTools {
+    private final StringProperty toolSelectedMenuItem;
     private AnchorPane travelToolsView;
     private AnchorPane checklistView;
     private AnchorPane currencyConverterView;
     private AnchorPane emergencyContactsView;
     private AnchorPane unitConverterView;
     private AnchorPane weatherView;
+    private AnchorPane travelToolsSubMenuView;
 
-    public ViewFactoryTravelTools(){}
+    public ViewFactoryTravelTools(){
+        this.toolSelectedMenuItem = new SimpleStringProperty("");
+    }
+
+    public StringProperty getToolSelectedMenuItem() {
+        return toolSelectedMenuItem;
+    }
+
+    public AnchorPane getTravelToolsSubMenuView(){
+        try{
+            if(travelToolsSubMenuView == null){
+                travelToolsSubMenuView = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/TravelToolsSubMenu.fxml")).load();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return travelToolsSubMenuView;
+    }
 
     public AnchorPane getTravelToolsView() {
         try{
@@ -81,8 +103,15 @@ public class ViewFactoryTravelTools {
         return weatherView;
     }
 
+    public void showTravelToolsSubMenuWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/TravelToolsSubMenu.fxml"));
+        createStage(loader);
+    }
+
     public void showTravelToolsWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/TravelTools.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/TravelToolsWindow.fxml"));
+        TravelToolsWindowController controller = new TravelToolsWindowController();
+        loader.setController(controller);
         createStage(loader);
     }
 
@@ -123,4 +152,5 @@ public class ViewFactoryTravelTools {
         stage.setScene(scene);
         stage.show();
     }
+
 }

@@ -13,9 +13,7 @@
    <Button layoutX="25.0" layoutY="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="36.0" prefWidth="36.0" styleClass="back_button" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="35.0">
       <graphic>
          <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../../assets/icons/back.png" />
-            </image>
+            <Image url="@../../assets/icons/back.png" />
          </ImageView>
       </graphic></Button>
    <TextField layoutX="61.0" layoutY="316.0" prefWidth="150.0" AnchorPane.leftAnchor="60.0" />
@@ -25,7 +23,7 @@
    <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="230.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../assets/icons/Arrow.png" />
    </ImageView>
-   <Button layoutX="232.0" layoutY="199.0" mnemonicParsing="false" styleClass="swap_button">
+   <Button layoutX="232.0" layoutY="206.0" mnemonicParsing="false" styleClass="swap_button">
       <graphic>
          <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
             <image>

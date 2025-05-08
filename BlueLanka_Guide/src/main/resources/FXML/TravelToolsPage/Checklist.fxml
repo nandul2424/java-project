@@ -3,8 +3,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="750.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TravelToolsPage.ChecklistController">
-   <children>
-      <Label layoutX="235.0" layoutY="117.0" text="Checklist" />
-   </children>
+<AnchorPane prefHeight="750.0" prefWidth="500.0" styleClass="checklist_container"
+            stylesheets="@../../styles/TravelTools/checklist.css" xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.bluelanka_guide.controller.TravelToolsPage.ChecklistController">
+   <Label layoutX="93.0" layoutY="43.0" text="Checklist"/>
 </AnchorPane>

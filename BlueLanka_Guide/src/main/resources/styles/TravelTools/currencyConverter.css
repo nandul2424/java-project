@@ -5,7 +5,7 @@
 .currency_container Text{
     -fx-font-family: "Poppins";
     -fx-font-size: 30px;
-    -fx-font-weight: semi-bold;
+    -fx-font-weight: 600;
 }
 
 .back_button{
