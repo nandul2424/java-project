@@ -1,4 +1,14 @@
 package com.bluelanka_guide.controller.TravelToolsPage;
 
-public class ChecklistController {
+import javafx.fxml.Initializable;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ChecklistController implements Initializable {
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }

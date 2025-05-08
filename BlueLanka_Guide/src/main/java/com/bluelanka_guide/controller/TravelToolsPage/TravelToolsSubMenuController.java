@@ -7,13 +7,13 @@ import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class TravelToolsController implements Initializable {
-    public Button btnMenuCurrencyConverter;
-    public Button btnMenuWeather;
-    public Button btnMenuUnitConverter;
-    public Button btnMenuChecklist;
-    public Button btnMenuEmergencyContacts;
-    public Button btnMenuOther;
+public class TravelToolsSubMenuController implements Initializable {
+    public Button btnCurrencyConverter;
+    public Button btnWeather;
+    public Button btnUnitConverter;
+    public Button btnChecklist;
+    public Button btnEmergencyContacts;
+    public Button btnOther;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -21,36 +21,35 @@ public class TravelToolsController implements Initializable {
     }
 
     private void addListeners() {
-        btnMenuCurrencyConverter.setOnAction(actionEvent -> onCurrencyConverter());
-        btnMenuWeather.setOnAction(actionEvent -> onWeather());
-        btnMenuUnitConverter.setOnAction(actionEvent -> onUnitConverter());
-        btnMenuEmergencyContacts.setOnAction(actionEvent -> onEmergencyContacts());
-        btnMenuChecklist.setOnAction(actionEvent -> onChecklist());
+        btnCurrencyConverter.setOnAction(event -> onCurrencyConverter());
+        btnWeather.setOnAction(event -> onWeather());
+        btnUnitConverter.setOnAction(event -> onUnitConverter());
+        btnEmergencyContacts.setOnAction(event -> onEmergencyContacts());
+        btnChecklist.setOnAction(event -> onChecklist());
     }
 
     private void onChecklist() {
+        System.out.println("Checklist button clicked");
         Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("Checklist");
-//        System.out.println("Checklist button clicked");
     }
 
     private void onEmergencyContacts() {
+        System.out.println("Emergency Contacts button clicked");
         Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("EmergencyContacts");
-//        System.out.println("Emergency Contacts button clicked");
     }
 
     private void onUnitConverter() {
+        System.out.println("Unit Converter button clicked");
         Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("UnitConverter");
-//        System.out.println("Unit Converter button clicked");
     }
 
     private void onWeather() {
+        System.out.println("Weather button clicked");
         Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("Weather");
-//        System.out.println("Weather button clicked");
     }
 
     private void onCurrencyConverter() {
+        System.out.println("Currency Converter button clicked");
         Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("CurrencyConverter");
-//        System.out.println("Currency Converter button clicked");
     }
-
 }

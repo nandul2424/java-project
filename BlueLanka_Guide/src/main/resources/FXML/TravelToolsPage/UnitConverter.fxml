@@ -3,8 +3,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TravelToolsPage.UnitConverterController">
+<AnchorPane prefHeight="750.0" prefWidth="500.0" styleClass="unit_converter_container" stylesheets="@../../styles/TravelTools/unitConverter.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TravelToolsPage.UnitConverterController">
    <children>
       <Label layoutX="141.0" layoutY="119.0" text="Unit Converter" />
    </children>
