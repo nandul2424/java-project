@@ -1,4 +1,4 @@
-package com.bluelanka_guide.controller;
+package com.bluelanka_guide.controller.TripPlanner;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
