@@ -1,0 +1,183 @@
+
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+
+    /* Color scheme - */
+    -fx-primary: #1a5276; /* Deep blue */
+    -fx-secondary: #2e86c1; /* Medium blue */
+    -fx-tertiary: #85c1e9; /* Light blue */
+    -fx-accent: #f39c12; /* Golden/amber accent */
+    -fx-background: #eeeeee; /* Light gray-blue background */
+    -fx-text-color: #2c3e50; /* Dark blue-gray text */
+    -fx-light-text: #ffffff; /* White text for dark backgrounds */
+}
+
+/* Main container styling */
+.main-container {
+    -fx-background-color: -fx-primary;
+}
+
+/* Header area styling */
+.header-container {
+    -fx-background-color: linear-gradient(to bottom, -fx-primary, -fx-secondary);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 2);
+}
+
+.title-label {
+    -fx-text-fill: -fx-light-text;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.subtitle-label {
+    -fx-text-fill: -fx-light-text;
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+}
+
+/* Tab styling */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: -fx-primary;
+}
+
+.tab {
+    -fx-background-color: -fx-tertiary;
+    -fx-background-radius: 5 5 0 0;
+    -fx-padding: 5 15;
+}
+
+.tab:selected {
+    -fx-background-color: -fx-background;
+    -fx-focus-color: transparent;
+}
+
+.tab .tab-label {
+    -fx-text-fill: -fx-text-color;
+    -fx-font-weight: bold;
+}
+
+/* Content container */
+.content-container {
+    -fx-background-color: -fx-background;
+}
+
+/* Section headers */
+.section-header {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-primary;
+    -fx-padding: 10 0 5 0;
+}
+
+.label-small {
+    -fx-font-size: 12px;
+    -fx-text-fill: -fx-text-color;
+}
+
+/* Form controls styling */
+.check-box, .radio-button {
+    -fx-text-fill: -fx-text-color;
+}
+
+.check-box .box, .radio-button .radio {
+    -fx-background-color: white;
+    -fx-border-color: -fx-secondary;
+    -fx-border-radius: 3px;
+}
+
+.check-box:selected .mark, .radio-button:selected .dot {
+    -fx-background-color: -fx-accent;
+}
+
+/* Button styling */
+.button {
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: derive(-fx-secondary, 20%);
+}
+
+.button:pressed {
+    -fx-background-color: derive(-fx-secondary, -10%);
+}
+
+.button-container {
+    -fx-background-color: derive(-fx-background, -5%);
+    -fx-border-color: derive(-fx-background, -15%);
+    -fx-border-width: 1 0 0 0;
+}
+
+/* Default button - for Generate Trip Plan */
+.button:default {
+    -fx-background-color: -fx-accent;
+    -fx-text-fill: white;
+}
+
+.button:default:hover {
+    -fx-background-color: derive(-fx-accent, 10%);
+}
+
+/* Titled pane styling */
+.titled-pane {
+    -fx-text-fill: -fx-primary;
+    -fx-font-weight: bold;
+}
+
+.titled-pane > .title {
+    -fx-background-color: derive(-fx-tertiary, 50%);
+    -fx-border-color: derive(-fx-tertiary, -10%);
+}
+
+.titled-pane > *.content {
+    -fx-background-color: white;
+    -fx-border-color: derive(-fx-tertiary, -10%);
+}
+
+/* Text fields and inputs */
+.text-field, .spinner, .combo-box {
+    -fx-background-color: white;
+    -fx-border-color: -fx-tertiary;
+    -fx-border-radius: 3;
+}
+
+.text-field:focused, .spinner:focused, .combo-box:focused {
+    -fx-border-color: -fx-accent;
+}
+
+/* Slider styling */
+.slider .track {
+    -fx-background-color: -fx-tertiary;
+}
+
+.slider .thumb {
+    -fx-background-color: -fx-accent;
+}
+
+/* Scroll pane */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb, .scroll-bar:horizontal .thumb {
+    -fx-background-color: -fx-secondary;
+    -fx-background-radius: 5;
+}
+
+/* Animation for hover effects */
+.button, .titled-pane, .check-box, .radio-button {
+    -fx-transition: all 0.2s ease-in-out;
+}
