@@ -5,57 +5,93 @@ import javafx.scene.control.*;
 
 public class TripPlannerController {
 
-    public RadioButton radWeekend;
-    public RadioButton radWeek;
-    public RadioButton radExtended;
-    public CheckBox checkMediterranean;
-    public CheckBox checkCaribbean;
-    public CheckBox checkNordicFjords;
-    public CheckBox checkSouthPacific;
-    public CheckBox checkOther;
-    public TextField txtOtherRegion;
+    @FXML
+    private RadioButton radWeekend;
+    @FXML
+    private RadioButton radWeek;
+    @FXML
+    private RadioButton radExtended;
+    @FXML
+    private CheckBox checkMediterranean;
+    @FXML
+    private CheckBox checkCaribbean;
+    @FXML
+    private CheckBox checkNordicFjords;
+    @FXML
+    private CheckBox checkSouthPacific;
+    @FXML
+    private CheckBox checkOther;
+    @FXML
+    private TextField txtOtherRegion;
 
-    public Button btnGeneratePlan;
-    public Button btnNext;
-    public Button btnPrevious;
-    public Button btnSave;
+    @FXML
+    private Button btnGeneratePlan;
+    @FXML
+    private Button btnNext;
+    @FXML
+    private Button btnPrevious;
+    @FXML
+    private Button btnSave;
 
-    public CheckBox chkChildFriendly;
-    public CheckBox chkAccessibility;
+    @FXML
+    private CheckBox chkChildFriendly;
+    @FXML
+    private CheckBox chkAccessibility;
 
+    @FXML
+    private Spinner spinnerChildren;
+    @FXML
+    private Spinner spinnerAdults;
 
-    public Spinner spinnerChildren;
-    public Spinner spinnerAdults;
+    @FXML
+    private ComboBox comboCurrency;
+    @FXML
+    private TextField txtBudgetAmount;
 
-    public ComboBox comboCurrency;
-    public TextField txtBudgetAmount;
+    @FXML
+    private RadioButton radUltraLuxury;
+    @FXML
+    private RadioButton radLuxury;
+    @FXML
+    private RadioButton radModerate;
+    @FXML
+    private RadioButton radBudget;
 
+    @FXML
+    private Slider sliderIntensity;
 
-    public RadioButton radUltraLuxury;
-    public RadioButton radLuxury;
-    public RadioButton radModerate;
-    public RadioButton radBudget;
+    @FXML
+    private CheckBox checkCultural;
+    @FXML
+    private CheckBox checkWildlife;
+    @FXML
+    private CheckBox checkSailing;
+    @FXML
+    private CheckBox checkWaterSports;
 
-    public Slider sliderIntensity;
+    @FXML
+    private CheckBox checkRelaxation;
+    @FXML
+    private CheckBox checkSnorkeling;
+    @FXML
+    private CheckBox checkDiving;
+    @FXML
+    private CheckBox checkFishing;
 
-    public CheckBox checkCultural;
-    public CheckBox checkWildlife;
-    public CheckBox checkSailing;
-    public CheckBox checkWaterSports;
-
-    public CheckBox checkRelaxation;
-    public CheckBox checkSnorkeling;
-    public CheckBox checkDiving;
-    public CheckBox checkFishing;
-
-    public Slider sliderDays;
+    @FXML
+    private Slider sliderDays;
     
-    public Slider sliderPopularity;
+    @FXML
+    private Slider sliderPopularity;
     
-    public RadioButton radCoastal;
-    public RadioButton radOpenSea;
-    public RadioButton radIslandHopping;
-    public RadioButton radMixed;
+    @FXML
+    private RadioButton radCoastal;
+    @FXML
+    private RadioButton radOpenSea;
+    @FXML
+    private RadioButton radIslandHopping;
+    @FXML
+    private RadioButton radMixed;
 
 
     @FXML
