@@ -1,14 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.bluelanka_guide.controller.SignupController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.SignupController">
+    <left>
+        <AnchorPane prefHeight="500.0" prefWidth="245.0" style="-fx-background-color: #0a034e;" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" layoutY="144.0" prefHeight="50.0" prefWidth="260.0" text="Welcome To" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="34.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="2.0" layoutY="244.0" prefHeight="50.0" prefWidth="255.0" text="Guide" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="34.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="3.0" layoutY="194.0" prefHeight="50.0" prefWidth="254.0" text="Blue Lanka" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="34.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="446.0" fitWidth="434.0" layoutX="9.0" layoutY="52.0" opacity="0.22" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/images/image2.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="register_text_id" alignment="CENTER" layoutX="2.0" layoutY="44.0" prefHeight="46.0" prefWidth="444.0" text="Register" textFill="#0a034e">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="usernametxt_reg_id" layoutX="50.0" layoutY="130.0" text="User Name">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="emailtxt_reg_id" layoutX="50.0" layoutY="175.0" text="Email">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="passwordtxt_reg_id" layoutX="50.0" layoutY="222.0" text="Password">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="confirmpasswordtxt_reg_id" layoutX="56.0" layoutY="276.0" text="Confirm Password">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="username_reg_id" layoutX="226.0" layoutY="131.0" promptText="UserName" />
+                <TextField fx:id="email_reg_id" layoutX="226.0" layoutY="176.0" promptText="Email" />
+                <PasswordField fx:id="password_reg_id" layoutX="227.0" layoutY="223.0" promptText="Password" />
+                <PasswordField fx:id="confirm_reg_id" layoutX="227.0" layoutY="277.0" promptText="Confirm Password" />
+                <Button fx:id="signup_reg_id" alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="350.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="322.0" style="-fx-background-color: #0a034e;" text="Sign Up" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Label fx:id="text_reg_id" layoutX="58.0" layoutY="420.0" prefHeight="18.0" prefWidth="166.0" text="Already Have a Account?">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Button fx:id="login_reg_id" layoutX="268.0" layoutY="416.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: #0a034e;" text="Log In" textFill="#efeded">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
