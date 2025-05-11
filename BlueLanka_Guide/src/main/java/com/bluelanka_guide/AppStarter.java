@@ -13,7 +13,7 @@ public class AppStarter extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-//        FXMLLoader fxmlLoader = new FXMLLoader(AppStarter.class.getResource("/FXML/TravelToolsPage/TravelTools.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(AppStarter.class.getResource("/FXML/TravelToolsPage/CurrencyConverter.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load());
 //        stage.setTitle("Travel Tools");
 //        stage.setScene(scene);
