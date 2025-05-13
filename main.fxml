@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="MainController" stylesheets="@styles.css">
+    <top>
+        <MenuBar BorderPane.alignment="TOP_CENTER">
+            <menus>
+
+                <Menu text="Homepage">
+                    <MenuItem fx:id="homeMenu" text="Go to Homepage" onAction="#handleHome"/>
+                </Menu>
+
+                <Menu text="Destinations">
+                    <MenuItem fx:id="destinationsMenu" text="View Destinations" onAction="#handleDestinations"/>
+                </Menu>
+
+                <Menu text="Trip Planner">
+                    <MenuItem fx:id="tripPlannerMenu" text="Plan a Trip" onAction="#handleTripPlanner"/>
+                </Menu>
+
+                <Menu text="Travel Tools">
+                    <MenuItem fx:id="toolsMenu" text="Open Travel Tools" onAction="#handleTools"/>
+                </Menu>
+
+                <Menu text="About">
+                    <MenuItem fx:id="emergencyMenu" text="Emergency Contacts" onAction="#handleEmergency"/>
+                    <MenuItem fx:id="mapMenu" text="Our Operational Map" onAction="#handleMap"/>
+                </Menu>
+
+                <Menu text="Settings">
+                    <MenuItem fx:id="bugMenu" text="Report a Bug" onAction="#handleBug"/>
+                    <MenuItem fx:id="troubleshootMenu" text="Troubleshoot an Issue" onAction="#handleTroubleshoot"/>
+                </Menu>
+
+            </menus>
+        </MenuBar>
+    </top>
+
+    <center>
+        <StackPane fx:id="contentPane" alignment="CENTER">
+            <Label fx:id="mainLabel" text="Welcome to Blue Lanka Guide" />
+        </StackPane>
+    </center>
+</BorderPane>
