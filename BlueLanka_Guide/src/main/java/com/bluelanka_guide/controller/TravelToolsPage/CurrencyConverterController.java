@@ -48,6 +48,11 @@ public class CurrencyConverterController implements Initializable {
             String fromCurrencySymbol = cmbFromCurrency.getValue();
             String toCurrencySymbol = cmbToCurrency.getValue();
 
+            if(fromCurrencySymbol == null || toCurrencySymbol == null){
+                lblError.setText("Please select both currencies");
+                return;
+            }
+
             ExchangeRateTask task = new ExchangeRateTask(fromCurrencySymbol, toCurrencySymbol);
 
             task.setOnSucceeded(event -> {
@@ -55,12 +60,22 @@ public class CurrencyConverterController implements Initializable {
                 double rate = task.getValue();
 
                 String strFromAmount = txtFromAmount.getText();
-                double doubleFromAmount = Double.parseDouble(strFromAmount);
+                double doubleFromAmount = 0;
+                try {
+                    doubleFromAmount = Double.parseDouble(strFromAmount);
+                    lblError.setText("");
+                } catch (NumberFormatException e) {
+                    lblError.setText("Please enter a valid number");
+//                    System.out.println(e.getMessage());
+                    txtFromAmount.clear();
+                    lblToAmount.setText("");
+                    return;
+                }
 
                 //calculate converted amount
                 double doubleToAmount = rate * doubleFromAmount;
 
-                String strToAmount = Double.toString(doubleToAmount);
+                String strToAmount = String.format("%.2f", doubleToAmount);
                 lblToAmount.setText(strToAmount);
 
                 lblError.setText("");

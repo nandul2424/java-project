@@ -69,4 +69,5 @@
 
 .error_lbl{
     -fx-text-fill: #FF0000;
+    -fx-text-alignment: center;
 }

@@ -31,5 +31,5 @@
       </graphic></Button>
    <Text layoutX="75.2" layoutY="62.9" strokeType="OUTSIDE" strokeWidth="0.0" text="Currency Converter" AnchorPane.leftAnchor="75.2" AnchorPane.topAnchor="31.4" />
    <Button fx:id="btnConvert" layoutX="178.0" layoutY="424.0" mnemonicParsing="false" styleClass="convert_button" text="Convert" />
-   <Label fx:id="lblError" layoutX="168.0" layoutY="513.0" styleClass="error_lbl" />
+   <Label fx:id="lblError" layoutX="15.2" layoutY="513.0" prefHeight="40.0" prefWidth="471.0" styleClass="error_lbl" textAlignment="CENTER" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
 </AnchorPane>
