@@ -36,7 +36,7 @@
    <Button fx:id="btnConvert" layoutX="178.0" layoutY="478.0" mnemonicParsing="false" styleClass="convert_button" text="Convert" />
    <Label fx:id="lblError" layoutX="14.0" layoutY="561.0" prefHeight="40.0" prefWidth="471.0" styleClass="error_lbl" textAlignment="CENTER" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="15.599999999999966" />
    <TextField fx:id="txtToAmount" layoutX="289.0" layoutY="389.0" prefWidth="150.0" />
-   <Label layoutX="60.0" layoutY="194.0" text="Select unit :-" />
+   <Label layoutX="60.0" layoutY="194.0" text="Select unit     :-" />
    <ChoiceBox fx:id="chbSelectUnit" layoutX="230.0" layoutY="188.0" prefWidth="150.0" />
    <stylesheets>
       <URL value="@../../styles/TravelTools/unitConverter.css" />
