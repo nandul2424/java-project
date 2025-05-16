@@ -2,6 +2,8 @@ package com.bluelanka_guide.controller.TravelToolsPage;
 
 import com.bluelanka_guide.models.*;
 import com.bluelanka_guide.models.UnitsModel.*;
+import com.bluelanka_guide.services.UnitConvertTask;
+import com.bluelanka_guide.services.UnitConverterAPIConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -26,10 +28,11 @@ public class UnitConverterController implements Initializable {
         //back button function
         btnBack.setOnAction(event -> onBackBtnClicked());
 
-        //setting choicebox values
+        //setting choice box values
         chbSelectUnit.setItems(FXCollections.observableArrayList(UnitType.Length, UnitType.Weight, UnitType.Area, UnitType.Temperature, UnitType.Volume, UnitType.Time));
         UnitType initialValue = Model.getInstance().getViewFactoryTravelTools().getUnitType();
         chbSelectUnit.setValue(initialValue);
+        //setting values for combo boxes according to choice
         handleUnitChange(initialValue);
 
         chbSelectUnit.valueProperty().addListener((observable, oldVal, newVal) -> {
@@ -69,7 +72,10 @@ public class UnitConverterController implements Initializable {
     }
 
     private void onConvert() {
+        String toUnitSymbol = cmbToUnit.getValue();
 
+        System.out.println(toUnitSymbol);
+//        UnitConvertTask task = new UnitConvertTask("1", "cm", "m");
     }
 
     private <T extends Enum<T>> void setComboBox(T[] units){
