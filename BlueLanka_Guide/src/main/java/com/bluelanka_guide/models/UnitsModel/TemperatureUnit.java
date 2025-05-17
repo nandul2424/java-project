@@ -1,6 +1,6 @@
 package com.bluelanka_guide.models.UnitsModel;
 
-public enum TemperatureUnit {
+public enum TemperatureUnit implements Unit{
     CELSIUS("Celsius", "C"),
     FAHRENHEIT("Fahrenheit", "F"),
     KELVIN("Kelvin", "K");

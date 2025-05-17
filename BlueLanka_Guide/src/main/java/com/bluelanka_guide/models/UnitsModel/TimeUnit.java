@@ -1,6 +1,6 @@
 package com.bluelanka_guide.models.UnitsModel;
 
-public enum TimeUnit {
+public enum TimeUnit implements Unit{
     SECONDS("Seconds", "s"),
     MINUTES("Minutes", "min"),
     HOURS("Hours", "h");

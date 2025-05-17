@@ -32,8 +32,7 @@ public class UnitConverterAPIConnection {
         try{
             JsonObject getData = JsonResponse.getAsJsonObject("data");
             JsonObject getResult = getData.getAsJsonObject("result");
-            double value = getResult.get("result").getAsDouble();
-            return value;
+            return getResult.get("result").getAsDouble();
         } catch (Exception e) {
             System.out.println("Data Fetching Error:" + e.getMessage());
         }

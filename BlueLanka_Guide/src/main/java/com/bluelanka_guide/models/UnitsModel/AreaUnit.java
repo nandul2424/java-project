@@ -1,6 +1,6 @@
 package com.bluelanka_guide.models.UnitsModel;
 
-public enum AreaUnit {
+public enum AreaUnit implements Unit{
     SQUARE_METER("Square Meter", "m²"),
     SQUARE_CENTIMETER("Square centimeter", "cm²"),
     SQUARE_KILOMETER("Square Kilometer", "km²"),

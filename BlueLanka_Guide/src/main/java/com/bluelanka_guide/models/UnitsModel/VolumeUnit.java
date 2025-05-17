@@ -1,6 +1,6 @@
 package com.bluelanka_guide.models.UnitsModel;
 
-public enum VolumeUnit {
+public enum VolumeUnit implements Unit{
     LITER("Liter", "l"),
     MILLILITER("Milliliter", "ml"),
     CUBICMETER("Cubic Meter", "m³"),

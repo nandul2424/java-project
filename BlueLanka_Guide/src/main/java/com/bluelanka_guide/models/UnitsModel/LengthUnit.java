@@ -1,6 +1,6 @@
 package com.bluelanka_guide.models.UnitsModel;
 
-public enum LengthUnit {
+public enum LengthUnit implements Unit{
     METER("Meter", "m"),
     CENTIMETER("Centimeter", "cm"),
     KILOMETER("Kilometer", "km"),
