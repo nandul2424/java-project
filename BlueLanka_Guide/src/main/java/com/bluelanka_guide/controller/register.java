@@ -11,7 +11,7 @@ public  class register extends Application {
     public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(AppStarter.class.getResource("/FXML/Signup.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Travel Tools");
+        stage.setTitle("Register");
         stage.setScene(scene);
         stage.show();
     }

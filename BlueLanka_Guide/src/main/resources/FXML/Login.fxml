@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.LoginController">
+<BorderPane fx:id="body1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.LoginController">
     <right>
         <AnchorPane prefHeight="500.0" prefWidth="374.0" style="-fx-background-color: lightblue;" BorderPane.alignment="CENTER">
             <children>
@@ -52,10 +52,13 @@
                         <Font name="Arial Narrow" size="16.0" />
                     </font>
                 </Label>
-                <Button fx:id="registerbtn_id" layoutX="229.0" layoutY="421.0" mnemonicParsing="false" style="-fx-background-color: #0a034e;" text="Register" textFill="WHITE" underline="true">
+                <Button fx:id="registerbtn_id" layoutX="229.0" layoutY="421.0" mnemonicParsing="false" onAction="#registerbtn_idOnAction" style="-fx-background-color: #0a034e;" text="Register" textFill="WHITE" underline="true">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
                 <Button id="loginbtn" fx:id="cancelbtn_id" alignment="CENTER" layoutX="38.0" layoutY="365.0" mnemonicParsing="false" onAction="#cancelbtn_idOnAction" prefHeight="34.0" prefWidth="272.0" style="-fx-border-radius: 5px; -fx-background-color: #0a034e; -fx-text-fill: white;" text="Cancel" textFill="#0a034e">
                     <font>

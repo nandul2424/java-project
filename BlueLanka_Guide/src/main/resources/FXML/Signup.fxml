@@ -83,7 +83,7 @@
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Button fx:id="login_reg_id" layoutX="272.0" layoutY="434.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: #0a034e;" text="Log In" textFill="#efeded">
+                <Button fx:id="login_reg_id" layoutX="272.0" layoutY="434.0" mnemonicParsing="false" onAction="#login_reg_idOnAction" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: #0a034e;" text="Log In" textFill="#efeded">
                     <font>
                         <Font name="Arial Bold" size="14.0" />
                     </font>

@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -32,6 +33,7 @@ public class LoginController {
     @FXML
     private Button registerbtn_id;
 
+
     @FXML
     private TextField usernametext;
 
@@ -42,65 +44,71 @@ public class LoginController {
 
     public Connection connectdb(){
         try{
-           connect= DriverManager.getConnection("jdbc:mysql://localhost/3306/logindetails","root","");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+           connect= DriverManager.getConnection("jdbc:mysql://localhost:3306/logindetails","root","");
             return connect;
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            return null;
         }
 
     }
+    @FXML
+    public void loginbtn_idOnAction(javafx.event.ActionEvent event) {
+        if (usernametext.getText().isBlank() || passwordtext.getText().isBlank()) {
+            msg1id.setText("Please enter both username and password.");
+            return;
+        }
 
-    public void loginbtn_idOnAction(ActionEvent event){
-        connect =connectdb();
-        try{
-            String sql="SELECT * FROM user WHERE username = ? and password =?";
-            statement=connect.prepareStatement(sql);
-            statement.setString(1,usernametext.getText());
-            statement.setString(2,passwordtext.getText());
-            result=statement.executeQuery();
+        connect = connectdb();
+        if (connect == null) {
+            msg1id.setText("Database connection failed.");
+            return;
+        }
 
-            if(result.next()){
-                msg1id.setText("logging Successful!");
-                loginbtn_id.getScene().getWindow().hide();
-                Parent root= FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
-                Scene scene=new Scene(root);
-                Stage stage=new Stage();
-                stage.setScene(scene);
+        try {
+            String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+            statement = connect.prepareStatement(sql);
+            statement.setString(1, usernametext.getText());
+            statement.setString(2, passwordtext.getText());
+            result = statement.executeQuery();
+
+            if (result.next()) {
+                msg1id.setText("Login successful!");
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/Dashboard.fxml"));
+                Parent root = fxmlLoader.load();
+                Stage stage = (Stage) registerbtn_id.getScene().getWindow();
+                stage.setScene(new Scene(root));
                 stage.show();
-            }else{
-                msg1id.setText("logging Unsuccessful!");
-
+            } else {
+                msg1id.setText("Invalid username or password.");
             }
 
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            msg1id.setText("An error occurred.");
         }
     }
 
-    public void loginbtn_idOnAction(javafx.event.ActionEvent event) {
-        if(usernametext.getText().isBlank()==true && passwordtext.getText().isBlank()==true){
-            msg1id.setText("Please Enter User name and password");
-        }else{
-            if(usernametext.getText().isBlank()==true){
-                msg1id.setText("Please Enter User name");
-
-            }else{
-                if(passwordtext.getText().isBlank()==true){
-                    msg1id.setText("Please Enter Password");
-                }else{
-                    msg1id.setText("");
-                }
-            }
-        }
-
-
-
-    }
 
     public void cancelbtn_idOnAction(javafx.event.ActionEvent event) {
         Stage stage=(Stage)cancelbtn_id.getScene().getWindow();
         stage.close();
     }
 
+    public void registerbtn_idOnAction(javafx.event.ActionEvent event){
 
+        Parent root = null;
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/Signup.fxml"));
+            root = fxmlLoader.load();
+            Stage stage = (Stage) registerbtn_id.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Register");
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }
