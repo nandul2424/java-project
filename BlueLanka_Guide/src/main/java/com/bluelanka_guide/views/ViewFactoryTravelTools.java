@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class ViewFactoryTravelTools {
@@ -22,6 +23,7 @@ public class ViewFactoryTravelTools {
     private AnchorPane weatherView;
     private AnchorPane travelToolsSubMenuView;
     private BorderPane travelToolsWindowView;
+    private HBox listItemView;
 
 
     public ViewFactoryTravelTools(){
@@ -129,6 +131,15 @@ public class ViewFactoryTravelTools {
             e.printStackTrace();
         }
         return weatherView;
+    }
+
+    public HBox getListItem(){
+        try{
+            listItemView = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/CheckItem.fxml")).load();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return listItemView;
     }
 
     public void showTravelToolsWindow(){
