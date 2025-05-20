@@ -7,7 +7,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="470.0" styleClass="check_item_container" stylesheets="@../../styles/TravelTools/checkItem.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TravelToolsPage.ChecklistItemController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0"
+      prefWidth="450.0" styleClass="check_item_container" stylesheets="@../../styles/TravelTools/checkItem.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TravelToolsPage.ChecklistItemController">
    <CheckBox fx:id="chkChecked" alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="10.0" prefWidth="17.0" />
    <Label fx:id="lblDate" styleClass="check_date" text="2025-04-15" />
    <Label fx:id="lblDescription" layoutX="65.0" layoutY="10.0" minWidth="180.0" styleClass="check_description" text="description" />

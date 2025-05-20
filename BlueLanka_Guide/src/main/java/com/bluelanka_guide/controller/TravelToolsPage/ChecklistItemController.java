@@ -21,8 +21,15 @@ public class ChecklistItemController implements Initializable {
         btnDelete.setOnAction(event -> onDelete());
     }
 
+    public void setOnDeleteCallback(Runnable callback) {
+        this.onDeleteCallback = callback;
+    }
+
     private void onDelete() {
         System.out.println("fef");
+        if(onDeleteCallback != null){
+            onDeleteCallback.run();
+        }
     }
 
 }

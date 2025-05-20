@@ -39,4 +39,5 @@
 
 .checklist_container .list-cell{
     -fx-pref-width: 470;
+    -fx-background-color: #AAE3FF;
 }

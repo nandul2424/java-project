@@ -2,6 +2,8 @@
     -fx-background-color: rgba(74, 83, 255, 0.7);
     -fx-spacing: 15;
     -fx-alignment: center;
+    -fx-border-radius: 15;
+    -fx-background-radius: 10;
 }
 
 .check_item_container Label{

@@ -42,6 +42,6 @@ public class ChecklistController implements Initializable {
     }
 
     private void onAddNew() {
-        listViewItems.getItems().add(Model.getInstance().getViewFactoryTravelTools().getListItem());
+        listViewItems.getItems().add(Model.getInstance().getViewFactoryTravelTools().getListItem(listViewItems));
     }
 }
