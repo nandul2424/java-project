@@ -56,7 +56,7 @@ public class LoginController {
     @FXML
     public void loginbtn_idOnAction(javafx.event.ActionEvent event) {
         if (usernametext.getText().isBlank() || passwordtext.getText().isBlank()) {
-            msg1id.setText("Please enter both username and password.");
+            msg1id.setText("Please Enter both username and password.");
             return;
         }
 
