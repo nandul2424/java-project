@@ -4,8 +4,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ChecklistItemController implements Initializable {
@@ -13,12 +17,25 @@ public class ChecklistItemController implements Initializable {
     public Label lblDescription;
     public Label lblDate;
     public CheckBox chkChecked;
+    public TextArea txtFieldDescription;
 
     private Runnable onDeleteCallback;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnDelete.setOnAction(event -> onDelete());
+        txtFieldDescription.setOnKeyPressed(event -> onEnterKeyPressed(event));
+    }
+
+    private void onEnterKeyPressed(KeyEvent event) {
+        if(event.getCode() == KeyCode.ENTER){
+            if(Objects.equals(txtFieldDescription.getText(), "")){
+                lblDescription.setText("(Empty)");
+            }
+            lblDescription.setText(txtFieldDescription.getText());
+            txtFieldDescription.setVisible(false);
+            lblDescription.setVisible(true);
+        }
     }
 
     public void setOnDeleteCallback(Runnable callback) {
@@ -26,7 +43,6 @@ public class ChecklistItemController implements Initializable {
     }
 
     private void onDelete() {
-        System.out.println("fef");
         if(onDeleteCallback != null){
             onDeleteCallback.run();
         }
