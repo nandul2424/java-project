@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="travel_essentials_container" stylesheets="@../../styles/TravelTools/travelEssentials.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TravelToolsPage.TravelToolsController">
+    <Text layoutX="155.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travel Essentials" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="25.0" />
+    <Button fx:id="btnMenuCurrencyConverter" layoutX="124.0" layoutY="116.0" mnemonicParsing="false" text="Currency Converter" textAlignment="CENTER" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="125.0" />
+    <Button fx:id="btnMenuWeather" layoutX="478.0" layoutY="106.0" mnemonicParsing="false" text="Weather" textAlignment="CENTER" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="125.0" />
+    <Button fx:id="btnMenuUnitConverter" layoutX="66.0" layoutY="302.0" mnemonicParsing="false" text="Unit              Converter" textAlignment="CENTER" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="325.0" />
+    <Button fx:id="btnMenuChecklist" layoutX="484.0" layoutY="321.0" mnemonicParsing="false" text="Checklist" textAlignment="CENTER" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="325.0" />
+    <Button fx:id="btnMenuEmergencyContacts" layoutX="150.0" layoutY="518.0" mnemonicParsing="false" text="Emergency Contacts" textAlignment="CENTER" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="525.0" />
+    <Button fx:id="btnMenuOther" layoutX="512.0" layoutY="518.0" mnemonicParsing="false" text="Currency Converter" textAlignment="CENTER" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="525.0" />
+</AnchorPane>

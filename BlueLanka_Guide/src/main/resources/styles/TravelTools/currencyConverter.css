@@ -1,0 +1,73 @@
+.currency_container{
+    -fx-background-color: #ABDCFF;
+}
+
+.currency_container Text{
+    -fx-font-family: "Poppins";
+    -fx-font-size: 30px;
+    -fx-font-weight: 600;
+}
+
+.back_button{
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.back_button:hover{
+    -fx-cursor: hand;
+}
+
+.currency_container ComboBox{
+    /* -fx-background-color: #c1def3; */
+    -fx-border-radius: 15px;
+    -fx-background-radius: 5px;
+    -fx-pref-width: 150px;
+    -fx-font-family: "Poppins";
+    -fx-font-size: 18px;
+}
+
+.currency_container TextField{
+    -fx-border-radius: 15px;
+    -fx-background-radius: 5px;
+    -fx-pref-width: 150px;
+    -fx-font-family: "Poppins";
+    -fx-font-size: 18px;
+}
+
+.currency_container Label{
+    -fx-border-radius: 15px;
+    -fx-background-radius: 5px;
+    -fx-pref-width: 150px;
+    -fx-font-family: "Poppins";
+    -fx-font-size: 18px;
+}
+
+.swap_button{
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.swap_button:hover{
+    -fx-cursor: hand;
+}
+
+.convert_button{
+    -fx-background-color: #3907ED;
+    -fx-text-fill: #000000;
+    -fx-font-family: "Poppins";
+    -fx-font-size: 20px;
+    -fx-padding: 10px 30px;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.0, 1, 1);
+}
+
+.convert_button:hover{
+    -fx-background-color: #2B0BB4;
+    -fx-text-fill: #FFFFFF;
+    -fx-cursor: hand;
+}
+
+.error_lbl{
+    -fx-text-fill: #FF0000;
+    -fx-text-alignment: center;
+}

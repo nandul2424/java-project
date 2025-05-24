@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
+        <module name="BlueLanka_Guide" />
+      </profile>
+    </annotationProcessing>
+=======
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="BlueLanka_Guide" target="21" />
+    </bytecodeTargetLevel>
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
+  </component>
+</project>
