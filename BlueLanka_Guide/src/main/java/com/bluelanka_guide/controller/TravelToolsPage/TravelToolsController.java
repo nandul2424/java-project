@@ -29,28 +29,23 @@ public class TravelToolsController implements Initializable {
     }
 
     private void onChecklist() {
-        Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("Checklist");
-//        System.out.println("Checklist button clicked");
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().set("Checklist");
     }
 
     private void onEmergencyContacts() {
-        Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("EmergencyContacts");
-//        System.out.println("Emergency Contacts button clicked");
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().set("EmergencyContacts");
     }
 
     private void onUnitConverter() {
-        Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("UnitConverter");
-//        System.out.println("Unit Converter button clicked");
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().set("UnitConverter");
     }
 
     private void onWeather() {
-        Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("Weather");
-//        System.out.println("Weather button clicked");
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().set("Weather");
     }
 
     private void onCurrencyConverter() {
-        Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("CurrencyConverter");
-//        System.out.println("Currency Converter button clicked");
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().set("CurrencyConverter");
     }
 
 }
