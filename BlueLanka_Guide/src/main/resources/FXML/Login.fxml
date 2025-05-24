@@ -13,7 +13,11 @@
 <?import javafx.scene.text.Font?>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.LoginController">
+=======
+<BorderPane fx:id="body1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.LoginController">
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 =======
 <BorderPane fx:id="body1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.LoginController">
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
@@ -23,7 +27,11 @@
                 <Label alignment="CENTER" layoutX="1.0" layoutY="62.0" prefHeight="18.0" prefWidth="346.0" text="LOGIN" textAlignment="JUSTIFY" textFill="#0a034e">
                     <font>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <Font name="Arial Bold" size="24.0" />
+=======
+                        <Font name="Arial Bold" size="33.0" />
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 =======
                         <Font name="Arial Bold" size="33.0" />
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
@@ -34,17 +42,23 @@
                         <Font name="Baskerville Old Face" size="18.0" />
                     </font></Label>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <Label layoutX="36.0" layoutY="250.0" text="Password">
                     <font>
                         <Font name="Baskerville Old Face" size="18.0" />
                     </font></Label>
                 <PasswordField fx:id="passwordtext" layoutX="159.0" layoutY="248.0" promptText="Pasword">
 =======
+=======
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
                 <Label layoutX="36.0" layoutY="216.0" text="Password">
                     <font>
                         <Font name="Baskerville Old Face" size="18.0" />
                     </font></Label>
                 <PasswordField fx:id="passwordtext" layoutX="159.0" layoutY="214.0" promptText="Pasword">
+<<<<<<< HEAD
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
+=======
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
                     <effect>
                         <Blend />
@@ -54,7 +68,11 @@
                     </cursor></PasswordField>
                 <TextField fx:id="usernametext" layoutX="159.0" layoutY="153.0" promptText="User Name" />
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <Button id="loginbtn" fx:id="loginbtn_id" alignment="CENTER" layoutX="38.0" layoutY="328.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="272.0" style="-fx-border-radius: 5px; -fx-background-color: black; -fx-text-fill: white;" text="Log In" textFill="#0a034e">
+=======
+                <Button id="loginbtn" fx:id="loginbtn_id" alignment="CENTER" layoutX="38.0" layoutY="307.0" mnemonicParsing="false" onAction="#loginbtn_idOnAction" prefHeight="34.0" prefWidth="272.0" style="-fx-border-radius: 5px; -fx-background-color: #0a034e; -fx-text-fill: white;" text="Log In" textFill="WHITE">
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 =======
                 <Button id="loginbtn" fx:id="loginbtn_id" alignment="CENTER" layoutX="38.0" layoutY="307.0" mnemonicParsing="false" onAction="#loginbtn_idOnAction" prefHeight="34.0" prefWidth="272.0" style="-fx-border-radius: 5px; -fx-background-color: #0a034e; -fx-text-fill: white;" text="Log In" textFill="WHITE">
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
@@ -68,7 +86,11 @@
                         <Blend />
                     </effect></Button>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <Label layoutX="86.0" layoutY="400.0" text="New User? Join Now">
+=======
+                <Label layoutX="92.0" layoutY="426.0" text="New User? Join Now">
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 =======
                 <Label layoutX="92.0" layoutY="426.0" text="New User? Join Now">
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
@@ -77,12 +99,15 @@
                     </font>
                 </Label>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <Button fx:id="registerbtn_id" layoutX="223.0" layoutY="395.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Register" underline="true">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Button>
 =======
+=======
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
                 <Button fx:id="registerbtn_id" layoutX="229.0" layoutY="421.0" mnemonicParsing="false" onAction="#registerbtn_idOnAction" style="-fx-background-color: #0a034e;" text="Register" textFill="WHITE" underline="true">
                     <font>
                         <Font name="System Bold" size="14.0" />
@@ -103,6 +128,9 @@
                     </effect>
                 </Button>
             <Label fx:id="msg1id" alignment="CENTER" layoutX="-2.0" layoutY="260.0" prefHeight="18.0" prefWidth="366.0" textFill="#ef0909" />
+<<<<<<< HEAD
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
+=======
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
             </children>
         </AnchorPane>
@@ -121,7 +149,11 @@
                     </font>
                 </Label>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <Label alignment="CENTER" layoutX="1.0" layoutY="209.0" prefHeight="54.0" prefWidth="332.0" text="Guide" textFill="#0a034e">
+=======
+                <Label alignment="CENTER" layoutX="1.0" layoutY="214.0" prefHeight="54.0" prefWidth="332.0" text="Guide" textFill="#0a034e">
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 =======
                 <Label alignment="CENTER" layoutX="1.0" layoutY="214.0" prefHeight="54.0" prefWidth="332.0" text="Guide" textFill="#0a034e">
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9

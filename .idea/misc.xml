@@ -8,12 +8,18 @@
       </list>
     </option>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/BlueLanka_Guide/pom.xml" />
       </set>
     </option>
+<<<<<<< HEAD
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
+=======
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="23" project-jdk-type="JavaSDK">

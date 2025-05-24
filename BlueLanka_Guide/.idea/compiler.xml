@@ -6,22 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-<<<<<<< HEAD
-<<<<<<< HEAD
         <module name="BlueLanka_Guide" />
       </profile>
     </annotationProcessing>
-=======
-=======
->>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
-      </profile>
-    </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="BlueLanka_Guide" target="21" />
-    </bytecodeTargetLevel>
-<<<<<<< HEAD
->>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
-=======
->>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
   </component>
 </project>

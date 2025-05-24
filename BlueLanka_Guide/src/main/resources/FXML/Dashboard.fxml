@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< HEAD
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -94,3 +95,17 @@
     </center>
 
 </BorderPane>
+=======
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.bluelanka_guide.controller.DashboardController"
+            prefHeight="400.0" prefWidth="600.0">
+
+</AnchorPane>
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9

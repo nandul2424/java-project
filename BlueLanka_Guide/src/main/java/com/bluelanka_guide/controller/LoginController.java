@@ -2,12 +2,15 @@ package com.bluelanka_guide.controller;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 =======
+=======
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,6 +27,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+<<<<<<< HEAD
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
+=======
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 
 public class LoginController {
@@ -32,6 +38,7 @@ public class LoginController {
     private Button loginbtn_id;
 
     @FXML
+<<<<<<< HEAD
 <<<<<<< HEAD
     private PasswordField passwordtext;
 
@@ -42,6 +49,8 @@ public class LoginController {
     private TextField usernametext;
 
 =======
+=======
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
     private Label msg1id;
 
     @FXML
@@ -129,5 +138,8 @@ public class LoginController {
         }
 
     }
+<<<<<<< HEAD
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
+=======
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 }

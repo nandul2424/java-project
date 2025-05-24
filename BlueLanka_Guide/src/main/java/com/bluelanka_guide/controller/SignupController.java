@@ -4,6 +4,12 @@ package com.bluelanka_guide.controller;
 
 import javafx.fxml.FXML;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 =======
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,10 +20,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 public class SignupController {
 
 =======
+=======
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 import javafx.stage.Stage;
 
 import java.awt.event.ActionEvent;
@@ -33,6 +42,9 @@ public class SignupController {
     @FXML
     private Button cancel_reg_id;
 
+<<<<<<< HEAD
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
+=======
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
     @FXML
     private PasswordField confirm_reg_id;
@@ -51,6 +63,12 @@ public class SignupController {
 
     @FXML
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    private Label msg2id;
+
+    @FXML
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 =======
     private Label msg2id;
 
@@ -77,8 +95,11 @@ public class SignupController {
     private Label usernametxt_reg_id;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
+=======
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 
 
 
@@ -177,5 +198,8 @@ public class SignupController {
 
 
 
+<<<<<<< HEAD
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
+=======
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 

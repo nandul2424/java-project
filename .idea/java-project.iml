@@ -3,10 +3,13 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
 =======
+=======
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/BlueLanka_Guide/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/BlueLanka_Guide/src/main/resources" type="java-resource" />
@@ -23,6 +26,9 @@
         <SOURCES />
       </library>
     </orderEntry>
+<<<<<<< HEAD
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
+=======
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
   </component>
 </module>

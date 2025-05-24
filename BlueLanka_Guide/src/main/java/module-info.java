@@ -4,6 +4,12 @@ module com.bluelanka_guide {
     requires com.google.gson;
     requires java.net.http;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    requires java.desktop;
+    requires java.sql;
+    requires mysql.connector.j;
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 =======
     requires java.desktop;
     requires java.sql;
@@ -14,6 +20,10 @@ module com.bluelanka_guide {
     opens com.bluelanka_guide to javafx.fxml;
     opens com.bluelanka_guide.controller.TravelToolsPage to javafx.fxml;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    opens com.bluelanka_guide.controller to javafx.fxml;
+>>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
 =======
     opens com.bluelanka_guide.controller to javafx.fxml;
 >>>>>>> 80e02d43eae397bc8544ba0d44eb72367c5221f9
