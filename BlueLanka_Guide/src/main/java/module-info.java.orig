@@ -1,0 +1,24 @@
+module com.bluelanka_guide {
+    requires javafx.controls;
+    requires javafx.fxml;
+<<<<<<< HEAD
+    requires com.google.gson;
+    requires java.net.http;
+=======
+    requires java.desktop;
+    requires java.sql;
+>>>>>>> 2a792990db11df343fea5c80e4c3c8c87045602f
+
+
+    opens com.bluelanka_guide to javafx.fxml;
+    opens com.bluelanka_guide.controller.TravelToolsPage to javafx.fxml;
+<<<<<<< HEAD
+    exports com.bluelanka_guide.controller;
+    exports com.bluelanka_guide.controller.TravelToolsPage;
+=======
+    opens com.bluelanka_guide.controller to javafx.fxml;
+    exports com.bluelanka_guide.controller;
+>>>>>>> 2a792990db11df343fea5c80e4c3c8c87045602f
+    exports com.bluelanka_guide;
+
+}
