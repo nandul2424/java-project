@@ -1,4 +1,3 @@
-B
 module com.bluelanka_guide {
     requires javafx.controls;
     requires javafx.fxml;
@@ -6,6 +5,7 @@ module com.bluelanka_guide {
     requires java.net.http;
     requires java.desktop;
     requires java.sql;
+    requires mysql.connector.j;
 
 
     opens com.bluelanka_guide to javafx.fxml;
@@ -14,5 +14,4 @@ module com.bluelanka_guide {
     exports com.bluelanka_guide.controller;
     exports com.bluelanka_guide.controller.TravelToolsPage;
     exports com.bluelanka_guide;
-
 }
