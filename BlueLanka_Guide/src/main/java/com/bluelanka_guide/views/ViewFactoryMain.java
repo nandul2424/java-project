@@ -1,13 +1,80 @@
 package com.bluelanka_guide.views;
 
+import com.bluelanka_guide.controller.MainWindowController;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class ViewFactoryMain {
+
+    private final StringProperty mainMenuSelectedItem;
     private BorderPane loginView;
     private BorderPane signUpView;
+    private AnchorPane dashboardView;
+    private AnchorPane destinationsView;
+    private BorderPane travelToolsView;
+    private BorderPane tripPlannerView;
+
+    public ViewFactoryMain() {
+        this.mainMenuSelectedItem = new SimpleStringProperty("");
+    }
+
+    public StringProperty getMainMenuSelectedItem() {
+        return mainMenuSelectedItem;
+    }
+
+    //main menu views
+
+
+    public AnchorPane getDashboardView() {
+        try {
+            if (dashboardView == null) {
+                dashboardView = new FXMLLoader(getClass().getResource("/FXML/Dashboard.fxml")).load();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dashboardView;
+    }
+
+    public AnchorPane getDestinationsView() {
+        try {
+            if (destinationsView == null) {
+                destinationsView = new FXMLLoader(getClass().getResource("/FXML/Destinations.fxml")).load();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return destinationsView;
+    }
+
+    public BorderPane getTravelToolsView() {
+        try{
+            if(travelToolsView == null){
+                travelToolsView = new FXMLLoader(getClass().getResource("/FXML/TravelTools.fxml")).load();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return travelToolsView;
+    }
+
+    public BorderPane getTripPlannerView() {
+        try {
+            if (tripPlannerView == null) {
+                tripPlannerView = new FXMLLoader(getClass().getResource("/FXML/TripPlanner.fxml")).load();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return tripPlannerView;
+    }
+
+    //login and signu views
 
     public BorderPane getLoginView(){
         try{
@@ -36,8 +103,10 @@ public class ViewFactoryMain {
         createStage(loader);
     }
 
-    public void showDashboardWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Dashboard.fxml"));
+    public void showMainWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/MainWindow.fxml"));
+        MainWindowController controller = new MainWindowController();
+        loader.setController(controller);
         createStage(loader);
     }
 
