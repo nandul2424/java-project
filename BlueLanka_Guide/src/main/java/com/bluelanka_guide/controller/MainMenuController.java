@@ -35,29 +35,28 @@ public class MainMenuController implements Initializable {
     }
 
     private void onLogout() {
-        System.out.println("Logout button clicked");
+        Stage stage = (Stage) btnLogout.getScene().getWindow();
+        stage.close();
+        Model.getInstance().getViewFactoryMain().showLoginWindow();
     }
 
     private void onSettings() {
-        System.out.println("Settings button clicked");
+        Model.getInstance().getViewFactoryMain().getMainMenuSelectedItem().set("Settings");
     }
 
     private void onTripPlanner() {
-        System.out.println("Trip Planner button clicked");
+        Model.getInstance().getViewFactoryMain().getMainMenuSelectedItem().set("TripPlanner");
     }
 
     private void onTraveltools() {
-        System.out.println("Travel Tools button clicked");
         Model.getInstance().getViewFactoryMain().getMainMenuSelectedItem().set("TravelTools");
     }
 
     private void onDestination() {
-        System.out.println("Destination button clicked");
         Model.getInstance().getViewFactoryMain().getMainMenuSelectedItem().set("Destinations");
     }
 
     private void onDashboard() {
-        System.out.println("Dashboard button clicked");
         Model.getInstance().getViewFactoryMain().getMainMenuSelectedItem().set("Dashboard");
     }
 }

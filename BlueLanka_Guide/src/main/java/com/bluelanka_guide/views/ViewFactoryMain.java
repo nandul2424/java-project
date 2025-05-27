@@ -18,6 +18,7 @@ public class ViewFactoryMain {
     private AnchorPane destinationsView;
     private BorderPane travelToolsView;
     private BorderPane tripPlannerView;
+    private AnchorPane settingsView;
 
     public ViewFactoryMain() {
         this.mainMenuSelectedItem = new SimpleStringProperty("");
@@ -66,7 +67,7 @@ public class ViewFactoryMain {
     public BorderPane getTripPlannerView() {
         try {
             if (tripPlannerView == null) {
-                tripPlannerView = new FXMLLoader(getClass().getResource("/FXML/TripPlanner.fxml")).load();
+                tripPlannerView = new FXMLLoader(getClass().getResource("/FXML/TripPlanner/TripPlanner.fxml")).load();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,7 +75,18 @@ public class ViewFactoryMain {
         return tripPlannerView;
     }
 
-    //login and signu views
+    public AnchorPane getSettingsView(){
+        try {
+            if (settingsView == null) {
+                settingsView = new FXMLLoader(getClass().getResource("/FXML/Settings.fxml")).load();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return settingsView;
+    }
+
+    //login and signup views
 
     public BorderPane getLoginView(){
         try{

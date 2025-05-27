@@ -16,8 +16,8 @@ public class MainWindowController implements Initializable {
             ((observable, oldValue, newValue) -> {
                 System.out.println(newValue);
                 switch (newValue){
-                    case "Dashboard":
-                        mainWindow.setCenter(Model.getInstance().getViewFactoryMain().getDashboardView());
+                    case "Settings":
+                        mainWindow.setCenter(Model.getInstance().getViewFactoryMain().getSettingsView());
                         break;
                     case "Destinations":
                         mainWindow.setCenter(Model.getInstance().getViewFactoryMain().getDestinationsView());
@@ -27,6 +27,9 @@ public class MainWindowController implements Initializable {
                         break;
                     case "TripPlanner":
                         mainWindow.setCenter(Model.getInstance().getViewFactoryMain().getTripPlannerView());
+                        break;
+                    default:
+                        mainWindow.setCenter(Model.getInstance().getViewFactoryMain().getDashboardView());
                         break;
                 }
             });

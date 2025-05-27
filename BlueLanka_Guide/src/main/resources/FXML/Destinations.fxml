@@ -10,5 +10,5 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.bluelanka_guide.controller.DestinationsController"
             prefHeight="400.0" prefWidth="600.0">
-
+<Label text="Destinations"></Label>
 </AnchorPane>
