@@ -6,96 +6,96 @@ import javafx.scene.control.*;
 public class TripPlannerController {
 
     @FXML
-    private RadioButton radWeekend;
+    public RadioButton radWeekend;
     @FXML
-    private RadioButton radWeek;
+    public RadioButton radWeek;
     @FXML
-    private RadioButton radExtended;
+    public RadioButton radExtended;
     @FXML
-    private CheckBox checkMediterranean;
+    public CheckBox checkMediterranean;
     @FXML
-    private CheckBox checkCaribbean;
+    public CheckBox checkCaribbean;
     @FXML
-    private CheckBox checkNordicFjords;
+    public CheckBox checkNordicFjords;
     @FXML
-    private CheckBox checkSouthPacific;
+    public CheckBox checkSouthPacific;
     @FXML
-    private CheckBox checkOther;
+    public CheckBox checkOther;
     @FXML
-    private TextField txtOtherRegion;
+    public TextField txtOtherRegion;
 
     @FXML
-    private Button btnGeneratePlan;
+    public Button btnGeneratePlan;
     @FXML
-    private Button btnNext;
+    public Button btnNext;
     @FXML
-    private Button btnPrevious;
+    public Button btnPrevious;
     @FXML
-    private Button btnSave;
+    public Button btnSave;
 
     @FXML
-    private CheckBox chkChildFriendly;
+    public CheckBox chkChildFriendly;
     @FXML
-    private CheckBox chkAccessibility;
+    public CheckBox chkAccessibility;
 
     @FXML
-    private Spinner spinnerChildren;
+    public Spinner spinnerChildren;
     @FXML
-    private Spinner spinnerAdults;
+    public Spinner spinnerAdults;
 
     @FXML
-    private ComboBox comboCurrency;
+    public ComboBox comboCurrency;
     @FXML
-    private TextField txtBudgetAmount;
+    public TextField txtBudgetAmount;
 
     @FXML
-    private RadioButton radUltraLuxury;
+    public RadioButton radUltraLuxury;
     @FXML
-    private RadioButton radLuxury;
+    public RadioButton radLuxury;
     @FXML
-    private RadioButton radModerate;
+    public RadioButton radModerate;
     @FXML
-    private RadioButton radBudget;
+    public RadioButton radBudget;
 
     @FXML
-    private Slider sliderIntensity;
+    public Slider sliderIntensity;
 
     @FXML
-    private CheckBox checkCultural;
+    public CheckBox checkCultural;
     @FXML
-    private CheckBox checkWildlife;
+    public CheckBox checkWildlife;
     @FXML
-    private CheckBox checkSailing;
+    public CheckBox checkSailing;
     @FXML
-    private CheckBox checkWaterSports;
+    public CheckBox checkWaterSports;
 
     @FXML
-    private CheckBox checkRelaxation;
+    public CheckBox checkRelaxation;
     @FXML
-    private CheckBox checkSnorkeling;
+    public CheckBox checkSnorkeling;
     @FXML
-    private CheckBox checkDiving;
+    public CheckBox checkDiving;
     @FXML
-    private CheckBox checkFishing;
+    public CheckBox checkFishing;
 
     @FXML
-    private Slider sliderDays;
+    public Slider sliderDays;
     
     @FXML
-    private Slider sliderPopularity;
+    public Slider sliderPopularity;
     
     @FXML
-    private RadioButton radCoastal;
+    public RadioButton radCoastal;
     @FXML
-    private RadioButton radOpenSea;
+    public RadioButton radOpenSea;
     @FXML
-    private RadioButton radIslandHopping;
+    public RadioButton radIslandHopping;
     @FXML
-    private RadioButton radMixed;
+    public RadioButton radMixed;
 
 
     @FXML
-    private RadioButton radDayTrip;
+    public RadioButton radDayTrip;
 
     @FXML
     public void handleOtherRegion() {
@@ -103,7 +103,7 @@ public class TripPlannerController {
     }
 
     @FXML
-    private void handleSaveProgress() {
+    public void handleSaveProgress() {
 
     }
 

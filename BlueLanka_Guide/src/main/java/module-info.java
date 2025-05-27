@@ -10,8 +10,10 @@ module com.bluelanka_guide {
 
     opens com.bluelanka_guide to javafx.fxml;
     opens com.bluelanka_guide.controller.TravelToolsPage to javafx.fxml;
+    opens com.bluelanka_guide.controller.TripPlanner to javafx.fxml;
     opens com.bluelanka_guide.controller to javafx.fxml;
     exports com.bluelanka_guide.controller;
     exports com.bluelanka_guide.controller.TravelToolsPage;
+    exports com.bluelanka_guide.controller.TripPlanner;
     exports com.bluelanka_guide;
 }

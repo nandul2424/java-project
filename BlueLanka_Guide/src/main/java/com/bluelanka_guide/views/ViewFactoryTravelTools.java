@@ -1,11 +1,13 @@
 package com.bluelanka_guide.views;
 
+import com.bluelanka_guide.controller.TravelToolsPage.ChecklistItemController;
 import com.bluelanka_guide.controller.TravelToolsPage.TravelToolsWindowController;
 import com.bluelanka_guide.models.UnitType;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -133,13 +135,20 @@ public class ViewFactoryTravelTools {
         return weatherView;
     }
 
-    public HBox getListItem(){
+    public HBox getListItem(ListView<HBox> listView){
         try{
-            listItemView = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/CheckItem.fxml")).load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/CheckItem.fxml"));
+            HBox listItemView = loader.load();
+            ChecklistItemController controller = loader.getController();
+
+            controller.setOnDeleteCallback(() -> {
+                listView.getItems().remove(listItemView);
+            });
+            return listItemView;
         }catch (Exception e){
             e.printStackTrace();
+            return null;
         }
-        return listItemView;
     }
 
     public void showTravelToolsWindow(){

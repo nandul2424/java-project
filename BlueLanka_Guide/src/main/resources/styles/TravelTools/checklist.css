@@ -8,6 +8,14 @@
     -fx-font-weight: 600;
 }
 
+.checklist_container Button{
+-fx-padding: 6 15;
+-fx-border-radius: 20;
+-fx-background-radius: 20;
+-fx-font-size: 18;
+-fx-font-weight: 600;
+}
+
 .back_button{
     -fx-background-color: transparent;
     -fx-padding: 0;
@@ -15,14 +23,6 @@
 
 .back_button:hover{
     -fx-cursor: hand;
-}
-
-.checklist_container Button{
-    -fx-padding: 6 15;
-    -fx-border-radius: 20;
-    -fx-background-radius: 20;
-    -fx-font-size: 18;
-    -fx-font-weight: 600;
 }
 
 .add_new_button{
@@ -39,4 +39,5 @@
 
 .checklist_container .list-cell{
     -fx-pref-width: 470;
+    -fx-background-color: #AAE3FF;
 }

@@ -5,6 +5,7 @@
 
 <BorderPane
         fx:id="toolsParentWindow"
+        fx:controller="com.bluelanka_guide.controller.TravelToolsPage.TravelToolsWindowController"
         xmlns="http://javafx.com/javafx/23.0.1"
         xmlns:fx="http://javafx.com/fxml/1" >
     <left>

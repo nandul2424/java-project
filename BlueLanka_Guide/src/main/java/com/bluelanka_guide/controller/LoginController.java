@@ -1,6 +1,7 @@
 package com.bluelanka_guide.controller;
 
 
+import com.bluelanka_guide.models.Model;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -75,11 +76,16 @@ public class LoginController {
 
             if (result.next()) {
                 msg1id.setText("Login successful!");
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/Dashboard.fxml"));
-                Parent root = fxmlLoader.load();
-                Stage stage = (Stage) registerbtn_id.getScene().getWindow();
-                stage.setScene(new Scene(root));
-                stage.show();
+                Stage stage = (Stage) loginbtn_id.getScene().getWindow();
+                stage.close();
+                Model.getInstance().getViewFactoryMain().showMainWindow();
+
+
+//                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/MainWindow.fxml"));
+//                Parent root = fxmlLoader.load();
+//                Stage stage = (Stage) registerbtn_id.getScene().getWindow();
+//                stage.setScene(new Scene(root));
+//                stage.show();
             } else {
                 msg1id.setText("Invalid username or password.");
             }

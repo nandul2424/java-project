@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.bluelanka_guide.controller.MainMenuController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="750.0" prefWidth="250.0" styleClass="main_menu_container" stylesheets="@../styles/mainMenu.css"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.bluelanka_guide.controller.MainMenuController">
+   <VBox layoutX="75.0" layoutY="14.0" prefHeight="100.0" prefWidth="100.0" styleClass="logo_container"
+         AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@../assets/images/logo.png"/>
+      </ImageView>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Safe Sea"/>
+   </VBox>
+   <VBox layoutX="15.0" layoutY="150.0" prefHeight="297.0" prefWidth="221.0" styleClass="pages_buttons_container"
+         AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+      <Button fx:id="btnDashboard" mnemonicParsing="false" text="Dashboard"/>
+      <Button fx:id="btnDestinations" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Destinations"/>
+      <Button fx:id="btnTravelTools" layoutX="10.0" layoutY="36.0" mnemonicParsing="false" text="Travel Tools"/>
+      <Button fx:id="btnTripPlanner" layoutX="10.0" layoutY="61.0" mnemonicParsing="false" text="Trip Planner"/>
+   </VBox>
+   <Line endX="14.0" layoutX="110.0" layoutY="129.0" startX="236.0" AnchorPane.leftAnchor="14.0"
+         AnchorPane.rightAnchor="14.0"/>
+   <VBox layoutX="15.0" layoutY="481.0" prefHeight="238.0" prefWidth="223.0" styleClass="pages_buttons_container">
+      <Button fx:id="btnSettings" layoutX="10.0" layoutY="87.0" mnemonicParsing="false" text="Settings"/>
+      <Button fx:id="btnLogout" layoutX="10.0" layoutY="114.0" mnemonicParsing="false" text="Logout"/>
+      <Button fx:id="btnExit" layoutX="10.0" layoutY="140.0" mnemonicParsing="false" text="Exit"/>
+   </VBox>
+   <Line endX="14.0" layoutX="11.0" layoutY="466.0" startX="236.0" AnchorPane.leftAnchor="14.0"
+         AnchorPane.rightAnchor="14.0"/>
 </AnchorPane>

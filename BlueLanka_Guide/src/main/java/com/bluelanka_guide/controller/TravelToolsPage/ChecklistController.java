@@ -6,6 +6,7 @@ import com.bluelanka_guide.views.ViewFactoryTravelTools;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
 import java.net.URL;
@@ -42,6 +43,6 @@ public class ChecklistController implements Initializable {
     }
 
     private void onAddNew() {
-        listViewItems.getItems().add(Model.getInstance().getViewFactoryTravelTools().getListItem());
+        listViewItems.getItems().add(Model.getInstance().getViewFactoryTravelTools().getListItem(listViewItems));
     }
 }

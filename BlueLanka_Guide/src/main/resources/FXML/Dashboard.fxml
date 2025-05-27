@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.bluelanka_guide.controller.DashboardController"
-            prefHeight="400.0" prefWidth="600.0">
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="javafxapplication7.FXMLDocumentController">
+<AnchorPane prefHeight="750.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.DashboardController">
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     
     <!-- Sidebar -->
     <left>
@@ -72,7 +66,7 @@
                 </padding>
                 <ImageView fitHeight="80" fitWidth="80">
                     <image>
-                        <Image url="@surfing.jpg" />
+                        <Image url="@../assets/images/surf.jpg" />
                     </image>
                 </ImageView>
                 <Label text="Safe Surfing Spots" textFill="WHITE">
@@ -89,7 +83,7 @@
                 </padding>
                 <ImageView fitHeight="80" fitWidth="80">
                     <image>
-                        <Image url="@diving.jpg" />
+                        <Image url="@../assets/images/diving.jpg" />
                     </image>
                 </ImageView>
                 <Label text="Safe Diving Locations" textFill="WHITE">
