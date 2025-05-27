@@ -1,0 +1,29 @@
+.check_item_container{
+    -fx-background-color: rgba(74, 83, 255, 0.7);
+    -fx-spacing: 15;
+    -fx-alignment: center;
+    -fx-border-radius: 15;
+    -fx-background-radius: 10;
+}
+
+.check_item_container Label{
+    -fx-font-size: 16;
+    -fx-font-family: "Poppins";
+}
+
+.check_description{
+    -fx-min-width: 200;
+    -fx-font-size: 15;
+    -fx-font-family: "Poppins";
+    -fx-alignment: center;
+}
+
+.check_date{
+    -fx-pref-width: 100;
+}
+
+.delete_button{
+    -fx-background-color: #FF0000;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+}
