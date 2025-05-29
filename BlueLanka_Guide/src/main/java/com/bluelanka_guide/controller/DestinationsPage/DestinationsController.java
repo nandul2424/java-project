@@ -27,19 +27,19 @@ public class DestinationsController extends Application {
         private final String description;
         private final double rating;
         private final String imagePath;
-        //private final double latitude;
-        //private final double longitude;
+        private final double latitude;
+        private final double longitude;
 
-        //public Destination(int id, String name, String country, String description, double rating, String imagePath, double latitude, double longitude) {
-        public Destination(int id, String name, String country, String description, double rating, String imagePath) {
+        public Destination(int id, String name, String country, String description, double rating, String imagePath, double latitude, double longitude) {
+        //public Destination(int id, String name, String country, String description, double rating, String imagePath) {
             this.id = id;
             this.name = name;
             this.country = country;
             this.description = description;
             this.rating = rating;
             this.imagePath = imagePath;
-            //this.latitude = latitude;
-            //this.longitude = longitude;
+            this.latitude = latitude;
+            this.longitude = longitude;
         }
         public int getId() { return id; }
         public String getName() { return name; }
@@ -47,8 +47,8 @@ public class DestinationsController extends Application {
         public String getDescription() { return description; }
         public double getRating() { return rating; }
         public String getImagePath() { return imagePath; }
-        //public double getLatitude() { return latitude; }
-        //public double getLongitude() { return longitude; }
+        public double getLatitude() { return latitude; }
+        public double getLongitude() { return longitude; }
 
     }
         private BorderPane root;
@@ -68,7 +68,7 @@ public class DestinationsController extends Application {
             root = new BorderPane();
             //applyStyles();
             createSidebar();
-            //createMapView();
+            createMapView();
 
         Scene scene = new Scene(root, 1200, 800);
         primaryStage.setTitle("Destination Explorer");
@@ -78,9 +78,9 @@ public class DestinationsController extends Application {
 
         private void initializeDestinations() {
             destinations = new ArrayList<>();
-            destinations.add(new Destination(1, "Negambo", "Sri Lanka", "Browns Beach in Negombo is a popular coastal destination known for its golden sands, clear waters, and vibrant atmosphere, offering a perfect blend of relaxation and adventure.", 4.8, ".jpg"));
-            destinations.add(new Destination(2, "Hikkaduwa", "Sri Lanka", "A bustling metropolis blending ultramodern and traditional aspects of Japanese culture.", 4.7, "tokyo.jpg"));
-            destinations.add(new Destination(3, "Arugambe", "Sri Lanka", "The Big Apple known for its skyscrapers, Broadway shows, and cultural diversity.", 4.6, "newyork.jpg"));
+            destinations.add(new Destination(1, "Negambo", "Sri Lanka", "Browns Beach in Negombo is a popular coastal destination known for its golden sands, clear waters, and vibrant atmosphere, offering a perfect blend of relaxation and adventure.", 4.8, ".jpg", 48.8566, 2.3522));
+            destinations.add(new Destination(2, "Hikkaduwa", "Sri Lanka", "A bustling metropolis blending ultramodern and traditional aspects of Japanese culture.", 4.7, "tokyo.jpg", 48.8566, 2.3522));
+            destinations.add(new Destination(3, "Arugambe", "Sri Lanka", "The Big Apple known for its skyscrapers, Broadway shows, and cultural diversity.", 4.6, "newyork.jpg", 48.8566, 2.3522));
     }
 
     private void createSidebar() {
@@ -191,8 +191,38 @@ public class DestinationsController extends Application {
                     "L.marker([%f, %f]).addTo(map).bindPopup('%s');\n",
                     dest.getLatitude(), dest.getLongitude(), dest.getName()));
         }
+        String mapHTML = """
+                <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+                    <style> html, body, #map { height: 100%%; margin: 0; padding: 0; } </style>
+                </head>
+                <body>
+                    <div id="map"></div>
+                    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                    <script>
+                        var map = L.map('map').setView([20, 0], 2);
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            maxZoom: 18
+                        }).addTo(map);
+                        %s
+                    </script>
+                </body>
+                </html>
+                """.formatted(markersJS.toString());
 
+        webEngine.loadContent(mapHTML);
 
-
+        mapContainer.getChildren().add(webView);
+        root.setCenter(mapContainer);
     }
+
+
+
+
+
+
+
+}
 
