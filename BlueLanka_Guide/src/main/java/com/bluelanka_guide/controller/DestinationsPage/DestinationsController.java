@@ -264,6 +264,48 @@ public class DestinationsController extends Application {
         System.out.println("Selected destination: " + destination.getName());
     }
 
+    private void updateDestinationDetails() {
+        if (selectedDestination == null) {
+            destinationDetails.setVisible(false);
+            return;
+        }
+
+        destinationDetails.getChildren().clear();
+        destinationDetails.setVisible(true);
+
+        VBox detailsContent = new VBox(10);
+        detailsContent.setPadding(new Insets(15));
+
+        HBox header = new HBox(10);
+        header.setAlignment(Pos.CENTER_LEFT);
+
+        VBox titleBox = new VBox();
+        titleBox.getChildren().addAll(
+                new Label(selectedDestination.getName()),
+                new Label(selectedDestination.getCountry())
+        );
+
+        Label ratingLabel = new Label(String.format("%.1f", selectedDestination.getRating()));
+        HBox ratingBox = new HBox(ratingLabel);
+        ratingBox.setStyle("-fx-background-color: #ccfbf1; -fx-background-radius: 4; -fx-padding: 4 8;");
+
+        header.getChildren().addAll(titleBox, ratingBox);
+
+        Label descriptionLabel = new Label(selectedDestination.getDescription());
+        descriptionLabel.setWrapText(true);
+        descriptionLabel.setStyle("-fx-font-size: 14; -fx-text-fill: #4b5563;");
+
+        HBox buttons = new HBox(10);
+        Button directionsButton = new Button("Directions");
+        directionsButton.setStyle("-fx-background-color: #0d9488; -fx-text-fill: white;");
+        Button infoButton = new Button("More Info");
+        infoButton.setStyle("-fx-background-color: white; -fx-border-color: #d1d5db;");
+        buttons.getChildren().addAll(directionsButton, infoButton);
+
+        detailsContent.getChildren().addAll(header, descriptionLabel, buttons);
+        destinationDetails.getChildren().add(detailsContent);
+    }
+
 
 
 
