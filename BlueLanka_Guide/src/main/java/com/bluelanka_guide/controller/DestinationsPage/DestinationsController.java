@@ -66,7 +66,7 @@ public class DestinationsController extends Application {
             initializeDestinations();
             root = new BorderPane();
             //applyStyles();
-            //createSidebar();
+            createSidebar();
             //createMapView();
 
         Scene scene = new Scene(root, 1200, 800);
@@ -82,7 +82,58 @@ public class DestinationsController extends Application {
             destinations.add(new Destination(3, "Arugambe", "Sri Lanka", "The Big Apple known for its skyscrapers, Broadway shows, and cultural diversity.", 4.6, "newyork.jpg"));
     }
 
+    private void createSidebar() {
+        sidebar = new VBox();
+        sidebar.setPrefWidth(300);
+        sidebar.setStyle("-fx-background-color: white; -fx-border-color: #e5e7eb; -fx-border-width: 0 1 0 0;");
+
+        HBox header = new HBox();
+        header.setStyle("-fx-padding: 15; -fx-border-color: #e5e7eb; -fx-border-width: 0 0 1 0;");
+        header.setAlignment(Pos.CENTER_LEFT);
+
+        Label titleLabel = new Label("Destination Explorer");
+        titleLabel.setStyle("-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #111827;");
+        header.getChildren().add(titleLabel);
+
+        HBox searchBox = new HBox();
+        searchBox.setStyle("-fx-padding: 15;");
+        searchBox.setAlignment(Pos.CENTER);
+
+        searchField = new TextField();
+        searchField.setPromptText("Search destinations...");
+        searchField.setStyle("-fx-background-color: #f3f4f6; -fx-background-radius: 4; -fx-padding: 8;");
+        HBox.setHgrow(searchField, Priority.ALWAYS);
+        searchBox.getChildren().add(searchField);
+
+        destinationTabs = new TabPane();
+        destinationTabs.setStyle("-fx-background-color: transparent;");
+        destinationTabs.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+        VBox.setVgrow(destinationTabs, Priority.ALWAYS);
+
+        Tab popularTab = new Tab("Popular");
+        popularTab.setContent(createDestinationList());
+
+        Tab savedTab = new Tab("Saved");
+        VBox savedContent = new VBox(new Label("No saved destinations yet"));
+        savedContent.setAlignment(Pos.CENTER);
+        savedContent.setPadding(new Insets(20));
+        savedTab.setContent(savedContent);
+
+        Tab recentTab = new Tab("Recent");
+        VBox recentContent = new VBox(new Label("No recent searches"));
+        recentContent.setAlignment(Pos.CENTER);
+        recentContent.setPadding(new Insets(20));
+        recentTab.setContent(recentContent);
+
+        destinationTabs.getTabs().addAll(popularTab, savedTab, recentTab);
+        sidebar.getChildren().addAll(header, searchBox, destinationTabs);
+
+        root.setLeft(sidebar);
+
+    }
 
 
-}
+
+
+    }
 
