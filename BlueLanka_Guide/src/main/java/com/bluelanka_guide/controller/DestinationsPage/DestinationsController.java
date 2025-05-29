@@ -179,7 +179,18 @@ public class DestinationsController extends Application {
         return card;
     }
 
+    private void createMapView() {
+        mapContainer = new StackPane();
 
+        WebView webView = new WebView();
+        WebEngine webEngine = webView.getEngine();
+
+        StringBuilder markersJS = new StringBuilder();
+        for (Destination dest : destinations) {
+            markersJS.append(String.format(
+                    "L.marker([%f, %f]).addTo(map).bindPopup('%s');\n",
+                    dest.getLatitude(), dest.getLongitude(), dest.getName()));
+        }
 
 
 
