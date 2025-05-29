@@ -218,6 +218,46 @@ public class DestinationsController extends Application {
         root.setCenter(mapContainer);
     }
 
+    private Pane createMapMarkers() {
+        Pane markersPane = new Pane();
+        markersPane.setPrefSize(800, 600);
+
+        for (Destination destination : destinations) {
+            double x = (destination.getLongitude() + 180) / 360 * 800;
+            double y = (90 - destination.getLatitude()) / 180 * 600;
+
+            StackPane marker = new StackPane();
+            Circle pin = new Circle(10, Color.valueOf("#0d9488"));
+            pin.setStroke(Color.WHITE);
+            pin.setStrokeWidth(2);
+
+            Label label = new Label(destination.getName());
+            label.setVisible(false);
+            label.setStyle("-fx-background-color: white; -fx-background-radius: 4; -fx-padding: 4 8; -fx-font-size: 10;");
+
+            marker.getChildren().addAll(pin, label);
+            marker.setLayoutX(x);
+            marker.setLayoutY(y);
+
+            marker.setOnMouseEntered(e -> {
+                pin.setRadius(12);
+                label.setVisible(true);
+            });
+
+            marker.setOnMouseExited(e -> {
+                if (selectedDestination == null || selectedDestination.getId() != destination.getId()) {
+                    pin.setRadius(10);
+                    label.setVisible(false);
+                }
+            });
+
+            marker.setOnMouseClicked(e -> selectDestination(destination));
+            markersPane.getChildren().add(marker);
+        }
+
+        return markersPane;
+    }
+
 
 
 
