@@ -12,6 +12,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +63,7 @@ public class DestinationsController extends Application {
         private Destination selectedDestination;
 
     @Override
-        public void start(Stage primaryStage) {
+        public void start(@NotNull Stage primaryStage) {
             initializeDestinations();
             root = new BorderPane();
             //applyStyles();
@@ -131,6 +132,53 @@ public class DestinationsController extends Application {
         root.setLeft(sidebar);
 
     }
+
+    private ScrollPane createDestinationList() {
+        VBox destinationList = new VBox(10);
+        destinationList.setPadding(new Insets(10));
+
+        for (Destination destination : destinations) {
+            VBox card = createDestinationCard(destination);
+            destinationList.getChildren().add(card);
+        }
+
+        ScrollPane scrollPane = new ScrollPane(destinationList);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setStyle("-fx-background-color: transparent; -fx-padding: 0;");
+        return scrollPane;
+    }
+
+    private VBox createDestinationCard(Destination destination) {
+        VBox card = new VBox();
+        card.setStyle("-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1); -fx-cursor: hand;");
+
+        StackPane imageContainer = new StackPane();
+        imageContainer.setPrefHeight(120);
+        Rectangle imagePlaceholder = new Rectangle(300, 120, Color.LIGHTGRAY);
+
+        HBox ratingBadge = new HBox();
+        ratingBadge.setStyle("-fx-background-color: rgba(255, 255, 255, 0.9); -fx-background-radius: 12; -fx-padding: 4 8;");
+        ratingBadge.getChildren().add(new Label(String.format("%.1f", destination.getRating())));
+        StackPane.setAlignment(ratingBadge, Pos.TOP_RIGHT);
+        StackPane.setMargin(ratingBadge, new Insets(8));
+        imageContainer.getChildren().addAll(imagePlaceholder, ratingBadge);
+
+        VBox infoContainer = new VBox(5);
+        infoContainer.setPadding(new Insets(10));
+        Label nameLabel = new Label(destination.getName());
+        nameLabel.setStyle("-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #111827;");
+        Label countryLabel = new Label(destination.getCountry());
+        countryLabel.setStyle("-fx-font-size: 12; -fx-text-fill: #6b7280;");
+        Label descriptionLabel = new Label(destination.getDescription());
+        descriptionLabel.setWrapText(true);
+        descriptionLabel.setStyle("-fx-font-size: 12; -fx-text-fill: #4b5563;");
+        infoContainer.getChildren().addAll(nameLabel, countryLabel, descriptionLabel);
+
+        card.getChildren().addAll(imageContainer, infoContainer);
+        card.setOnMouseClicked(e -> selectDestination(destination));
+        return card;
+    }
+
 
 
 
