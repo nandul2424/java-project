@@ -258,6 +258,12 @@ public class DestinationsController extends Application {
         return markersPane;
     }
 
+    private void selectDestination(Destination destination) {
+        selectedDestination = destination;
+        updateDestinationDetails();
+        System.out.println("Selected destination: " + destination.getName());
+    }
+
 
 
 
