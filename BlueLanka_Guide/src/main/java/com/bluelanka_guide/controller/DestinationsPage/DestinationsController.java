@@ -306,6 +306,15 @@ public class DestinationsController extends Application {
         destinationDetails.getChildren().add(detailsContent);
     }
 
+    private void toggleSidebar() {
+        sidebarVisible = !sidebarVisible;
+        root.setLeft(sidebarVisible ? sidebar : null);
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
 
 
 
