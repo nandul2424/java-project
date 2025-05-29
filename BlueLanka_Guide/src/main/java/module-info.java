@@ -6,7 +6,7 @@ module com.bluelanka_guide {
     requires java.desktop;
     requires java.sql;
     requires mysql.connector.j;
-
+    requires org.xerial.sqlitejdbc;
 
     opens com.bluelanka_guide to javafx.fxml;
     opens com.bluelanka_guide.controller.TravelToolsPage to javafx.fxml;
