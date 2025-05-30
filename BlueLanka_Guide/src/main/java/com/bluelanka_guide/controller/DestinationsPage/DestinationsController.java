@@ -315,11 +315,3 @@ public class DestinationsController extends Application {
         launch(args);
     }
 }
-
-
-
-
-
-
-}
-
