@@ -1,124 +1,102 @@
 package com.bluelanka_guide.controller.TripPlanner;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class TripPlannerController {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+public class TripPlannerController implements Initializable{
     @FXML
-    public RadioButton radWeekend;
-    @FXML
-    public RadioButton radWeek;
-    @FXML
-    public RadioButton radExtended;
-    @FXML
-    public CheckBox checkMediterranean;
-    @FXML
-    public CheckBox checkCaribbean;
-    @FXML
-    public CheckBox checkNordicFjords;
-    @FXML
-    public CheckBox checkSouthPacific;
-    @FXML
-    public CheckBox checkOther;
-    @FXML
-    public TextField txtOtherRegion;
+    private Label welcomeText;
 
-    @FXML
-    public Button btnGeneratePlan;
-    @FXML
-    public Button btnNext;
-    @FXML
-    public Button btnPrevious;
-    @FXML
-    public Button btnSave;
-
-    @FXML
-    public CheckBox chkChildFriendly;
-    @FXML
-    public CheckBox chkAccessibility;
-
-    @FXML
-    public Spinner spinnerChildren;
-    @FXML
-    public Spinner spinnerAdults;
-
-    @FXML
-    public ComboBox comboCurrency;
-    @FXML
-    public TextField txtBudgetAmount;
-
-    @FXML
-    public RadioButton radUltraLuxury;
-    @FXML
-    public RadioButton radLuxury;
-    @FXML
-    public RadioButton radModerate;
-    @FXML
-    public RadioButton radBudget;
-
-    @FXML
-    public Slider sliderIntensity;
-
-    @FXML
-    public CheckBox checkCultural;
-    @FXML
-    public CheckBox checkWildlife;
-    @FXML
-    public CheckBox checkSailing;
-    @FXML
-    public CheckBox checkWaterSports;
-
-    @FXML
-    public CheckBox checkRelaxation;
-    @FXML
-    public CheckBox checkSnorkeling;
-    @FXML
-    public CheckBox checkDiving;
-    @FXML
-    public CheckBox checkFishing;
-
-    @FXML
-    public Slider sliderDays;
-    
-    @FXML
-    public Slider sliderPopularity;
-    
-    @FXML
-    public RadioButton radCoastal;
-    @FXML
-    public RadioButton radOpenSea;
-    @FXML
-    public RadioButton radIslandHopping;
-    @FXML
-    public RadioButton radMixed;
 
 
     @FXML
-    public RadioButton radDayTrip;
+    private TabPane mainTabPane;
 
     @FXML
-    public void handleOtherRegion() {
+    private Tab destinationsTab;
+
+    @FXML
+    private Tab durationTab;
+
+    @FXML
+    private Tab activitiesTab;
+
+    @FXML
+    private Tab budgetTab;
+
+    @FXML
+    private Button nextActionButton;
+
+    @FXML
+    private Button prevActionButton;
+
+    @FXML
+    private Button GenerateActionButton;
+
+
+    @FXML
+    protected void onHelloButtonClick() {
+        welcomeText.setText("Welcome to JavaFX Application!");
 
     }
 
-    @FXML
-    public void handleSaveProgress() {
+    private int currentTabIndex = 0;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Set initial tab selection
+        mainTabPane.getSelectionModel().select(0);
+        updateButtonStates();
+
+        // Add listener to tab selection changes
+        mainTabPane.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            currentTabIndex = newValue.intValue();
+            updateButtonStates();
+        });
+
+        // Disable tab switching by clicking (force linear navigation)
+        for (Tab tab : mainTabPane.getTabs()) {
+            tab.setDisable(true);
+        }
+        // Enable only the first tab
+        if (!mainTabPane.getTabs().isEmpty()) {
+            mainTabPane.getTabs().get(0).setDisable(false);
+        }
+    }
+
+    public void handleNextButton(ActionEvent actionEvent) {
 
     }
 
-    @FXML
-    private void handlePrevious() {
+    public void handlePreviousButton(ActionEvent actionEvent) {
 
     }
 
-    @FXML
-    private void handleNext() {
+    public void handleGenerateTripPlan(ActionEvent actionEvent) {
 
     }
 
-    @FXML
-    private void handleGeneratePlan() {
 
+    private void updateButtonStates() {
+        // Update Previous button
+        prevActionButton.setDisable(currentTabIndex == 0);
+
+        // Update Next button
+        // Destinations, Duration, Activities, Budget, Travelers
+        int TOTAL_TABS = 5;
+        if (currentTabIndex == TOTAL_TABS - 1) {
+            nextActionButton.setVisible(false);
+            GenerateActionButton.setVisible(true);
+        } else {
+            nextActionButton.setVisible(true);
+            GenerateActionButton.setVisible(false);
+            nextActionButton.setDisable(false);
+        }
     }
+
 }
