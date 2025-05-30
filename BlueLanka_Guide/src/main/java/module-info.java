@@ -6,6 +6,9 @@ module com.bluelanka_guide {
     requires java.desktop;
     requires java.sql;
     requires mysql.connector.j;
+    requires javafx.web;
+    requires java.naming;
+    requires annotations;
 
 
     opens com.bluelanka_guide to javafx.fxml;
