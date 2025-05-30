@@ -10,7 +10,7 @@
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.bluelanka_guide.controller.TripPlanner.TripPlannerController"
-            prefHeight="600.0" prefWidth="800.0" stylesheets="@styles/TripPlanner.css" styleClass="main-container">
+            prefHeight="600.0" prefWidth="850.0" stylesheets="@styles/TripPlanner.css" styleClass="main-container">
 
     <!-- Top Banner -->
     <top>
