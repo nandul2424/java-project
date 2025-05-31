@@ -9,8 +9,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class TripPlannerController implements Initializable{
-    @FXML
-    private Label welcomeText;
+
 
 
 
@@ -54,14 +53,9 @@ public class TripPlannerController implements Initializable{
     private CheckBox checkRelaxation, checkSnorkeling, checkDiving, checkFishing;
 
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-
-    }
 
     public int currentTabIndex = 0;
-    public final int TOTAL_TABS = 5;
+    public final int TOTAL_TABS = 4;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Set initial tab selection
@@ -108,6 +102,10 @@ public class TripPlannerController implements Initializable{
 
     @FXML
     public void handleGenerateTripPlan(ActionEvent actionEvent) {
+        if (validateAllTabs()) {
+            // Collect all form data and generate trip plan
+            generateTripPlan();
+        }
 
     }
     // =======================================================================================================================
@@ -138,14 +136,82 @@ public class TripPlannerController implements Initializable{
         return true;
     }
     private boolean validateDuration() {
+        boolean validDuration = radDayTrip.isSelected() || radWeekend.isSelected() || radWeek.isSelected() || radExtended.isSelected();
+        if (!validDuration) {
+            showAlert("Validation Error", "Please select at least one duration.");
+            return false;
+        }
+
         return true;
     }
     private boolean validateActivities() {
+        boolean validActivities = checkRelaxation.isSelected() || checkSnorkeling.isSelected() || checkDiving.isSelected() || checkFishing.isSelected();
+        if (!validActivities) {
+            showAlert("Validation Error", "Please select at least one activities.");
+            return false;
+        }
         return true;
     }
     private boolean validateBudget() {
         return true;
     }
+
+    private boolean validateAllTabs() {
+        for (int i = 0; i < TOTAL_TABS; i++) {
+            int tempIndex = currentTabIndex;
+            currentTabIndex = i;
+            if (!validateCurrentTab()) {
+                currentTabIndex = tempIndex;
+                return false;
+            }
+            currentTabIndex = tempIndex;
+        }
+        return true;
+    }
+
+    private void generateTripPlan() {
+        // Collect all selected data
+        StringBuilder tripData = new StringBuilder();
+        tripData.append("Selected Destinations:\n");
+
+        if (checkMirissa.isSelected()) tripData.append("- Mirissa\n");
+        if (checkUnawatuna.isSelected()) tripData.append("- Unawatuna\n");
+        if (checkArugambay.isSelected()) tripData.append("- Arugambay\n");
+        if (checkHikkaduwa.isSelected()) tripData.append("- Hikkaduwa\n");
+        if (checkTangalle.isSelected()) tripData.append("- Tangalle\n");
+        if (checkBentota.isSelected()) tripData.append("- Bentota\n");
+        if (checkKalpitiya.isSelected()) tripData.append("- Kalpitiya\n");
+
+
+        tripData.append("\nSelected Experiences:\n");
+        if (radCoastal.isSelected()) tripData.append("- Coastal Exploration\n");
+        if (radOpenSea.isSelected()) tripData.append("- Open Sea Adventure\n");
+        if (radIslandHopping.isSelected()) tripData.append("- Island Hopping\n");
+        if (radMixed.isSelected()) tripData.append("- Mixed Experience\n");
+
+        tripData.append("\n Trip Duration:\n");
+        if (radDayTrip.isSelected()) tripData.append("- Day Trip\n");
+        if (radWeekend.isSelected()) tripData.append("- Weekend\n");
+        if (radWeek.isSelected()) tripData.append("- Week\n");
+        if (radExtended.isSelected()) tripData.append("- Extended\n");
+
+        tripData.append("\nSelected Activities:\n");
+        if(checkRelaxation.isSelected()) tripData.append("- Relaxation\n");
+        if (checkSnorkeling.isSelected()) tripData.append("- Snorkeling\n");
+        if (checkDiving.isSelected()) tripData.append("- Diving\n");
+        if (checkFishing.isSelected()) tripData.append("- Fishing\n");
+
+        tripData.append("\nSelected Budget:\n");
+        //  radBudgetFriendly, radBudgetModerate, radBudgetLuxury;
+        if(radBudgetFriendly.isSelected()) tripData.append("- Friendly Budget\n");
+        if(radBudgetModerate.isSelected()) tripData.append("- Moderate Budget\n");
+        if(radBudgetLuxury.isSelected()) tripData.append("- Luxury Budget\n");
+
+        // Show generated trip plan (you can replace this with actual trip generation logic)
+        showAlert("Trip Plan Generated", tripData.toString());
+
+    }
+
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -159,9 +225,6 @@ public class TripPlannerController implements Initializable{
         // Update Previous button
         prevActionButton.setDisable(currentTabIndex == 0);
 
-        // Update Next button
-        // Destinations, Duration, Activities, Budget, Travelers
-        int TOTAL_TABS = 5;
         if (currentTabIndex == TOTAL_TABS - 1) {
             nextActionButton.setVisible(false);
             GenerateActionButton.setVisible(true);
