@@ -6,16 +6,17 @@ module com.bluelanka_guide {
     requires java.desktop;
     requires java.sql;
     requires mysql.connector.j;
+    requires org.xerial.sqlitejdbc;
     requires javafx.web;
-    requires java.naming;
     requires annotations;
-
+    requires com.fasterxml.jackson.databind;
 
     opens com.bluelanka_guide to javafx.fxml;
     opens com.bluelanka_guide.controller.TravelToolsPage to javafx.fxml;
     opens com.bluelanka_guide.controller.TripPlanner to javafx.fxml;
     opens com.bluelanka_guide.controller to javafx.fxml;
     exports com.bluelanka_guide.controller;
+    exports com.bluelanka_guide.controller.DestinationsPage;
     exports com.bluelanka_guide.controller.TravelToolsPage;
     exports com.bluelanka_guide.controller.TripPlanner;
     exports com.bluelanka_guide;

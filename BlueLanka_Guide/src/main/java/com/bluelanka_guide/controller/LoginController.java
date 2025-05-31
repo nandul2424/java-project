@@ -45,8 +45,9 @@ public class LoginController {
 
     public Connection connectdb(){
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-           connect= DriverManager.getConnection("jdbc:mysql://localhost:3306/logindetails","root","");
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            connect= DriverManager.getConnection("jdbc:mysql://localhost:3306/logindetails","root","");
+            connect =DriverManager.getConnection("jdbc:sqlite:logindetails.db");
             return connect;
         } catch (Exception e) {
             e.printStackTrace();

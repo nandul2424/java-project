@@ -16,3 +16,26 @@
 .back_button:hover{
     -fx-cursor: hand;
 }
+
+.search-bar{
+    -fx-background-color: #E6F4F1;
+    -fx-text-fill: #333333;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+    -fx-padding: 10 20 10 20;
+}
+
+.search-button{
+    -fx-background-color: #0077B6;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+    -fx-padding: 5 10;
+}
+
+.search-button:hover{
+    -fx-background-color: #0096C7;
+    -fx-cursor: hand;
+}
