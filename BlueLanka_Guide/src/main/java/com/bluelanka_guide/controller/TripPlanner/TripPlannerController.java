@@ -40,13 +40,28 @@ public class TripPlannerController implements Initializable{
 
 
     @FXML
+    private RadioButton checkMirissa, checkUnawatuna, checkArugambay, checkHikkaduwa, checkTangalle, checkBentota, checkKalpitiya;
+
+    @FXML
+    private RadioButton radCoastal, radOpenSea, radIslandHopping, radMixed;
+    @FXML
+    private RadioButton radDayTrip, radWeekend, radWeek, radExtended;
+
+    @FXML
+    private RadioButton radBudgetFriendly, radBudgetModerate, radBudgetLuxury;
+
+    @FXML
+    private CheckBox checkRelaxation, checkSnorkeling, checkDiving, checkFishing;
+
+
+    @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
 
     }
 
-    private int currentTabIndex = 0;
-
+    public int currentTabIndex = 0;
+    public final int TOTAL_TABS = 5;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Set initial tab selection
@@ -70,17 +85,75 @@ public class TripPlannerController implements Initializable{
     }
 
     public void handleNextButton(ActionEvent actionEvent) {
+        if (validateCurrentTab()) {
+            if (currentTabIndex < TOTAL_TABS - 1) {
+                currentTabIndex++;
+                mainTabPane.getSelectionModel().select(currentTabIndex);
 
+                // Enable the next tab
+                mainTabPane.getTabs().get(currentTabIndex).setDisable(false);
+
+                updateButtonStates();
+            }
+        }
     }
 
     public void handlePreviousButton(ActionEvent actionEvent) {
-
+        if (currentTabIndex > 0) {
+            currentTabIndex--;
+            mainTabPane.getSelectionModel().select(currentTabIndex);
+            updateButtonStates();
+        }
     }
 
+    @FXML
     public void handleGenerateTripPlan(ActionEvent actionEvent) {
 
     }
+    // =======================================================================================================================
+    private boolean validateCurrentTab() {
+        return switch (currentTabIndex) {
+            case 0 -> validateDestinations(); // Destination tab
+            case 1 -> validateDuration(); // Duration tab
+            case 2 -> validateActivities(); // Activities tab
+            case 3 -> validateBudget(); // Budget tab
+            default -> true;
+        };
+    }
 
+    private boolean validateDestinations() {
+        boolean geographicRegion = checkMirissa.isSelected() || checkUnawatuna.isSelected() || checkArugambay.isSelected() || checkHikkaduwa.isSelected() || checkTangalle.isSelected() || checkBentota.isSelected() || checkKalpitiya.isSelected();
+        boolean experienceType = radCoastal.isSelected() || radOpenSea.isSelected() || radIslandHopping.isSelected() || radMixed.isSelected();
+
+        if (!geographicRegion) {
+            showAlert("Validation Error", "Please select at least one geographic region.");
+            return false;
+        }
+
+        if (!experienceType) {
+            showAlert("Validation Error", "Please select at least one experience type.");
+            return false;
+        }
+
+        return true;
+    }
+    private boolean validateDuration() {
+        return true;
+    }
+    private boolean validateActivities() {
+        return true;
+    }
+    private boolean validateBudget() {
+        return true;
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 
     private void updateButtonStates() {
         // Update Previous button

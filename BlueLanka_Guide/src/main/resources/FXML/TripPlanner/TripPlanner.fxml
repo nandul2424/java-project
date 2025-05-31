@@ -71,7 +71,7 @@
                         <Insets top="20" right="20" bottom="20" left="20"/>
                     </padding>
                     <Label text="How long would you like your trip to be ?" styleClass="section_header"/>
-                    <TitledPane text="Geographic Regions">
+                    <TitledPane text="Trip Duration">
                         <VBox spacing="10">
                             <RadioButton fx:id="radDayTrip" text="Day Trip (1 day)" toggleGroup="$tripDuration"/>
                             <RadioButton fx:id="radWeekend" text="Weekend Gateway (2-3 days)" toggleGroup="$tripDuration"/>
