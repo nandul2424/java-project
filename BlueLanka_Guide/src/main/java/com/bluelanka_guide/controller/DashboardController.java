@@ -2,63 +2,41 @@ package com.bluelanka_guide.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Rectangle;
 
-public class DashboardController {
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
 
-    @FXML
-    private Button btnHome;
+public class DashboardController implements Initializable {
 
-    @FXML
-    private Button btnSurfing;
+    public Label lblDate;
+    public Label lblGreeting;
+    public Label lblLocation;
+    public ImageView imageLocHikkaduwa;
+    public Label lblPlaceName;
+    public Label lblPlaceDescription;
 
-    @FXML
-    private Button btnDiving;
 
-    @FXML
-    private Button btnAbout;
-
-    @FXML
-    private Button btnExit;
-
-    @FXML
-    void initialize() {
-        System.out.println("Controller initialized");
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        lblDate.setText(LocalDate.now().toString());
     }
 
-    @FXML
-    void handleHomeAction(ActionEvent event) {
-        showInfo("Home", "You are already on the home page.");
+    public void showDescription(MouseEvent mouseEvent) {
+        lblPlaceName.setVisible(false);
+        lblPlaceDescription.setVisible(true);
+        lblPlaceDescription.setText("It's a popular destination for snorkeling, diving, and enjoying the sun. The town also has a rich cultural heritage with various temples and local markets.");
     }
 
-    @FXML
-    void handleSurfingAction(ActionEvent event) {
-        showInfo("Surfing Spots", "This will show safe surfing spots.");
-        // Navigate or load Surfing page
-    }
-
-    @FXML
-    void handleDivingAction(ActionEvent event) {
-        showInfo("Diving Locations", "This will show safe diving locations.");
-        // Navigate or load Diving page
-    }
-
-    @FXML
-    void handleAboutAction(ActionEvent event) {
-        showInfo("About", "SafeSea Explorer helps you find safe surfing and diving spots.");
-    }
-
-    @FXML
-    void handleExitAction(ActionEvent event) {
-        System.exit(0);
-    }
-
-    private void showInfo(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
+    public void hideDescription(MouseEvent mouseEvent) {
+        lblPlaceDescription.setVisible(false);
+        lblPlaceName.setVisible(true);
     }
 }
