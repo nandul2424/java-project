@@ -22,4 +22,6 @@ module com.bluelanka_guide {
     exports com.bluelanka_guide.controller.TravelToolsPage;
     exports com.bluelanka_guide.controller.TripPlanner;
     exports com.bluelanka_guide;
+    exports com.bluelanka_guide.controller.DashboardPage;
+    opens com.bluelanka_guide.controller.DashboardPage to javafx.fxml;
 }
