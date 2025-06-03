@@ -5,12 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5033f2a-47a9-457e-a658-d79af2645b33" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/logindetails.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/WeatherModel/DayForcast.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/WeatherModel/ForcastData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/WeatherModel/LocationData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/WeatherModel/WeatherData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/services/WeatherAPIConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/icons/search.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DestinationsPage/DestinationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DestinationsPage/DestinationsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DestinationsPage/MapIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DestinationsPage/MapIntegration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/AppStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/AppStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/SignupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Destinations.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Destinations.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/Weather.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/Weather.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/TripPlanner.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/TripPlanner.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/TravelTools/weather.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/TravelTools/weather.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,9 +91,8 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "janith",
-    "last_opened_file_path": "C:/Users/asus/OneDrive/Desktop/java project/java-project/BlueLanka_Guide/src/main/resources/assets/images",
+    "git-widget-placeholder": "#18 on Merging janith",
+    "last_opened_file_path": "C:/Users/USER/Desktop/Java Tutorials/java-project/BlueLanka_Guide/src/main/resources/assets/icons",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -86,10 +100,14 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.bluelanka_guide.models.WeatherModel" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\asus\OneDrive\Desktop\java project\java-project\BlueLanka_Guide\src\main\resources\assets\images" />
+      <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide\src\main\resources\assets\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide" />
       <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide\src\main\resources\assets\icons" />
     </key>
   </component>
@@ -114,8 +132,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MapIntegration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bluelanka_guide.controller.DestinationsPage.MapIntegration" />
+      <module name="BlueLanka_Guide" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bluelanka_guide.controller.DestinationsPage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MapIntegration" />
         <item itemvalue="Application.DestinationsController" />
       </list>
     </recent_temporary>
