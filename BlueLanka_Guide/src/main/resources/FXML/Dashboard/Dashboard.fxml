@@ -7,12 +7,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="dashboard_container" stylesheets="@../styles/dashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.DashboardController">
+<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="dashboard_container" stylesheets="@../../styles/dashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.DashboardPage.DashboardController">
    <HBox layoutX="62.0" layoutY="14.0" prefHeight="80.0" prefWidth="810.0" styleClass="top_section_container" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
       <VBox prefHeight="80.0" prefWidth="434.0">
          <Label fx:id="lblDate" styleClass="date" text="2025-05-25" />
@@ -22,7 +20,7 @@
          <children>
             <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/icons/location.png" />
+                  <Image url="@../../assets/icons/location.png" />
                </image>
             </ImageView>
             <Label fx:id="lblLocation" styleClass="location" text="Matara" />
@@ -34,22 +32,12 @@
          <VBox prefHeight="574.0" prefWidth="807.0">
             <children>
                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Explore" />
-               <HBox prefHeight="147.0" prefWidth="797.0" styleClass="explore_container">
-                  <children>
-                     <StackPane onMouseEntered="#showDescription" onMouseExited="#hideDescription" prefHeight="150.0" prefWidth="200.0">
-                        <children>
-                           <ImageView fx:id="imageLocHikkaduwa" fitHeight="178.0" fitWidth="244.0" opacity="0.75" pickOnBounds="true">
-                              <Image url="@../assets/images/dashboard/hikkaduwa_beach.jpg" />
-                              <clip>
-                                    <Rectangle arcHeight="25.0" arcWidth="25.0" height="178.0" width="244.0" />
-                              </clip>
-                           </ImageView>
-                           <Label fx:id="lblPlaceName" styleClass="place_name" text="Hikkaduwa" />
-                           <Label fx:id="lblPlaceDescription" prefHeight="94.0" prefWidth="244.0" styleClass="place_description" wrapText="true" />
-                        </children>
-                     </StackPane>
-                  </children>
+               <ScrollPane hbarPolicy="NEVER" styleClass="explore_scrollpane" vbarPolicy="NEVER">
+                  <content>
+                     <HBox fx:id="hbxExploreContainer" prefHeight="147.0" prefWidth="797.0" styleClass="explore_container">
                </HBox>
+                  </content>
+               </ScrollPane>
                <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activities" />
                <HBox layoutX="10.0" layoutY="26.0" prefHeight="290.0" prefWidth="797.0" />
                <Text layoutX="10.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weather" />

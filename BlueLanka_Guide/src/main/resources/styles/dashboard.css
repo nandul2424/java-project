@@ -60,12 +60,14 @@
 }
 
 .explore_container{
-    -fx-spacing: 10;
-}
-
-.explore_container {
+    -fx-spacing: 20;
     -fx-border-radius: 25;
     -fx-background-radius: 20;
+}
+
+.explore_scrollpane{
+    -fx-background-color: tranparent;
+    -fx-pref-height: 375;
 }
 
 .place_name{
