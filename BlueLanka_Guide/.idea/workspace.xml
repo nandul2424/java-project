@@ -6,14 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="e5033f2a-47a9-457e-a658-d79af2645b33" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/logindetails.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/WeatherModel/DayForcast.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/WeatherModel/ForcastData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/WeatherModel/LocationData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/WeatherModel/WeatherData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/services/WeatherAPIConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/icons/search.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/AppStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/AppStarter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/SignupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/Weather.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/Weather.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/TripPlanner.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/TripPlanner.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/styles/TravelTools/weather.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/TravelTools/weather.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
@@ -71,23 +82,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AppStarter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DestinationsController.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MapIntegration.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging isira&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/Desktop/Java Tutorials/java-project/BlueLanka_Guide/src/main/resources/assets/icons&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AppStarter.executor": "Run",
+    "Application.DestinationsController.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.MapIntegration.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "#18 on Merging janith",
+    "last_opened_file_path": "C:/Users/USER/Desktop/Java Tutorials/java-project/BlueLanka_Guide/src/main/resources/assets/icons",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.bluelanka_guide.models.WeatherModel" />
