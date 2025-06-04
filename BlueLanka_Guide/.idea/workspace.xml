@@ -7,8 +7,7 @@
     <list default="true" id="e5033f2a-47a9-457e-a658-d79af2645b33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DestinationsPage/DestinationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DestinationsPage/DestinationsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/Negambo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/images/destinations/Negombo.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +89,7 @@
       <recent name="C:\Users\asus\OneDrive\Desktop\java project\java-project\BlueLanka_Guide\src\main\resources\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\asus\OneDrive\Desktop\java project\java-project\BlueLanka_Guide\src\main\resources\assets\images\destinations" />
       <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide\src\main\resources\assets\icons" />
     </key>
   </component>
