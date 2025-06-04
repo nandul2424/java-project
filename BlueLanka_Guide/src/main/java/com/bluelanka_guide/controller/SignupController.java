@@ -77,8 +77,8 @@ public class SignupController {
 
     public Connection connectdb(){
         try{
-            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/logindetails", "root", "");
-            return connect;
+//            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/logindetails", "root", "");
+            return DriverManager.getConnection("jdbc:sqlite:logindetails.db");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

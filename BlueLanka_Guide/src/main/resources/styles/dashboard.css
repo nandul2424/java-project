@@ -1,0 +1,89 @@
+.dashboard_container{
+    -fx-background-color: #DBF9FA;
+}
+
+/* Top section styles */
+.top_section_container{
+    -fx-spacing: 400;
+}
+
+.top_section_container VBox{
+    -fx-spacing: 10;
+}
+
+.top_section_container HBox{
+    -fx-alignment: center;
+    -fx-spacing: 0;
+}
+
+.date{
+    -fx-font-size: 16px;
+    -fx-text-fill: #777777;
+    -fx-font-weight: 800;
+    -fx-font-family: "Roboto";
+}
+
+.user{
+    -fx-font-size: 28px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: 800;
+    -fx-font-family: "Roboto";
+}
+
+.location{
+    -fx-font-size: 16px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: 700;
+    -fx-font-family: "Roboto";
+}
+
+/* Scroll section styles */
+.scroll_view_container {
+    -fx-background-color: transparent;
+}
+
+.scroll_view_container .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll_view_container VBox{
+    -fx-spacing: 15;    
+    -fx-padding: 0 0 0 10;
+}
+
+.scroll_view_container Text{
+    -fx-font-size: 24px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: 600;
+    -fx-padding: 15 0 0 0;
+    -fx-font-family: "Roboto";
+}
+
+.explore_container{
+    -fx-spacing: 20;
+    -fx-border-radius: 25;
+    -fx-background-radius: 20;
+}
+
+.explore_scrollpane{
+    -fx-background-color: tranparent;
+    -fx-pref-height: 375;
+}
+
+.place_name{
+    -fx-font-size: 20px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: 600;
+    -fx-font-family: "Roboto";
+}
+
+.place_description{
+    -fx-font-size: 16px;
+    -fx-text-fill: #777777;
+    -fx-font-weight: 500;
+    -fx-font-family: "Roboto";
+    -fx-alignment: center;
+    -fx-padding: 4 8 4 8;
+    -fx-pref-width: 250;
+    -fx-text-alignment: center;
+}
