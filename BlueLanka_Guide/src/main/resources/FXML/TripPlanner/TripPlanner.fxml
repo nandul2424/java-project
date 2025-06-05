@@ -8,7 +8,6 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,133 +15,121 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="1196.0" styleClass="background-pane" stylesheets="@styles/TripPlanner.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TripPlanner.TripPlannerController">
+<?import javafx.scene.control.TextField?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="1196.0"  stylesheets="@styles/tripPlanning.css"  styleClass="background-pane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TripPlanner.TripPlannerController">
    <children>
        <BorderPane layoutX="409.0" prefHeight="711.0" prefWidth="789.0" styleClass="section_pane">
            <top>
-                       <HBox prefHeight="122.0" prefWidth="948.0" styleClass="trip_planner_navbar" BorderPane.alignment="CENTER">
-                           <padding>
-                               <Insets bottom="30" left="30" right="30" top="30" />
-                           </padding>
-                           <Label styleClass="navbar_heading" text="BlueLanka Trip Planning " textAlignment="LEFT" />
-
-                       </HBox>
-                   </top>
-                   <center>
-                       <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE">
-                           <Tab fx:id="destinationsTab" styleClass="tab" text="Destination">
-                               <ScrollPane>
-                                   <HBox>
-                                       <VBox spacing="15" styleClass="content-container">
-                                           <padding>
-                                               <Insets bottom="20" left="20" right="20" top="20" />
-                                           </padding>
-                                           <Label styleClass="section_header" text="Select your preferred Destinations" />
-                                           <TitledPane text="Geographic Regions" HBox.hgrow="ALWAYS">
-                                               <VBox spacing="10">
-                                                   <RadioButton fx:id="checkMirissa" text="Mirissa">
-                                    <toggleGroup>
-                                       <ToggleGroup fx:id="destinations" />
-                                    </toggleGroup></RadioButton>
-                                                   <RadioButton fx:id="checkUnawatuna" text="Unawatuna" toggleGroup="$destinations" />
-                                                   <RadioButton fx:id="checkArugambay" text="Arugam Bay" toggleGroup="$destinations" />
-                                                   <RadioButton fx:id="checkHikkaduwa" text="Hikkaduwa" toggleGroup="$destinations" />
-                                                   <RadioButton fx:id="checkTangalle" text="Tangalle" toggleGroup="$destinations" />
-                                                   <RadioButton fx:id="checkBentota" text="Bentota" toggleGroup="$destinations" />
-                                                   <RadioButton fx:id="checkKalpitiya" text="Kalpitiya" toggleGroup="$destinations" />
-                                               </VBox>
-                                               <fx:define>
-                                                   <ToggleGroup fx:id="destinations" />
-                                               </fx:define>
-                                           </TitledPane>
-                                           <TitledPane text="Experience Type" HBox.hgrow="ALWAYS">
-                                               <VBox spacing="10">
-                                                   <RadioButton fx:id="radCoastal" text="Coastal Exploration">
-                                    <toggleGroup>
-                                       <ToggleGroup fx:id="experienceType" />
-                                    </toggleGroup></RadioButton>
-                                                   <RadioButton fx:id="radOpenSea" text="Open Sea Adventure" toggleGroup="$experienceType" />
-                                                   <RadioButton fx:id="radIslandHopping" text="Island Hopping" toggleGroup="$experienceType" />
-                                                   <RadioButton fx:id="radMixed" text="Mixed Experience" toggleGroup="$experienceType" />
-                                               </VBox>
-                                               <fx:define>
-                                                   <ToggleGroup fx:id="experienceType" />
-                                               </fx:define>
-                                           </TitledPane>
-
-                                       </VBox>
-
-                                   </HBox>
-                               </ScrollPane>
-                           </Tab>
-                           <Tab fx:id="durationTab" styleClass="tab" text="Duration">
-                               <VBox spacing="15" styleClass="countent-container">
-                                   <padding>
-                                       <Insets bottom="20" left="20" right="20" top="20" />
-                                   </padding>
-                                   <Label styleClass="section_header" text="How long would you like your trip to be ?" />
-                                   <TitledPane text="Trip Duration">
-                                       <VBox spacing="10">
-                                           <RadioButton fx:id="radDayTrip" text="Day Trip (1 day)">
-                              <toggleGroup>
-                                 <ToggleGroup fx:id="tripDuration" />
-                              </toggleGroup></RadioButton>
-                                           <RadioButton fx:id="radWeekend" text="Weekend Gateway (2-3 days)" toggleGroup="$tripDuration" />
-                                           <RadioButton fx:id="radWeek" text="Week-long Vacation(4-7 days)" toggleGroup="$tripDuration" />
-                                           <RadioButton fx:id="radExtended" text="Extended Journey (8+ days)" toggleGroup="$tripDuration" />
-                                       </VBox>
-                                       <fx:define>
-                                           <ToggleGroup fx:id="tripDuration" />
-                                       </fx:define>
-                                   </TitledPane>
-                               </VBox>
-                           </Tab>
-                           <Tab fx:id="activitiesTab" styleClass="tab" text="Activities">
-                               <ScrollPane fitToWidth="true">
-                                   <VBox spacing="15" styleClass="content-container">
-                                       <padding>
-                                           <Insets bottom="20" left="20" right="20" top="20" />
-                                       </padding>
-
-                                       <Label styleClass="section_header" text="What activities are you interested in ?" />
-                                       <HBox prefWidth="400" spacing="20">
-                                           <VBox spacing="10" HBox.hgrow="ALWAYS">
-                                               <TitledPane prefWidth="400" text="Sea Activities">
-                                                   <VBox spacing="15">
-                                                       <CheckBox fx:id="checkRelaxation" text="Relaxation" />
-                                                       <CheckBox fx:id="checkSnorkeling" text="Snorkeling" />
-                                                       <CheckBox fx:id="checkDiving" text="Scuba Diving" />
-                                                       <CheckBox fx:id="checkFishing" text="Fishing" />
-                                                   </VBox>
-                                               </TitledPane>
-
-                                           </VBox>
-                                       </HBox>
-                                   </VBox>
-                               </ScrollPane>
-                           </Tab>
-                           <Tab fx:id="budgetTab" styleClass="tab" text="Budget Scheduling">
+               <HBox prefHeight="122.0" prefWidth="948.0" styleClass="trip_planner_navbar" BorderPane.alignment="CENTER">
+                   <padding>
+                       <Insets bottom="30" left="30" right="30" top="30" />
+                   </padding>
+                   <Label styleClass="navbar_heading" text="BlueLanka Trip Planning " textAlignment="LEFT" />
+               </HBox>
+           </top>
+           <center>
+               <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE">
+                   <Tab fx:id="destinationsTab" styleClass="tab" text="Destination">
+                       <ScrollPane>
+                           <HBox>
                                <VBox spacing="15" styleClass="content-container">
                                    <padding>
                                        <Insets bottom="20" left="20" right="20" top="20" />
                                    </padding>
-                                   <TitledPane text="What's your budget range ?">
-                                       <VBox spacing="15">
-                                           <RadioButton fx:id="radBudgetFriendly" text="Budget-friendly">
-                              <toggleGroup>
-                                 <ToggleGroup fx:id="budgetType" />
-                              </toggleGroup></RadioButton>
-                                           <RadioButton fx:id="radBudgetModerate" text="Budget-Moderate" toggleGroup="$budgetType" />
-                                           <RadioButton fx:id="radBudgetLuxury" text="Budget-Luxury" toggleGroup="$budgetType" />
+                                   <Label styleClass="section_header" text="Select your preferred Destinations" />
+                                   <TitledPane text="Geographic Regions" HBox.hgrow="ALWAYS">
+                                       <VBox spacing="10">
+                                           <RadioButton fx:id="checkMirissa" text="Mirissa"/>
+                                           <RadioButton fx:id="checkUnawatuna" text="Unawatuna" toggleGroup="$destinations" />
+                                           <RadioButton fx:id="checkArugambay" text="Arugam Bay" toggleGroup="$destinations" />
+                                           <RadioButton fx:id="checkHikkaduwa" text="Hikkaduwa" toggleGroup="$destinations" />
+                                           <RadioButton fx:id="checkTangalle" text="Tangalle" toggleGroup="$destinations" />
+                                           <RadioButton fx:id="checkBentota" text="Bentota" toggleGroup="$destinations" />
+                                           <RadioButton fx:id="checkKalpitiya" text="Kalpitiya" toggleGroup="$destinations" />
                                        </VBox>
                                        <fx:define>
-                                           <ToggleGroup fx:id="budgetType" />
+                                           <ToggleGroup fx:id="destinations" />
                                        </fx:define>
                                    </TitledPane>
+                                   <TitledPane text="Experience Type" HBox.hgrow="ALWAYS">
+                                       <VBox spacing="10">
+                                           <RadioButton fx:id="radCoastal" text="Coastal Exploration"/>
+                                           <RadioButton fx:id="radOpenSea" text="Open Sea Adventure" toggleGroup="$experienceType" />
+                                           <RadioButton fx:id="radIslandHopping" text="Island Hopping" toggleGroup="$experienceType" />
+                                           <RadioButton fx:id="radMixed" text="Mixed Experience" toggleGroup="$experienceType" />
+                                       </VBox>
+                                       <fx:define>
+                                           <ToggleGroup fx:id="experienceType" />
+                                       </fx:define>
+                                   </TitledPane>
+
                                </VBox>
-                           </Tab>
-                       </TabPane>
-                   </center>
+
+                           </HBox>
+                       </ScrollPane>
+                   </Tab>
+                   <Tab fx:id="durationTab" styleClass="tab" text="Duration">
+                       <VBox spacing="15" styleClass="countent-container">
+                           <padding>
+                               <Insets bottom="20" left="20" right="20" top="20" />
+                           </padding>
+                           <Label styleClass="section_header" text="How long would you like your trip to be ?" />
+                           <TitledPane text="Trip Duration">
+                               <VBox spacing="10">
+                                   <RadioButton fx:id="radDayTrip" text="Day Trip (1 day)"/>
+                                   <RadioButton fx:id="radWeekend" text="Weekend Gateway (2-3 days)" toggleGroup="$tripDuration" />
+                                   <RadioButton fx:id="radWeek" text="Week-long Vacation(4-7 days)" toggleGroup="$tripDuration" />
+                                   <RadioButton fx:id="radExtended" text="Extended Journey (8+ days)" toggleGroup="$tripDuration" />
+                               </VBox>
+                               <fx:define>
+                                   <ToggleGroup fx:id="tripDuration" />
+                               </fx:define>
+                           </TitledPane>
+                       </VBox>
+                   </Tab>
+                   <Tab fx:id="activitiesTab" styleClass="tab" text="Activities">
+                       <ScrollPane fitToWidth="true">
+                           <VBox spacing="15" styleClass="content-container">
+                               <padding>
+                                   <Insets bottom="20" left="20" right="20" top="20" />
+                               </padding>
+
+                               <Label styleClass="section_header" text="What activities are you interested in ?" />
+                               <HBox prefWidth="400" spacing="20">
+                                   <VBox spacing="10" HBox.hgrow="ALWAYS">
+                                       <TitledPane prefWidth="400" text="Sea Activities">
+                                           <VBox spacing="15">
+                                               <CheckBox fx:id="checkRelaxation" text="Relaxation" />
+                                               <CheckBox fx:id="checkSnorkeling" text="Snorkeling" />
+                                               <CheckBox fx:id="checkDiving" text="Scuba Diving" />
+                                               <CheckBox fx:id="checkFishing" text="Fishing" />
+                                           </VBox>
+                                       </TitledPane>
+
+                                   </VBox>
+                               </HBox>
+                           </VBox>
+                       </ScrollPane>
+                   </Tab>
+                   <Tab fx:id="budgetTab" styleClass="tab" text="Budget Scheduling">
+                       <VBox spacing="15" styleClass="content-container">
+                           <padding>
+                               <Insets bottom="20" left="20" right="20" top="20" />
+                           </padding>
+                           <TitledPane text="What's your budget range ?">
+                               <VBox spacing="15">
+                                   <RadioButton fx:id="radBudgetFriendly" text="Budget-friendly"/>
+                                   <RadioButton fx:id="radBudgetModerate" text="Budget-Moderate" toggleGroup="$budgetType" />
+                                   <RadioButton fx:id="radBudgetLuxury" text="Budget-Luxury" toggleGroup="$budgetType" />
+                               </VBox>
+                               <fx:define>
+                                   <ToggleGroup fx:id="budgetType" />
+                               </fx:define>
+                           </TitledPane>
+                       </VBox>
+                   </Tab>
+               </TabPane>
+           </center>
 
                    <!-- Bottom Navigation Buttons -->
                    <bottom>
@@ -159,7 +146,7 @@
       <AnchorPane layoutX="43.0" layoutY="28.0" prefHeight="158.0" prefWidth="346.0">
          <children>
              <VBox layoutX="23.0" layoutY="14.0" prefHeight="134.0" prefWidth="299.0">
-                 <TextField text="BlueLanka Trip Planning" />
+                 <TextField text="Enjoy life with BlueLanka Trip Planning" styleClass="main_title"/>
              </VBox>
          </children>
       </AnchorPane>

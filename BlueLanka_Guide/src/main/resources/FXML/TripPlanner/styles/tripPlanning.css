@@ -1,5 +1,5 @@
 .background-pane {
-    -fx-background-image: url("../images/bech.jpg");
+    -fx-background-image: url(".././images/beach.jpg");
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
