@@ -15,7 +15,7 @@ public class ViewFactoryMain {
     private BorderPane loginView;
     private BorderPane signUpView;
     private AnchorPane dashboardView;
-    private AnchorPane destinationsView;
+    private BorderPane destinationsView;
     private BorderPane travelToolsView;
     private BorderPane tripPlannerView;
     private AnchorPane settingsView;
@@ -34,7 +34,7 @@ public class ViewFactoryMain {
     public AnchorPane getDashboardView() {
         try {
             if (dashboardView == null) {
-                dashboardView = new FXMLLoader(getClass().getResource("/FXML/Dashboard.fxml")).load();
+                dashboardView = new FXMLLoader(getClass().getResource("/FXML/Dashboard/Dashboard.fxml")).load();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -42,7 +42,7 @@ public class ViewFactoryMain {
         return dashboardView;
     }
 
-    public AnchorPane getDestinationsView() {
+    public BorderPane getDestinationsView() {
         try {
             if (destinationsView == null) {
                 destinationsView = new FXMLLoader(getClass().getResource("/FXML/Destinations.fxml")).load();

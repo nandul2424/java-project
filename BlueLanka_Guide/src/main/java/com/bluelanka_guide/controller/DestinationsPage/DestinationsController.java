@@ -1,24 +1,23 @@
 package com.bluelanka_guide.controller.DestinationsPage;
 
-import javafx.application.Application;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import javafx.stage.Stage;
-import org.jetbrains.annotations.NotNull;
+import netscape.javascript.JSObject;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class DestinationsController extends Application {
-
+public class DestinationsController implements Initializable {
 
     static class Destination {
         private final int id;
@@ -31,7 +30,6 @@ public class DestinationsController extends Application {
         private final double longitude;
 
         public Destination(int id, String name, String country, String description, double rating, String imagePath, double latitude, double longitude) {
-        //public Destination(int id, String name, String country, String description, double rating, String imagePath) {
             this.id = id;
             this.name = name;
             this.country = country;
@@ -41,6 +39,7 @@ public class DestinationsController extends Application {
             this.latitude = latitude;
             this.longitude = longitude;
         }
+
         public int getId() { return id; }
         public String getName() { return name; }
         public String getCountry() { return country; }
@@ -49,269 +48,380 @@ public class DestinationsController extends Application {
         public String getImagePath() { return imagePath; }
         public double getLatitude() { return latitude; }
         public double getLongitude() { return longitude; }
-
     }
-        private BorderPane root;
-        private VBox sidebar;
-        private StackPane mapContainer;
-        private VBox destinationDetails;
-        private TabPane destinationTabs;
-        private TextField searchField;
-        private Button toggleSidebarButton;
-        private boolean sidebarVisible = true;
-        private List<Destination> destinations;
-        private Destination selectedDestination;
+
+    // FXML injected components
+    @FXML private BorderPane root;
+    @FXML private VBox sidebar;
+    @FXML private StackPane mapContainer;
+    @FXML private VBox destinationDetails;
+    @FXML private TabPane destinationTabs;
+    @FXML private TextField searchField;
+    @FXML private Button toggleSidebarButton;
+    @FXML private Button toggleDetailsButton;
+    @FXML private Tab popularTab;
+    @FXML private Tab savedTab;
+    @FXML private Tab recentTab;
+    @FXML private ScrollPane popularScrollPane;
+    @FXML private VBox popularDestinationList;
+
+    private boolean sidebarVisible = true;
+    private boolean detailsVisible = false;
+    private List<Destination> destinations;
+    private Destination selectedDestination;
+    private WebView webView;
+    private WebEngine webEngine;
 
     @Override
-        public void start(@NotNull Stage primaryStage) {
-            initializeDestinations();
-            root = new BorderPane();
-            //applyStyles();
-            createSidebar();
-            createMapView();
+    public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("Initializing DestinationsController...");
 
-        Scene scene = new Scene(root, 1200, 800);
-        primaryStage.setTitle("Destination Explorer");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        // Initialize destinations first
+        initializeDestinations();
+
+        // Create map view
+        createMapView();
+
+        // Populate destination list
+        populateDestinationList();
+
+        // Set up search functionality
+        setupSearchFunctionality();
+
+        // Set up toggle buttons
+        setupToggleButtons();
+
+        System.out.println("DestinationsController initialized successfully!");
     }
 
-        private void initializeDestinations() {
-            destinations = new ArrayList<>();
-            destinations.add(new Destination(1, "Negambo", "Sri Lanka", "Browns Beach in Negombo is a popular coastal destination known for its golden sands, clear waters, and vibrant atmosphere, offering a perfect blend of relaxation and adventure.", 4.8, ".jpg", 48.8566, 2.3522));
-            destinations.add(new Destination(2, "Hikkaduwa", "Sri Lanka", "A bustling metropolis blending ultramodern and traditional aspects of Japanese culture.", 4.7, "tokyo.jpg", 48.8566, 2.3522));
-            destinations.add(new Destination(3, "Arugambe", "Sri Lanka", "The Big Apple known for its skyscrapers, Broadway shows, and cultural diversity.", 4.6, "newyork.jpg", 48.8566, 2.3522));
+    private void initializeDestinations() {
+        destinations = new ArrayList<>();
+        destinations.add(new Destination(1, "Negombo", "Sri Lanka", "Browns Beach in Negombo is a popular coastal destination known for its golden sands, clear waters, and vibrant atmosphere, offering a perfect blend of relaxation and adventure.", 4.8, "resources/assets/icons/images/Negombo.jpg", 7.2083, 79.8358));
+        destinations.add(new Destination(2, "Hikkaduwa", "Sri Lanka", "A bustling beach town known for its coral reefs, surfing, and vibrant nightlife.", 4.7, "resources/assets/icons/images/Hikkaduwa.jpg", 6.1395, 80.1063));
+        destinations.add(new Destination(3, "Arugam Bay", "Sri Lanka", "Famous for its world-class surfing spots and laid-back atmosphere.", 4.6, "resources/assets/icons/images/Arugambe.jpg", 6.8404, 81.8368));
+        destinations.add(new Destination(4, "Galle", "Sri Lanka", "Historic fort city with colonial architecture and beautiful beaches.", 4.5, "resources/assets/icons/images/Galle.jpg", 6.0535, 80.2210));
+        destinations.add(new Destination(5, "Kandy", "Sri Lanka", "Cultural capital with the Temple of the Tooth and beautiful lake.", 4.7, "resources/assets/icons/images/Kandy.jpg", 7.2906, 80.6337));
+
+        System.out.println("Initialized " + destinations.size() + " destinations");
     }
 
-    private void createSidebar() {
-        sidebar = new VBox();
-        sidebar.setPrefWidth(300);
-        sidebar.setStyle("-fx-background-color: white; -fx-border-color: #e5e7eb; -fx-border-width: 0 1 0 0;");
-
-        HBox header = new HBox();
-        header.setStyle("-fx-padding: 15; -fx-border-color: #e5e7eb; -fx-border-width: 0 0 1 0;");
-        header.setAlignment(Pos.CENTER_LEFT);
-
-        Label titleLabel = new Label("Destination Explorer");
-        titleLabel.setStyle("-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #111827;");
-        header.getChildren().add(titleLabel);
-
-        HBox searchBox = new HBox();
-        searchBox.setStyle("-fx-padding: 15;");
-        searchBox.setAlignment(Pos.CENTER);
-
-        searchField = new TextField();
-        searchField.setPromptText("Search destinations...");
-        searchField.setStyle("-fx-background-color: #f3f4f6; -fx-background-radius: 4; -fx-padding: 8;");
-        HBox.setHgrow(searchField, Priority.ALWAYS);
-        searchBox.getChildren().add(searchField);
-
-        destinationTabs = new TabPane();
-        destinationTabs.setStyle("-fx-background-color: transparent;");
-        destinationTabs.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
-        VBox.setVgrow(destinationTabs, Priority.ALWAYS);
-
-        Tab popularTab = new Tab("Popular");
-        popularTab.setContent(createDestinationList());
-
-        Tab savedTab = new Tab("Saved");
-        VBox savedContent = new VBox(new Label("No saved destinations yet"));
-        savedContent.setAlignment(Pos.CENTER);
-        savedContent.setPadding(new Insets(20));
-        savedTab.setContent(savedContent);
-
-        Tab recentTab = new Tab("Recent");
-        VBox recentContent = new VBox(new Label("No recent searches"));
-        recentContent.setAlignment(Pos.CENTER);
-        recentContent.setPadding(new Insets(20));
-        recentTab.setContent(recentContent);
-
-        destinationTabs.getTabs().addAll(popularTab, savedTab, recentTab);
-        sidebar.getChildren().addAll(header, searchBox, destinationTabs);
-
-        root.setLeft(sidebar);
-
-    }
-
-    private ScrollPane createDestinationList() {
-        VBox destinationList = new VBox(10);
-        destinationList.setPadding(new Insets(10));
-
-        for (Destination destination : destinations) {
-            VBox card = createDestinationCard(destination);
-            destinationList.getChildren().add(card);
+    private void populateDestinationList() {
+        if (popularDestinationList == null) {
+            System.err.println("popularDestinationList is null!");
+            return;
         }
 
-        ScrollPane scrollPane = new ScrollPane(destinationList);
-        scrollPane.setFitToWidth(true);
-        scrollPane.setStyle("-fx-background-color: transparent; -fx-padding: 0;");
-        return scrollPane;
+        // Clear existing content
+        popularDestinationList.getChildren().clear();
+
+        // Add destination cards
+        for (Destination destination : destinations) {
+            VBox card = createDestinationCard(destination);
+            popularDestinationList.getChildren().add(card);
+        }
+
+        System.out.println("Added " + destinations.size() + " destination cards to the list");
+    }
+
+    private void setupSearchFunctionality() {
+        if (searchField != null) {
+            searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+                filterDestinations(newValue);
+            });
+        }
+    }
+
+    private void setupToggleButtons() {
+        // Setup sidebar toggle button
+        if (toggleSidebarButton != null) {
+            toggleSidebarButton.setOnAction(event -> toggleSidebar());
+        }
+
+        // Setup details toggle button
+        if (toggleDetailsButton != null) {
+            toggleDetailsButton.setOnAction(event -> toggleDetails());
+
+            // Update button text based on initial state
+            updateToggleDetailsButtonText();
+        }
     }
 
     private VBox createDestinationCard(Destination destination) {
         VBox card = new VBox();
-        card.setStyle("-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1); -fx-cursor: hand;");
+        card.setStyle("-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1); -fx-cursor: hand; -fx-padding: 8; -fx-spacing: 8;");
+        card.setPrefWidth(260);
 
+        // Image container
         StackPane imageContainer = new StackPane();
         imageContainer.setPrefHeight(120);
-        Rectangle imagePlaceholder = new Rectangle(300, 120, Color.LIGHTGRAY);
+        Rectangle imagePlaceholder = new Rectangle(260, 120);
+        imagePlaceholder.setFill(Color.LIGHTGRAY);
+        imagePlaceholder.setArcWidth(8);
+        imagePlaceholder.setArcHeight(8);
 
+        // Rating badge
         HBox ratingBadge = new HBox();
-        ratingBadge.setStyle("-fx-background-color: rgba(255, 255, 255, 0.9); -fx-background-radius: 12; -fx-padding: 4 8;");
-        ratingBadge.getChildren().add(new Label(String.format("%.1f", destination.getRating())));
+        ratingBadge.setStyle("-fx-background-color: rgba(13, 148, 136, 0.9); -fx-background-radius: 12; -fx-padding: 4 8;");
+        Label ratingLabel = new Label(String.format("%.1f", destination.getRating()));
+        ratingLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12;");
+        ratingBadge.getChildren().add(ratingLabel);
         StackPane.setAlignment(ratingBadge, Pos.TOP_RIGHT);
         StackPane.setMargin(ratingBadge, new Insets(8));
         imageContainer.getChildren().addAll(imagePlaceholder, ratingBadge);
 
+        // Info container
         VBox infoContainer = new VBox(5);
-        infoContainer.setPadding(new Insets(10));
+        infoContainer.setPadding(new Insets(0, 8, 8, 8));
+
         Label nameLabel = new Label(destination.getName());
         nameLabel.setStyle("-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #111827;");
+
         Label countryLabel = new Label(destination.getCountry());
         countryLabel.setStyle("-fx-font-size: 12; -fx-text-fill: #6b7280;");
+
         Label descriptionLabel = new Label(destination.getDescription());
         descriptionLabel.setWrapText(true);
-        descriptionLabel.setStyle("-fx-font-size: 12; -fx-text-fill: #4b5563;");
+        descriptionLabel.setMaxHeight(50);
+        descriptionLabel.setStyle("-fx-font-size: 11; -fx-text-fill: #4b5563;");
+
         infoContainer.getChildren().addAll(nameLabel, countryLabel, descriptionLabel);
 
         card.getChildren().addAll(imageContainer, infoContainer);
-        card.setOnMouseClicked(e -> selectDestination(destination));
+
+        // Add click handler
+        card.setOnMouseClicked(e -> {
+            selectDestination(destination);
+
+            // Show details panel if it's not visible
+            if (!detailsVisible) {
+                toggleDetails();
+            }
+        });
+
+        // Add hover effects
+        card.setOnMouseEntered(e -> {
+            card.setStyle("-fx-background-color: #f9fafb; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 6, 0, 0, 2); -fx-cursor: hand; -fx-padding: 8; -fx-spacing: 8;");
+        });
+
+        card.setOnMouseExited(e -> {
+            card.setStyle("-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1); -fx-cursor: hand; -fx-padding: 8; -fx-spacing: 8;");
+        });
+
         return card;
     }
 
-    private void createMapView() {
-        mapContainer = new StackPane();
+    private void filterDestinations(String searchText) {
+        if (popularDestinationList == null) return;
 
-        WebView webView = new WebView();
-        WebEngine webEngine = webView.getEngine();
+        popularDestinationList.getChildren().clear();
 
-        StringBuilder markersJS = new StringBuilder();
-        for (Destination dest : destinations) {
-            markersJS.append(String.format(
-                    "L.marker([%f, %f]).addTo(map).bindPopup('%s');\n",
-                    dest.getLatitude(), dest.getLongitude(), dest.getName()));
+        List<Destination> filteredDestinations;
+        if (searchText == null || searchText.trim().isEmpty()) {
+            filteredDestinations = destinations;
+        } else {
+            filteredDestinations = destinations.stream()
+                    .filter(dest -> dest.getName().toLowerCase().contains(searchText.toLowerCase()) ||
+                            dest.getCountry().toLowerCase().contains(searchText.toLowerCase()) ||
+                            dest.getDescription().toLowerCase().contains(searchText.toLowerCase()))
+                    .toList();
         }
-        String mapHTML = """
-                <html>
-                <head>
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-                    <style> html, body, #map { height: 100%%; margin: 0; padding: 0; } </style>
-                </head>
-                <body>
-                    <div id="map"></div>
-                    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-                    <script>
-                        var map = L.map('map').setView([20, 0], 2);
-                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                            maxZoom: 18
-                        }).addTo(map);
-                        %s
-                    </script>
-                </body>
-                </html>
-                """.formatted(markersJS.toString());
 
-        webEngine.loadContent(mapHTML);
+        for (Destination destination : filteredDestinations) {
+            VBox card = createDestinationCard(destination);
+            popularDestinationList.getChildren().add(card);
+        }
 
-        mapContainer.getChildren().add(webView);
-        root.setCenter(mapContainer);
+        System.out.println("Filtered to " + filteredDestinations.size() + " destinations");
     }
 
-    private Pane createMapMarkers() {
-        Pane markersPane = new Pane();
-        markersPane.setPrefSize(800, 600);
+    private void createMapView() {
+        webView = new WebView();
+        webEngine = webView.getEngine();
 
-        for (Destination destination : destinations) {
-            double x = (destination.getLongitude() + 180) / 360 * 800;
-            double y = (90 - destination.getLatitude()) / 180 * 600;
+        // Enable JavaScript-to-Java communication
+        webEngine.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                JSObject window = (JSObject) webEngine.executeScript("window");
+                window.setMember("javaApp", this);
+                System.out.println("JavaScript-Java bridge established");
+            }
+        });
 
-            StackPane marker = new StackPane();
-            Circle pin = new Circle(10, Color.valueOf("#0d9488"));
-            pin.setStroke(Color.WHITE);
-            pin.setStrokeWidth(2);
+        // Load the map
+        webEngine.loadContent(getEnhancedMapHtml());
+        mapContainer.getChildren().add(webView);
 
-            Label label = new Label(destination.getName());
-            label.setVisible(false);
-            label.setStyle("-fx-background-color: white; -fx-background-radius: 4; -fx-padding: 4 8; -fx-font-size: 10;");
+        System.out.println("Map view created");
+    }
 
-            marker.getChildren().addAll(pin, label);
-            marker.setLayoutX(x);
-            marker.setLayoutY(y);
+    private String getEnhancedMapHtml() {
+        StringBuilder markersJS = new StringBuilder();
 
-            marker.setOnMouseEntered(e -> {
-                pin.setRadius(12);
-                label.setVisible(true);
-            });
-
-            marker.setOnMouseExited(e -> {
-                if (selectedDestination == null || selectedDestination.getId() != destination.getId()) {
-                    pin.setRadius(10);
-                    label.setVisible(false);
-                }
-            });
-
-            marker.setOnMouseClicked(e -> selectDestination(destination));
-            markersPane.getChildren().add(marker);
+        for (Destination dest : destinations) {
+            markersJS.append(String.format(
+                    "L.marker([%f, %f])" +
+                            ".addTo(map)" +
+                            ".bindPopup('<div><h3>%s</h3><p>%s</p><p>Rating: %.1f</p></div>')" +
+                            ".on('click', function() { if(window.javaApp) window.javaApp.selectDestinationFromMap(%d); });\n",
+                    dest.getLatitude(), dest.getLongitude(),
+                    dest.getName(), dest.getCountry(), dest.getRating(), dest.getId()
+            ));
         }
 
-        return markersPane;
+        return """
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Sri Lanka Destinations Map</title>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+                <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+                <style>
+                    html, body, #map {
+                        height: 100%%;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .leaflet-popup-content h3 {
+                        margin: 0 0 5px 0;
+                        color: #0d9488;
+                    }
+                    .leaflet-popup-content p {
+                        margin: 2px 0;
+                        font-size: 12px;
+                    }
+                </style>
+            </head>
+            <body>
+                <div id="map"></div>
+                <script>
+                    var map = L.map('map').setView([7.8731, 80.7718], 8);
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OpenStreetMap contributors',
+                        maxZoom: 18
+                    }).addTo(map);
+                    
+                    %s
+                    
+                    function selectDestination(lat, lng, name) {
+                        map.setView([lat, lng], 15);
+                        L.popup()
+                            .setLatLng([lat, lng])
+                            .setContent('<h3>' + name + '</h3>')
+                            .openOn(map);
+                    }
+                    
+                    console.log('Map initialized successfully');
+                </script>
+            </body>
+            </html>
+            """.formatted(markersJS.toString());
+    }
+
+    public void selectDestinationFromMap(int destinationId) {
+        Destination destination = destinations.stream()
+                .filter(d -> d.getId() == destinationId)
+                .findFirst()
+                .orElse(null);
+
+        if (destination != null) {
+            selectDestination(destination);
+
+            // Show details panel if it's not visible
+            if (!detailsVisible) {
+                toggleDetails();
+            }
+        }
     }
 
     private void selectDestination(Destination destination) {
         selectedDestination = destination;
         updateDestinationDetails();
+
+        // Update map focus
+        if (webEngine != null) {
+            webEngine.executeScript(String.format(
+                    "selectDestination(%f, %f, '%s')",
+                    destination.getLatitude(),
+                    destination.getLongitude(),
+                    destination.getName()
+            ));
+        }
+
         System.out.println("Selected destination: " + destination.getName());
     }
 
     private void updateDestinationDetails() {
-        if (selectedDestination == null) {
-            destinationDetails.setVisible(false);
+        if (selectedDestination == null || destinationDetails == null) {
+            if (destinationDetails != null) {
+                destinationDetails.setVisible(false);
+            }
             return;
         }
 
         destinationDetails.getChildren().clear();
         destinationDetails.setVisible(true);
 
-        VBox detailsContent = new VBox(10);
-        detailsContent.setPadding(new Insets(15));
+        VBox detailsContent = new VBox(15);
+        detailsContent.setPadding(new Insets(20));
 
-        HBox header = new HBox(10);
-        header.setAlignment(Pos.CENTER_LEFT);
+        // Header
+        Label nameLabel = new Label(selectedDestination.getName());
+        nameLabel.setStyle("-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #111827;");
 
-        VBox titleBox = new VBox();
-        titleBox.getChildren().addAll(
-                new Label(selectedDestination.getName()),
-                new Label(selectedDestination.getCountry())
-        );
+        Label countryLabel = new Label(selectedDestination.getCountry());
+        countryLabel.setStyle("-fx-font-size: 14; -fx-text-fill: #6b7280;");
 
+        HBox ratingBox = new HBox();
+        ratingBox.setStyle("-fx-background-color: #0d9488; -fx-background-radius: 6; -fx-padding: 6 10;");
         Label ratingLabel = new Label(String.format("%.1f", selectedDestination.getRating()));
-        HBox ratingBox = new HBox(ratingLabel);
-        ratingBox.setStyle("-fx-background-color: #ccfbf1; -fx-background-radius: 4; -fx-padding: 4 8;");
+        ratingLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold;");
+        ratingBox.getChildren().add(ratingLabel);
 
-        header.getChildren().addAll(titleBox, ratingBox);
-
+        // Description
         Label descriptionLabel = new Label(selectedDestination.getDescription());
         descriptionLabel.setWrapText(true);
         descriptionLabel.setStyle("-fx-font-size: 14; -fx-text-fill: #4b5563;");
 
-        HBox buttons = new HBox(10);
-        Button directionsButton = new Button("Directions");
-        directionsButton.setStyle("-fx-background-color: #0d9488; -fx-text-fill: white;");
-        Button infoButton = new Button("More Info");
-        infoButton.setStyle("-fx-background-color: white; -fx-border-color: #d1d5db;");
-        buttons.getChildren().addAll(directionsButton, infoButton);
+        // Buttons
+        Button directionsButton = new Button("Get Directions");
+        directionsButton.setStyle("-fx-background-color: #0d9488; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 6;");
+        directionsButton.setPrefWidth(200);
 
-        detailsContent.getChildren().addAll(header, descriptionLabel, buttons);
+        detailsContent.getChildren().addAll(nameLabel, countryLabel, ratingBox, descriptionLabel, directionsButton);
         destinationDetails.getChildren().add(detailsContent);
     }
 
+    @FXML
     private void toggleSidebar() {
         sidebarVisible = !sidebarVisible;
-        root.setLeft(sidebarVisible ? sidebar : null);
+        if (sidebarVisible) {
+            root.setLeft(sidebar);
+            toggleSidebarButton.setText("Hide Sidebar");
+        } else {
+            root.setLeft(null);
+            toggleSidebarButton.setText("Show Sidebar");
+        }
+        System.out.println("Sidebar toggled: " + (sidebarVisible ? "visible" : "hidden"));
     }
 
-    public static void main(String[] args) {
-        launch(args);
+    @FXML
+    private void toggleDetails() {
+        detailsVisible = !detailsVisible;
+        if (detailsVisible) {
+            root.setRight(destinationDetails);
+        } else {
+            root.setRight(null);
+        }
+        updateToggleDetailsButtonText();
+        System.out.println("Details panel toggled: " + (detailsVisible ? "visible" : "hidden"));
+    }
+
+    private void updateToggleDetailsButtonText() {
+        if (toggleDetailsButton != null) {
+            toggleDetailsButton.setText(detailsVisible ? "Hide Details" : "Show Details");
+        }
     }
 }

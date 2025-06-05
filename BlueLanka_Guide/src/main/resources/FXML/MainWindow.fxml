@@ -8,7 +8,7 @@
     </left>
 
     <center>
-        <fx:include source="Dashboard.fxml" />
+        <fx:include source="Dashboard/Dashboard.fxml" />
     </center>
 
 </BorderPane>

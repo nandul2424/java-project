@@ -53,19 +53,19 @@ public class MapIntegration extends Application {
                 <script>
                     // Initialize the map
                     var map = L.map('map').setView([48.8566, 2.3522], 13);
-                    
+            
                     //Add OpenStreetMap tile layer
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     }).addTo(map);
-                    
+            
                     // Add markers for destinations
                     var destinations = [
                         {name: "Paris", lat: 48.8566, lng: 2.3522},
                         {name: "Tokyo", lat: 35.6762, lng: 139.6503},
                         {name: "New York", lat: 40.7128, lng: -74.006}
                     ];
-                    
+            
                     destinations.forEach(function(dest) {
                         L.marker([dest.lat, dest.lng])
                             .addTo(map)
@@ -82,7 +82,7 @@ public class MapIntegration extends Application {
                                     </script>
                                 </body>
                                 </html>
-                                """;
+            """ ;
                         }
                     
     public static void main(String[] args) {

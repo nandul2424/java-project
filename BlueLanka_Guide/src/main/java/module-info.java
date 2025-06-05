@@ -9,9 +9,11 @@ module com.bluelanka_guide {
     requires org.xerial.sqlitejdbc;
     requires javafx.web;
     requires annotations;
+    requires jdk.jsobject;
     requires com.fasterxml.jackson.databind;
 
     opens com.bluelanka_guide to javafx.fxml;
+    opens com.bluelanka_guide.controller.DestinationsPage to javafx.fxml;
     opens com.bluelanka_guide.controller.TravelToolsPage to javafx.fxml;
     opens com.bluelanka_guide.controller.TripPlanner to javafx.fxml;
     opens com.bluelanka_guide.controller to javafx.fxml;
@@ -20,4 +22,6 @@ module com.bluelanka_guide {
     exports com.bluelanka_guide.controller.TravelToolsPage;
     exports com.bluelanka_guide.controller.TripPlanner;
     exports com.bluelanka_guide;
+    exports com.bluelanka_guide.controller.DashboardPage;
+    opens com.bluelanka_guide.controller.DashboardPage to javafx.fxml;
 }
