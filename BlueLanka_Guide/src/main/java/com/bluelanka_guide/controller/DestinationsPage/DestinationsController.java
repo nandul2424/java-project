@@ -13,6 +13,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import netscape.javascript.JSObject;
 
 import java.net.URL;
@@ -63,6 +66,19 @@ public class DestinationsController implements Initializable {
         public String getProvince() { return province; }
         public String getActivities() { return activities; }
         public String getBestTime() { return bestTime; }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            if (obj == null || getClass() != obj.getClass()) return false;
+            Destination that = (Destination) obj;
+            return id == that.id;
+        }
+
+        @Override
+        public int hashCode() {
+            return Integer.hashCode(id);
+        }
     }
 
     // FXML injected components
@@ -83,9 +99,11 @@ public class DestinationsController implements Initializable {
     private boolean sidebarVisible = true;
     private boolean detailsVisible = false;
     private List<Destination> destinations;
+    private List<Destination> savedDestinations;
     private Destination selectedDestination;
     private WebView webView;
     private WebEngine webEngine;
+    private Stage imageViewerStage;
 
     // Location and directions fields
     private String userLat;
@@ -98,6 +116,7 @@ public class DestinationsController implements Initializable {
 
         // Initialize destinations first
         initializeDestinations();
+        savedDestinations = new ArrayList<>();
 
         // Create map view
         createMapView();
@@ -111,7 +130,20 @@ public class DestinationsController implements Initializable {
         // Set up toggle buttons
         setupToggleButtons();
 
+        // Set up tab change listener
+        setupTabChangeListener();
+
         System.out.println("DestinationsController initialized successfully!");
+    }
+
+    private void setupTabChangeListener() {
+        destinationTabs.getSelectionModel().selectedItemProperty().addListener((observable, oldTab, newTab) -> {
+            if (newTab == savedTab) {
+                populateSavedDestinations();
+            } else if (newTab == popularTab) {
+                populateDestinationList();
+            }
+        });
     }
 
     private void initializeDestinations() {
@@ -262,11 +294,63 @@ public class DestinationsController implements Initializable {
 
         // Add destination cards
         for (Destination destination : destinations) {
-            VBox card = createDestinationCard(destination);
+            VBox card = createDestinationCard(destination, false);
             popularDestinationList.getChildren().add(card);
         }
 
         System.out.println("Added " + destinations.size() + " destination cards to the list");
+    }
+
+    private void populateSavedDestinations() {
+        VBox savedContent = getSavedTabContent();
+
+        if (savedContent == null) {
+            System.err.println("Could not find saved tab content!");
+            return;
+        }
+
+        savedContent.getChildren().clear();
+
+        if (savedDestinations.isEmpty()) {
+            // Show empty state
+            VBox emptyState = new VBox();
+            emptyState.setAlignment(Pos.CENTER);
+            emptyState.setPadding(new Insets(20));
+            Label emptyLabel = new Label("No saved destinations yet");
+            emptyLabel.setStyle("-fx-text-fill: #6b7280; -fx-font-size: 14;");
+            Label hintLabel = new Label("Save your favorite destinations to view them here!");
+            hintLabel.setStyle("-fx-text-fill: #9ca3af; -fx-font-size: 12;");
+            emptyState.getChildren().addAll(emptyLabel, hintLabel);
+            savedContent.getChildren().add(emptyState);
+        } else {
+            // Show saved destinations
+            for (Destination destination : savedDestinations) {
+                VBox card = createDestinationCard(destination, true);
+                savedContent.getChildren().add(card);
+            }
+        }
+
+        System.out.println("Updated saved destinations: " + savedDestinations.size() + " items");
+    }
+
+    private VBox getSavedTabContent() {
+        if (savedTab.getContent() instanceof ScrollPane) {
+            ScrollPane scrollPane = (ScrollPane) savedTab.getContent();
+            if (scrollPane.getContent() instanceof VBox) {
+                return (VBox) scrollPane.getContent();
+            }
+        }
+
+        // Create new content structure for saved tab
+        VBox savedDestinationList = new VBox(10);
+        savedDestinationList.setPadding(new Insets(10));
+
+        ScrollPane scrollPane = new ScrollPane(savedDestinationList);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setStyle("-fx-background-color: transparent; -fx-padding: 0;");
+
+        savedTab.setContent(scrollPane);
+        return savedDestinationList;
     }
 
     private void setupSearchFunctionality() {
@@ -286,64 +370,60 @@ public class DestinationsController implements Initializable {
         // Setup details toggle button
         if (toggleDetailsButton != null) {
             toggleDetailsButton.setOnAction(event -> toggleDetails());
-
-            // Update button text based on initial state
             updateToggleDetailsButtonText();
         }
     }
 
-    private VBox createDestinationCard(Destination destination) {
+    private VBox createDestinationCard(Destination destination, boolean isSavedTab) {
         VBox card = new VBox();
         card.setStyle("-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1); -fx-cursor: hand; -fx-padding: 8; -fx-spacing: 8;");
         card.setPrefWidth(280);
 
-        // Image container
+        // Image container - Now using actual image as background
         StackPane imageContainer = new StackPane();
         imageContainer.setPrefHeight(140);
+        imageContainer.setCursor(javafx.scene.Cursor.HAND);
 
-        // Load image first
+        // Load destination image
         Image image = loadDestinationImage(destination.getImagePath());
 
         if (image != null) {
-            // Create ImageView that fills the entire container
-            ImageView imageView = new ImageView(image);
-            imageView.setFitWidth(280);
-            imageView.setFitHeight(140);
-            imageView.setPreserveRatio(false); // Fill entire area
-            imageView.setSmooth(true);
+            // Create ImageView for the full background
+            ImageView backgroundImage = new ImageView(image);
+            backgroundImage.setFitWidth(280);
+            backgroundImage.setFitHeight(140);
+            backgroundImage.setPreserveRatio(false); // Fill the entire area
 
             // Clip the image to create rounded corners
             Rectangle clip = new Rectangle(280, 140);
             clip.setArcWidth(8);
             clip.setArcHeight(8);
-            imageView.setClip(clip);
+            backgroundImage.setClip(clip);
 
-            // Add image as the main background
-            imageContainer.getChildren().add(imageView);
+            // Add the image as background
+            imageContainer.getChildren().add(backgroundImage);
 
-            // Add a subtle overlay for better text readability
+            // Add a semi-transparent overlay for better text visibility
             Rectangle overlay = new Rectangle(280, 140);
-            overlay.setFill(Color.rgb(0, 0, 0, 0.1)); // Subtle dark overlay
+            overlay.setFill(Color.rgb(0, 0, 0, 0.4)); // Semi-transparent black
             overlay.setArcWidth(8);
             overlay.setArcHeight(8);
             imageContainer.getChildren().add(overlay);
-
         } else {
-            // Fallback: Create a gradient background instead of plain blue
-            Rectangle placeholder = new Rectangle(280, 140);
-
-            // Create a gradient based on province
-            String gradientColor = getProvinceGradient(destination.getProvince());
-            placeholder.setStyle(gradientColor);
-            placeholder.setArcWidth(8);
-            placeholder.setArcHeight(8);
-            imageContainer.getChildren().add(placeholder);
-
-            // Add destination name as overlay on placeholder
-            Label placeholderLabel = new Label(destination.getName());
-            placeholderLabel.setStyle("-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 2, 0, 0, 1);");
-            imageContainer.getChildren().add(placeholderLabel);
+            // Fallback to colored background if image can't be loaded
+            Rectangle colorBackground = new Rectangle(280, 140);
+            String provinceColor = getProvinceColor(destination.getProvince());
+            colorBackground.setFill(Color.web(provinceColor));
+            colorBackground.setArcWidth(8);
+            colorBackground.setArcHeight(8);
+            imageContainer.getChildren().add(colorBackground);
         }
+
+        // Add rating text
+        Label ratingLabel = new Label(String.format("%.1f", destination.getRating()));
+        ratingLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 24; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 2, 0, 0, 1);");
+        imageContainer.getChildren().add(ratingLabel);
+        StackPane.setAlignment(ratingLabel, Pos.CENTER);
 
         // Province badge (top-left)
         HBox provinceBadge = createProvinceBadge(destination.getProvince());
@@ -351,18 +431,50 @@ public class DestinationsController implements Initializable {
         StackPane.setAlignment(provinceBadge, Pos.TOP_LEFT);
         StackPane.setMargin(provinceBadge, new Insets(8));
 
-        // Rating badge (top-right)
-        HBox ratingBadge = createRatingBadge(destination.getRating());
-        imageContainer.getChildren().add(ratingBadge);
-        StackPane.setAlignment(ratingBadge, Pos.TOP_RIGHT);
-        StackPane.setMargin(ratingBadge, new Insets(8));
+        // Add destination name overlay at the bottom
+        Label nameOverlay = new Label(destination.getName());
+        nameOverlay.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 2, 0, 0, 1);");
+        imageContainer.getChildren().add(nameOverlay);
+        StackPane.setAlignment(nameOverlay, Pos.BOTTOM_LEFT);
+        StackPane.setMargin(nameOverlay, new Insets(0, 0, 10, 10));
+
+        // Add saved indicator if this is a saved destination
+        if (isSavedTab) {
+            HBox savedBadge = new HBox();
+            savedBadge.setStyle("-fx-background-color: rgba(245, 158, 11, 0.9); -fx-background-radius: 12; -fx-padding: 4 8;");
+            Label savedLabel = new Label("⭐");
+            savedLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12;");
+            savedBadge.getChildren().add(savedLabel);
+            StackPane.setAlignment(savedBadge, Pos.BOTTOM_RIGHT);
+            StackPane.setMargin(savedBadge, new Insets(0, 10, 10, 0));
+            imageContainer.getChildren().add(savedBadge);
+        }
+
+        // Add click handler to the image container
+        imageContainer.setOnMouseClicked(e -> {
+            if (e.getClickCount() == 1) {
+                // Show larger image in a popup
+                showFullImage(destination);
+                e.consume(); // Prevent card selection
+            }
+        });
+
+        // Add hover effect to image container
+        imageContainer.setOnMouseEntered(e -> {
+            imageContainer.setScaleX(1.05);
+            imageContainer.setScaleY(1.05);
+            imageContainer.setEffect(new javafx.scene.effect.DropShadow(10, Color.rgb(13, 148, 136, 0.8)));
+        });
+
+        imageContainer.setOnMouseExited(e -> {
+            imageContainer.setScaleX(1.0);
+            imageContainer.setScaleY(1.0);
+            imageContainer.setEffect(null);
+        });
 
         // Info container
         VBox infoContainer = new VBox(5);
         infoContainer.setPadding(new Insets(0, 8, 8, 8));
-
-        Label nameLabel = new Label(destination.getName());
-        nameLabel.setStyle("-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #111827;");
 
         Label countryLabel = new Label(destination.getCountry() + " • " + destination.getProvince());
         countryLabel.setStyle("-fx-font-size: 12; -fx-text-fill: #6b7280;");
@@ -380,11 +492,22 @@ public class DestinationsController implements Initializable {
         Label bestTimeLabel = new Label("Best Time: " + destination.getBestTime());
         bestTimeLabel.setStyle("-fx-font-size: 10; -fx-text-fill: #dc2626; -fx-font-style: italic;");
 
-        infoContainer.getChildren().addAll(nameLabel, countryLabel, activitiesLabel, descriptionLabel, bestTimeLabel);
+        infoContainer.getChildren().addAll(countryLabel, activitiesLabel, descriptionLabel, bestTimeLabel);
+
+        // Add remove button for saved destinations
+        if (isSavedTab) {
+            Button removeButton = new Button("Remove from Saved");
+            removeButton.setStyle("-fx-background-color: #ef4444; -fx-text-fill: white; -fx-padding: 5 10; -fx-background-radius: 4; -fx-font-size: 10;");
+            removeButton.setOnAction(e -> {
+                removeSavedDestination(destination);
+                e.consume(); // Prevent card click event
+            });
+            infoContainer.getChildren().add(removeButton);
+        }
 
         card.getChildren().addAll(imageContainer, infoContainer);
 
-        // Add click handler
+        // Add click handler for the whole card
         card.setOnMouseClicked(e -> {
             selectDestination(destination);
             if (!detailsVisible) {
@@ -392,17 +515,15 @@ public class DestinationsController implements Initializable {
             }
         });
 
-        // Enhanced hover effects
+        // Enhanced hover effects for the card
         card.setOnMouseEntered(e -> {
             card.setStyle("-fx-background-color: #f0fdfa; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(13, 148, 136, 0.3), 10, 0, 0, 4); -fx-cursor: hand; -fx-padding: 8; -fx-spacing: 8;");
-            // Slight scale effect on hover
             card.setScaleX(1.02);
             card.setScaleY(1.02);
         });
 
         card.setOnMouseExited(e -> {
             card.setStyle("-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1); -fx-cursor: hand; -fx-padding: 8; -fx-spacing: 8;");
-            // Reset scale
             card.setScaleX(1.0);
             card.setScaleY(1.0);
         });
@@ -410,7 +531,151 @@ public class DestinationsController implements Initializable {
         return card;
     }
 
-    // Helper method to create province-based gradients for placeholders
+    // Method to show full-sized image in a popup
+    private void showFullImage(Destination destination) {
+        Image image = loadDestinationImage(destination.getImagePath());
+        if (image == null) {
+            System.err.println("Cannot show full image: Image not found for " + destination.getName());
+            return;
+        }
+
+        // Create a new stage for the image viewer if it doesn't exist
+        if (imageViewerStage == null) {
+            imageViewerStage = new Stage();
+            imageViewerStage.initModality(Modality.NONE);
+            imageViewerStage.initStyle(StageStyle.DECORATED);
+            imageViewerStage.setResizable(true);
+        }
+
+        // Set the stage title
+        imageViewerStage.setTitle(destination.getName() + " - " + destination.getProvince());
+
+        // Create an ImageView with the full image
+        ImageView fullImageView = new ImageView(image);
+        fullImageView.setPreserveRatio(true);
+        fullImageView.setSmooth(true);
+
+        // Set a reasonable max size
+        fullImageView.setFitWidth(800);
+        fullImageView.setFitHeight(600);
+
+        // Create a scrollable container for the image
+        ScrollPane scrollPane = new ScrollPane(fullImageView);
+        scrollPane.setPannable(true);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setFitToHeight(true);
+
+        // Create a VBox to hold the image and information
+        VBox content = new VBox(10);
+        content.setPadding(new Insets(15));
+        content.setAlignment(Pos.CENTER);
+
+        // Add destination information
+        Label nameLabel = new Label(destination.getName());
+        nameLabel.setStyle("-fx-font-size: 20; -fx-font-weight: bold;");
+
+        Label locationLabel = new Label(destination.getCountry() + " • " + destination.getProvince());
+        locationLabel.setStyle("-fx-font-size: 14; -fx-text-fill: #6b7280;");
+
+        Label ratingLabel = new Label("Rating: " + String.format("%.1f", destination.getRating()) + " ⭐");
+        ratingLabel.setStyle("-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #0d9488;");
+
+        Label descriptionLabel = new Label(destination.getDescription());
+        descriptionLabel.setWrapText(true);
+        descriptionLabel.setMaxWidth(780);
+        descriptionLabel.setStyle("-fx-font-size: 14;");
+
+        // Add buttons
+        HBox buttonBox = new HBox(10);
+        buttonBox.setAlignment(Pos.CENTER);
+
+        Button closeButton = new Button("Close");
+        closeButton.setStyle("-fx-background-color: #6b7280; -fx-text-fill: white; -fx-padding: 8 16;");
+        closeButton.setOnAction(e -> imageViewerStage.close());
+
+        Button viewDetailsButton = new Button("View Details");
+        viewDetailsButton.setStyle("-fx-background-color: #0d9488; -fx-text-fill: white; -fx-padding: 8 16;");
+        viewDetailsButton.setOnAction(e -> {
+            selectDestination(destination);
+            if (!detailsVisible) {
+                toggleDetails();
+            }
+            imageViewerStage.close();
+        });
+
+        buttonBox.getChildren().addAll(viewDetailsButton, closeButton);
+
+        // Add all elements to the content VBox
+        content.getChildren().addAll(
+                scrollPane,
+                nameLabel,
+                locationLabel,
+                ratingLabel,
+                descriptionLabel,
+                buttonBox
+        );
+
+        // Set the scene
+        javafx.scene.Scene scene = new javafx.scene.Scene(content, 850, 700);
+        imageViewerStage.setScene(scene);
+
+        // Show the stage
+        imageViewerStage.show();
+    }
+
+    private void saveDestination(Destination destination) {
+        if (!savedDestinations.contains(destination)) {
+            savedDestinations.add(destination);
+            System.out.println("Saved destination: " + destination.getName());
+
+            // Show success message
+            showSaveConfirmation(destination.getName());
+
+            // If currently viewing saved tab, refresh it
+            if (destinationTabs.getSelectionModel().getSelectedItem() == savedTab) {
+                populateSavedDestinations();
+            }
+        } else {
+            System.out.println("Destination already saved: " + destination.getName());
+            showAlreadySavedMessage(destination.getName());
+        }
+    }
+
+    private void removeSavedDestination(Destination destination) {
+        savedDestinations.remove(destination);
+        System.out.println("Removed saved destination: " + destination.getName());
+
+        // Refresh the saved tab
+        populateSavedDestinations();
+
+        // Show removal confirmation
+        showRemovalConfirmation(destination.getName());
+    }
+
+    private void showSaveConfirmation(String destinationName) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Destination Saved");
+        alert.setHeaderText(null);
+        alert.setContentText(destinationName + " has been saved to your favorites!");
+        alert.showAndWait();
+    }
+
+    private void showAlreadySavedMessage(String destinationName) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Already Saved");
+        alert.setHeaderText(null);
+        alert.setContentText(destinationName + " is already in your saved destinations!");
+        alert.showAndWait();
+    }
+
+    private void showRemovalConfirmation(String destinationName) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Destination Removed");
+        alert.setHeaderText(null);
+        alert.setContentText(destinationName + " has been removed from your saved destinations.");
+        alert.showAndWait();
+    }
+
     private String getProvinceGradient(String province) {
         return switch (province) {
             case "Western Province" -> "-fx-fill: linear-gradient(to bottom, #ef4444, #dc2626);";
@@ -422,16 +687,18 @@ public class DestinationsController implements Initializable {
         };
     }
 
-    // Enhanced image loading with better error handling and debugging
     private Image loadDestinationImage(String imagePath) {
         try {
-            // Try multiple possible paths
             String[] possiblePaths = {
                     imagePath,
                     imagePath.replace("/assets/images/", "/assets/icons/images/"),
                     imagePath.replace("/assets/images/", "/images/"),
                     imagePath.replace("/assets/images/destinations/", "/assets/images/"),
-                    imagePath.replace("/assets/images/destinations/", "/")
+                    imagePath.replace("/assets/images/destinations/", "/"),
+                    // Add more fallback paths
+                    "/images/" + imagePath.substring(imagePath.lastIndexOf("/") + 1),
+                    "/assets/" + imagePath.substring(imagePath.lastIndexOf("/") + 1),
+                    imagePath.substring(imagePath.lastIndexOf("/") + 1)
             };
 
             for (String path : possiblePaths) {
@@ -450,7 +717,6 @@ public class DestinationsController implements Initializable {
             }
 
             System.out.println("❌ Could not find image: " + imagePath);
-            System.out.println("📁 Tried paths: " + String.join(", ", possiblePaths));
 
         } catch (Exception e) {
             System.out.println("❌ Error loading image " + imagePath + ": " + e.getMessage());
@@ -458,7 +724,6 @@ public class DestinationsController implements Initializable {
         return null;
     }
 
-    // Enhanced badge creation with better styling
     private HBox createProvinceBadge(String province) {
         HBox provinceBadge = new HBox();
         String provinceColor = getProvinceColor(province);
@@ -502,7 +767,7 @@ public class DestinationsController implements Initializable {
         }
 
         for (Destination destination : filteredDestinations) {
-            VBox card = createDestinationCard(destination);
+            VBox card = createDestinationCard(destination, false);
             popularDestinationList.getChildren().add(card);
         }
 
@@ -937,7 +1202,11 @@ public class DestinationsController implements Initializable {
             ImageView imageView = new ImageView(detailImage);
             imageView.setFitWidth(320);
             imageView.setPreserveRatio(true);
-            imageView.setStyle("-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 3);");
+            imageView.setStyle("-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 3); -fx-cursor: hand;");
+
+            // Make the image clickable to show larger version
+            imageView.setOnMouseClicked(e -> showFullImage(selectedDestination));
+
             detailsContent.getChildren().add(imageView);
         }
 
@@ -974,9 +1243,27 @@ public class DestinationsController implements Initializable {
             }
         });
 
-        Button saveButton = new Button("Save");
-        saveButton.setStyle("-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 6;");
+        // Save button with functionality
+        Button saveButton = new Button();
+        boolean isAlreadySaved = savedDestinations.contains(selectedDestination);
+
+        if (isAlreadySaved) {
+            saveButton.setText("Saved ⭐");
+            saveButton.setStyle("-fx-background-color: #6b7280; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 6;");
+            saveButton.setDisable(true);
+        } else {
+            saveButton.setText("Save");
+            saveButton.setStyle("-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 6;");
+            saveButton.setDisable(false);
+        }
         saveButton.setPrefWidth(100);
+
+        // Add save button action
+        saveButton.setOnAction(event -> {
+            saveDestination(selectedDestination);
+            // Refresh the details panel to update the save button
+            updateDestinationDetails();
+        });
 
         buttonContainer.getChildren().addAll(directionsButton, saveButton);
 
