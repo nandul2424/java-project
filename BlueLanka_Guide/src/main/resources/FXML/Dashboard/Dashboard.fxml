@@ -11,7 +11,9 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="dashboard_container" stylesheets="@../../styles/dashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.DashboardPage.DashboardController">
-   <HBox layoutX="62.0" layoutY="14.0" prefHeight="80.0" prefWidth="810.0" styleClass="top_section_container" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+   <ImageView fx:id="imageSlider" fitWidth="800" fitHeight="500" layoutX="50" layoutY="60" preserveRatio="true" />
+
+<HBox layoutX="62.0" layoutY="14.0" prefHeight="80.0" prefWidth="810.0" styleClass="top_section_container" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
       <VBox prefHeight="80.0" prefWidth="434.0">
          <Label fx:id="lblDate" styleClass="date" text="2025-05-25" />
          <Label fx:id="lblGreeting" layoutX="10.0" layoutY="10.0" styleClass="user" text="Good Morning User" />
