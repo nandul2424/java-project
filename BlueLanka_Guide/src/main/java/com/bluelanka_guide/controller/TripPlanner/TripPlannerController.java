@@ -61,10 +61,52 @@ public class TripPlannerController implements Initializable{
     @FXML
     private CheckBox checkRelaxation, checkSnorkeling, checkDiving, checkFishing;
 
+    // FXML injected toggle groups
+    @FXML private ToggleGroup destinations;
+    @FXML private ToggleGroup experienceType;
+    @FXML private ToggleGroup tripDuration;
+    @FXML private ToggleGroup budgetType;
+
     private ObservableList<UserTripPlan> tripList = FXCollections.observableArrayList();
 
     public int currentTabIndex = 0;
     public final int TOTAL_TABS = 4;
+
+    UserTripPlan currentTripPlan = new UserTripPlan();
+    private void setupValueListeners() {
+        // Gender selection listener
+        destinations.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
+            currentTripPlan.geographic_region = getRadioButtonValue(newToggle);
+
+        });
+
+        // Size selection listener
+        experienceType.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
+            currentTripPlan.experience_type = getRadioButtonValue(newToggle);
+
+        });
+
+        // Color selection listener
+        tripDuration.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
+            currentTripPlan.trip_duration = getRadioButtonValue(newToggle);
+
+        });
+
+        // Color selection listener
+        budgetType.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
+            currentTripPlan.budget_range = getRadioButtonValue(newToggle);
+
+        });
+    }
+
+    // Helper method to get radio button value from toggle
+    private String getRadioButtonValue(Toggle toggle) {
+        if (toggle != null) {
+            return ((RadioButton) toggle).getText();
+        }
+        return "";
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Set initial tab selection
@@ -111,6 +153,8 @@ public class TripPlannerController implements Initializable{
             e.printStackTrace();
         }
     }
+
+
 
     public void handleNextButton(ActionEvent actionEvent) {
         if (validateCurrentTab()) {

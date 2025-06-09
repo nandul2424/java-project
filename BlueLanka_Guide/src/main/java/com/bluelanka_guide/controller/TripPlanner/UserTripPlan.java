@@ -1,26 +1,14 @@
 package com.bluelanka_guide.controller.TripPlanner;
 
 public class UserTripPlan {
-    private String name;
-    private int age;
-    private String email;
+    public String geographic_region = "";
+    public String experience_type = "";
+    public String trip_duration = "";
 
-    // Constructors
-    public UserTripPlan() {}
+    public String[] activities = {};
+    public String budget_range = "";
 
-    public UserTripPlan(String name, int age, String email) {
-        this.name = name;
-        this.age = age;
-        this.email = email;
-    }
 
-    // Getters and setters
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public UserTripPlan() {};
 
-    public int getAge() { return age; }
-    public void setAge(int age) { this.age = age; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
 }
