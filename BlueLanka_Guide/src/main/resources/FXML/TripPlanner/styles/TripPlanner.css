@@ -4,6 +4,9 @@
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
 }
+TabPane {
+    -fx-background-color: transparent;
+}
 .section_pane {
     -fx-background-color: rgba(33, 150, 254, 0.51);
 }

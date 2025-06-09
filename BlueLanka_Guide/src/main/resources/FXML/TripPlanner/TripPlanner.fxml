@@ -38,28 +38,32 @@
                                    <Label styleClass="section_header" text="Select your preferred Destinations" />
                                    <TitledPane text="Geographic Regions" HBox.hgrow="ALWAYS">
                                        <VBox spacing="10">
-                                           <RadioButton fx:id="checkMirissa" text="Mirissa" />
-                                           <RadioButton fx:id="checkUnawatuna" text="Unawatuna"/>
+                                           <RadioButton fx:id="checkMirissa" text="Mirissa" >
+                                               <toggleGroup>
+                                                   <ToggleGroup fx:id="destinations" />
+                                               </toggleGroup>
+                                           </RadioButton>
+                                           <RadioButton fx:id="checkUnawatuna" text="Unawatuna" toggleGroup="$destinations"/>
                                            <RadioButton fx:id="checkArugambay" text="Arugam Bay" toggleGroup="$destinations" />
                                            <RadioButton fx:id="checkHikkaduwa" text="Hikkaduwa" toggleGroup="$destinations" />
                                            <RadioButton fx:id="checkTangalle" text="Tangalle" toggleGroup="$destinations" />
                                            <RadioButton fx:id="checkBentota" text="Bentota" toggleGroup="$destinations" />
                                            <RadioButton fx:id="checkKalpitiya" text="Kalpitiya" toggleGroup="$destinations" />
                                        </VBox>
-                                       <fx:define>
-                                           <ToggleGroup fx:id="destinations" />
-                                       </fx:define>
+
                                    </TitledPane>
                                    <TitledPane text="Experience Type" HBox.hgrow="ALWAYS">
                                        <VBox spacing="10">
-                                           <RadioButton fx:id="radCoastal" text="Coastal Exploration" />
-                                           <RadioButton fx:id="radOpenSea" text="Open Sea Adventure"/>
+                                           <RadioButton fx:id="radCoastal" text="Coastal Exploration" >
+                                               <toggleGroup >
+                                                   <ToggleGroup fx:id="experienceType" />
+                                               </toggleGroup>
+                                           </RadioButton>
+                                           <RadioButton fx:id="radOpenSea" text="Open Sea Adventure" toggleGroup="$experienceType"/>
                                            <RadioButton fx:id="radIslandHopping" text="Island Hopping" toggleGroup="$experienceType" />
                                            <RadioButton fx:id="radMixed" text="Mixed Experience" toggleGroup="$experienceType" />
                                        </VBox>
-                                       <fx:define>
-                                           <ToggleGroup fx:id="experienceType" />
-                                       </fx:define>
+
                                    </TitledPane>
 
                                </VBox>
@@ -75,14 +79,16 @@
                            <Label styleClass="section_header" text="How long would you like your trip to be ?" />
                            <TitledPane text="Trip Duration">
                                <VBox spacing="10">
-                                   <RadioButton fx:id="radDayTrip" text="Day Trip (1 day)" />
-                                   <RadioButton fx:id="radWeekend" text="Weekend Gateway (2-3 days)"/>
+                                   <RadioButton fx:id="radDayTrip" text="Day Trip (1 day)" >
+                                       <toggleGroup>
+                                           <ToggleGroup fx:id="tripDuration" />
+                                       </toggleGroup>
+                                   </RadioButton>
+                                   <RadioButton fx:id="radWeekend" text="Weekend Gateway (2-3 days)" toggleGroup="$tripDuration"/>
                                    <RadioButton fx:id="radWeek" text="Week-long Vacation(4-7 days)" toggleGroup="$tripDuration" />
                                    <RadioButton fx:id="radExtended" text="Extended Journey (8+ days)" toggleGroup="$tripDuration" />
                                </VBox>
-                               <fx:define>
-                                   <ToggleGroup fx:id="tripDuration" />
-                               </fx:define>
+
                            </TitledPane>
                        </VBox>
                    </Tab>
@@ -117,13 +123,15 @@
                            </padding>
                            <TitledPane text="What's your budget range ?">
                                <VBox spacing="15">
-                                   <RadioButton fx:id="radBudgetFriendly" text="Budget-friendly" />
-                                   <RadioButton fx:id="radBudgetModerate" text="Budget-Moderate"/>
+                                   <RadioButton fx:id="radBudgetFriendly" text="Budget-friendly">
+                                       <toggleGroup>
+                                           <ToggleGroup fx:id="budgetType" />
+                                       </toggleGroup>
+                                   </RadioButton>
+                                   <RadioButton fx:id="radBudgetModerate" text="Budget-Moderate" toggleGroup="$budgetType" />
                                    <RadioButton fx:id="radBudgetLuxury" text="Budget-Luxury" toggleGroup="$budgetType" />
                                </VBox>
-                               <fx:define>
-                                   <ToggleGroup fx:id="budgetType" />
-                               </fx:define>
+
                            </TitledPane>
                        </VBox>
                    </Tab>
