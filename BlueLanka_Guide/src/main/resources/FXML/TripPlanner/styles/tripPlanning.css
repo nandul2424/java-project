@@ -1,0 +1,47 @@
+.background-pane {
+    -fx-background-image: url(".././images/beach.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+.section_pane {
+    -fx-background-color: rgba(33, 150, 254, 0.51);
+}
+.trip_planner_navbar {
+    -fx-background-color: rgba(33, 0, 254, 0.51); !important;
+}
+
+.navbar_heading {
+    -fx-font-size: 32;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.section_header {
+    -fx-font-size: 24;
+    -fx-text-fill: rgba(33, 150, 254, 0.51);;
+}
+.tab {
+    -fx-text-fill: rgba(33, 150, 254, 0.51);;
+    -fx-font-size: 18;
+    -fx-border-style: none;
+    -fx-padding-bottom: 10;
+}
+.main_title {
+    -fx-font-size: 32;
+    -fx-text-fill: white;
+    -fx-background-color: #ff0000;
+}
+
+.action_button {
+    -fx-background-color: rgba(33, 150, 254, 0.51);;
+    -fx-padding: 10;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.action_button:hover {
+    -fx-background-color: #222222;
+}
+.footer_container {
+    -fx-background-color: rgba(33, 150, 254, 0.51); !important;
+}
