@@ -13,7 +13,7 @@ public class TravelToolsController implements Initializable {
     public Button btnMenuUnitConverter;
     public Button btnMenuChecklist;
     public Button btnMenuEmergencyContacts;
-    public Button btnMenuOther;
+    public Button btnMenuLanguageTranslator;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -26,6 +26,11 @@ public class TravelToolsController implements Initializable {
         btnMenuUnitConverter.setOnAction(actionEvent -> onUnitConverter());
         btnMenuEmergencyContacts.setOnAction(actionEvent -> onEmergencyContacts());
         btnMenuChecklist.setOnAction(actionEvent -> onChecklist());
+        btnMenuLanguageTranslator.setOnAction((actionEvent -> onLanguageTranslator()));
+    }
+
+    private void onLanguageTranslator() {
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().set("LanguageTranslator");
     }
 
     private void onChecklist() {

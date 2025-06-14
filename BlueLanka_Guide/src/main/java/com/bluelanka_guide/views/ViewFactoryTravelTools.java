@@ -6,6 +6,7 @@ import com.bluelanka_guide.models.UnitType;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
@@ -23,6 +24,7 @@ public class ViewFactoryTravelTools {
     private AnchorPane emergencyContactsView;
     private AnchorPane unitConverterView;
     private AnchorPane weatherView;
+    private AnchorPane languageTranslatorView;
     private AnchorPane travelToolsSubMenuView;
     private BorderPane travelToolsWindowView;
     private HBox listItemView;
@@ -135,6 +137,17 @@ public class ViewFactoryTravelTools {
         return weatherView;
     }
 
+    public AnchorPane getLanguageTranslatoeView() {
+        try{
+            if(languageTranslatorView == null){
+                languageTranslatorView = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/LanguageTranslator.fxml")).load();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return languageTranslatorView;
+    }
+
     public HBox getListItem(ListView<HBox> listView){
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/CheckItem.fxml"));
@@ -171,5 +184,4 @@ public class ViewFactoryTravelTools {
         stage.setScene(scene);
         stage.show();
     }
-
 }

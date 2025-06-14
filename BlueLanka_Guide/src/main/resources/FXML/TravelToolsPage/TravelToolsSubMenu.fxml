@@ -11,6 +11,7 @@
         <Button fx:id="btnUnitConverter" layoutX="10.0" layoutY="36.0" mnemonicParsing="false" text="Unit Converter" />
         <Button fx:id="btnChecklist" layoutX="10.0" layoutY="61.0" mnemonicParsing="false" text="Checklist" />
         <Button fx:id="btnEmergencyContacts" layoutX="10.0" layoutY="87.0" mnemonicParsing="false" text="Emergency Contacts" />
-        <Button fx:id="btnOther" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" text="Other" />
+        <Button fx:id="btnLanguageTranslator" layoutX="10.0" layoutY="112.0" mnemonicParsing="false"
+                text="Language Translator" />
     </VBox>
 </AnchorPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.ImageView?>
+
+<StackPane fx:id="activityCard"
+           prefHeight="150.0"
+           prefWidth="200.0"
+           xmlns="http://javafx.com/javafx/23.0.1"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.bluelanka_guide.controller.DashboardPage.ActivityCardController">
+    <children>
+        <ImageView fx:id="imageView"
+                   fitHeight="178.0"
+                   fitWidth="244.0"
+                   opacity="0.75"
+                   pickOnBounds="true">
+            <clip>
+                <Rectangle arcHeight="25.0" arcWidth="25.0" height="178.0" width="244.0" />
+            </clip>
+        </ImageView>
+        <Label fx:id="lblActivityName" styleClass="place_name" text="City" />
+        <Label fx:id="lblActivityDescription"
+               prefHeight="94.0"
+               prefWidth="244.0"
+               styleClass="place_description"
+               wrapText="true"
+               visible="false"/>
+    </children>
+</StackPane>

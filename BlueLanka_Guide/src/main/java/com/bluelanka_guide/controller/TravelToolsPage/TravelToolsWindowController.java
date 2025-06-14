@@ -40,7 +40,12 @@ public class TravelToolsWindowController implements Initializable {
                             toolsParentWindow.setLeft(Model.getInstance().getViewFactoryTravelTools().getTravelToolsSubMenuView());
                             toolsParentWindow.setCenter(Model.getInstance().getViewFactoryTravelTools().getChecklistView());
                             break;
-//
+
+                        case "LanguageTranslator" :
+                            toolsParentWindow.setLeft(Model.getInstance().getViewFactoryTravelTools().getTravelToolsSubMenuView());
+                            toolsParentWindow.setCenter(Model.getInstance().getViewFactoryTravelTools().getLanguageTranslatoeView());
+                            break;
+
 //                        case "back" :
 //                            toolsParentWindow.setLeft(Model.getInstance().getViewFactory().getTravelToolsView());
 //                            toolsParentWindow.setCenter(null);
