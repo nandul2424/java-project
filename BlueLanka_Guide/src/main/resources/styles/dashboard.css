@@ -87,3 +87,8 @@
     -fx-pref-width: 250;
     -fx-text-alignment: center;
 }
+
+.dot {
+    -fx-fill: #ccc;
+    -fx-stroke: none;
+}
