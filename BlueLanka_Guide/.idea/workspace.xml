@@ -5,28 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5033f2a-47a9-457e-a658-d79af2645b33" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/logindetails.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/WeatherModel/DayForcast.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/WeatherModel/ForcastData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/WeatherModel/LocationData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/WeatherModel/WeatherData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/services/WeatherAPIConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/icons/search.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/AppStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/AppStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/SignupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/WeatherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/Weather.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/Weather.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/TripPlanner.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/TripPlanner.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/TravelTools/weather.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/TravelTools/weather.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/TravelToolsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/TravelToolsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/TravelToolsSubMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/TravelToolsSubMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/TravelToolsWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/TravelToolsWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryTravelTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryTravelTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Dashboard/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Dashboard/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/TravelTools.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/TravelTools.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/TravelToolsSubMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/TravelToolsSubMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +25,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -64,6 +51,11 @@
     &quot;accountId&quot;: &quot;e4bc78a5-e5b2-4af7-a9d3-70d0d0e7d9df&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_10_module-info.class" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_3_module-info.class" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_4_module-info.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -82,23 +74,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AppStarter.executor": "Run",
-    "Application.DestinationsController.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.MapIntegration.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#18 on Merging janith",
-    "last_opened_file_path": "C:/Users/USER/Desktop/Java Tutorials/java-project/BlueLanka_Guide/src/main/resources/assets/icons",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AppStarter.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DestinationsController.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MapIntegration.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;isira&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/Desktop/Java Tutorials/java-project/BlueLanka_Guide&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.bluelanka_guide.models.WeatherModel" />
