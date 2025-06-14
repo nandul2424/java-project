@@ -6,14 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e5033f2a-47a9-457e-a658-d79af2645b33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/TravelToolsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/TravelToolsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/TravelToolsSubMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/TravelToolsSubMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/TravelToolsWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/TravelToolsWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryTravelTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryTravelTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/WeatherCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/WeatherCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TravelToolsPage/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Dashboard/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Dashboard/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/TravelTools.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/TravelTools.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/TravelToolsSubMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/TravelToolsSubMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Dashboard/WeatherCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Dashboard/WeatherCard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,8 +81,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;isira&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/Desktop/Java Tutorials/java-project/BlueLanka_Guide&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
