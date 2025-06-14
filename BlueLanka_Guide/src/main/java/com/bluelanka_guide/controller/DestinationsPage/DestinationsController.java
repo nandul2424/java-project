@@ -157,127 +157,127 @@ public class DestinationsController implements Initializable {
 
         destinations.add(new Destination(2, "Mount Lavinia", "Sri Lanka",
                 "A beautiful golden sandy beach just south of Colombo, perfect for sunset viewing and romantic walks. Popular among locals and tourists alike.",
-                4.6, "/assets/images/destinations/Negombo.jpg", 6.8344, 79.8633, "Western Province",
+                4.6, "/assets/images/destinations/Mountlavinia.jpeg", 6.8344, 79.8633, "Western Province",
                 "Swimming, Sunset Viewing, Dining, Beach Walks", "December to March"));
 
         destinations.add(new Destination(3, "Kalutara", "Sri Lanka",
                 "Known for its wide sandy beaches and the famous Kalutara Bodhiya temple. Great for water sports and river activities on the Kalu Ganga.",
-                4.4, "/assets/images/destinations/diving.jpg", 6.5854, 79.9607, "Western Province",
+                4.4, "/assets/images/destinations/Kaluthara.jpeg", 6.5854, 79.9607, "Western Province",
                 "Water Sports, Temple Visits, River Cruises", "November to April"));
 
         // Southern Province Beaches
         destinations.add(new Destination(4, "Hikkaduwa", "Sri Lanka",
                 "A bustling beach town known for its coral reefs, surfing, and vibrant nightlife. Perfect for snorkeling and diving enthusiasts.",
-                4.7, "/assets/images/destinations/image1.jpg", 6.1395, 80.1063, "Southern Province",
+                4.7, "/assets/images/destinations/hikkaduwa.jpg", 6.1395, 80.1063, "Southern Province",
                 "Surfing, Snorkeling, Diving, Nightlife", "November to April"));
 
         destinations.add(new Destination(5, "Unawatuna", "Sri Lanka",
                 "A crescent-shaped bay with calm waters, perfect for swimming and relaxation. One of the most beautiful beaches in Sri Lanka.",
-                4.8, "/assets/images/destinations/image2.png", 6.0108, 80.2492, "Southern Province",
+                4.8, "/assets/images/destinations/unawatuna.jpeg", 6.0108, 80.2492, "Southern Province",
                 "Swimming, Snorkeling, Beach Relaxation, Yoga", "December to March"));
 
         destinations.add(new Destination(6, "Mirissa", "Sri Lanka",
                 "Famous for whale watching and stunning sunsets. A laid-back beach town with excellent seafood and coconut tree-lined shores.",
-                4.9, "/assets/images/destinations/surf.jpg", 5.9487, 80.4565, "Southern Province",
+                4.9, "/assets/images/destinations/mirissa.jpg", 5.9487, 80.4565, "Southern Province",
                 "Whale Watching, Surfing, Sunset Viewing, Fishing", "December to April"));
 
         destinations.add(new Destination(7, "Weligama", "Sri Lanka",
                 "Known for its stilt fishermen and excellent surfing conditions. Features a beautiful bay with Snake Island accessible by foot during low tide.",
-                4.5, "/assets/images/destinations/diving.jpg", 5.9749, 80.4293, "Southern Province",
+                4.5, "/assets/images/destinations/weligama.jpeg", 5.9749, 80.4293, "Southern Province",
                 "Surfing, Stilt Fishing, Photography, Swimming", "November to April"));
 
         destinations.add(new Destination(8, "Tangalle", "Sri Lanka",
                 "A peaceful fishing town with pristine beaches and minimal crowds. Perfect for those seeking tranquility and natural beauty.",
-                4.6, "/assets/images/destinations/image1.jpg", 6.0235, 80.7928, "Southern Province",
+                4.6, "/assets/images/destinations/tangalle.jpeg", 6.0235, 80.7928, "Southern Province",
                 "Beach Relaxation, Turtle Watching, Fishing, Photography", "December to March"));
 
         destinations.add(new Destination(9, "Matara", "Sri Lanka",
                 "Historic coastal city with beautiful beaches and the famous Matara Fort. Great combination of culture and beach activities.",
-                4.3, "/assets/images/destinations/image2.png", 5.9549, 80.5550, "Southern Province",
+                4.3, "/assets/images/destinations/matara.jpeg", 5.9549, 80.5550, "Southern Province",
                 "Historical Tours, Beach Activities, Temple Visits", "December to March"));
 
         destinations.add(new Destination(10, "Koggala", "Sri Lanka",
                 "Home to a large lagoon and beautiful beaches. Famous for its stilt fishermen and the Martin Wickramasinghe Folk Museum.",
-                4.4, "/assets/images/destinations/Negombo.jpg", 5.9942, 80.3275, "Southern Province",
+                4.4, "/assets/images/destinations/koggala.jpeg", 5.9942, 80.3275, "Southern Province",
                 "Lagoon Tours, Cultural Visits, Stilt Fishing, Bird Watching", "December to March"));
 
         // Eastern Province Beaches
         destinations.add(new Destination(11, "Arugam Bay", "Sri Lanka",
                 "World-renowned surfing destination with consistent waves and a laid-back atmosphere. Popular among international surfers.",
-                4.9, "/assets/images/destinations/surf.jpg", 6.8404, 81.8368, "Eastern Province",
+                4.9, "/assets/images/destinations/arugambay.jpeg", 6.8404, 81.8368, "Eastern Province",
                 "Surfing, Beach Relaxation, Lagoon Safari, Yoga", "April to September"));
 
         destinations.add(new Destination(12, "Batticaloa", "Sri Lanka",
                 "Known for its singing fish phenomenon and beautiful lagoons. Rich in Tamil culture and history.",
-                4.2, "/assets/images/destinations/diving.jpg", 7.7102, 81.6924, "Eastern Province",
+                4.2, "/assets/images/destinations/batticalo.jpeg", 7.7102, 81.6924, "Eastern Province",
                 "Lagoon Tours, Cultural Experiences, Fishing, Bird Watching", "April to September"));
 
         destinations.add(new Destination(13, "Trincomalee", "Sri Lanka",
                 "Features some of the finest natural harbors in the world and pristine beaches. Rich in naval history and marine life.",
-                4.7, "/assets/images/destinations/image1.jpg", 8.5874, 81.2152, "Eastern Province",
+                4.7, "/assets/images/destinations/thrinco.jpeg", 8.5874, 81.2152, "Eastern Province",
                 "Whale Watching, Diving, Historical Tours, Beach Activities", "April to September"));
 
         destinations.add(new Destination(14, "Nilaveli", "Sri Lanka",
                 "Crystal clear waters and white sandy beaches near Trincomalee. Perfect for snorkeling and diving with coral reefs nearby.",
-                4.8, "/assets/images/destinations/image2.png", 8.6833, 81.1833, "Eastern Province",
+                4.8, "/assets/images/destinations/nilaweli.jpeg", 8.6833, 81.1833, "Eastern Province",
                 "Snorkeling, Diving, Beach Relaxation, Boat Tours", "April to September"));
 
         destinations.add(new Destination(15, "Uppuveli", "Sri Lanka",
                 "A quieter alternative to Nilaveli with beautiful beaches and clear waters. Great for peaceful beach holidays.",
-                4.5, "/assets/images/destinations/Negombo.jpg", 8.6167, 81.2167, "Eastern Province",
+                4.5, "/assets/images/destinations/uppuweli.jpg", 8.6167, 81.2167, "Eastern Province",
                 "Swimming, Beach Walks, Relaxation, Photography", "April to September"));
 
         destinations.add(new Destination(16, "Pasikudah", "Sri Lanka",
                 "Known for its shallow, calm waters extending far into the sea. Perfect for families with children and non-swimmers.",
-                4.6, "/assets/images/destinations/surf.jpg", 7.9333, 81.5500, "Eastern Province",
+                4.6, "/assets/images/destinations/pasikuda.jpeg", 7.9333, 81.5500, "Eastern Province",
                 "Family Swimming, Water Sports, Beach Games, Relaxation", "April to September"));
 
         destinations.add(new Destination(17, "Kalkudah", "Sri Lanka",
                 "Adjacent to Pasikudah, offering similar calm waters and beautiful coral reefs. Less crowded and more pristine.",
-                4.5, "/assets/images/destinations/diving.jpg", 7.9167, 81.5333, "Eastern Province",
+                4.5, "/assets/images/destinations/kalkuda.jpeg", 7.9167, 81.5333, "Eastern Province",
                 "Snorkeling, Swimming, Coral Viewing, Beach Relaxation", "April to September"));
 
         // Northern Province Beaches
         destinations.add(new Destination(18, "Jaffna Peninsula", "Sri Lanka",
                 "Unique cultural experience with beautiful beaches and rich Tamil heritage. Features pristine islands and lagoons.",
-                4.3, "/assets/images/destinations/image1.jpg", 9.6615, 80.0255, "Northern Province",
+                4.3, "/assets/images/destinations/jaffnapenis.jpg", 9.6615, 80.0255, "Northern Province",
                 "Cultural Tours, Island Hopping, Historical Sites, Fishing", "December to March"));
 
         destinations.add(new Destination(19, "Casuarina Beach", "Sri Lanka",
                 "Located in Karainagar, known for its casuarina trees and golden sand. A peaceful retreat in the northern region.",
-                4.4, "/assets/images/destinations/image2.png", 9.7667, 79.9167, "Northern Province",
+                4.4, "/assets/images/destinations/casuarina.jpeg", 9.7667, 79.9167, "Northern Province",
                 "Beach Relaxation, Photography, Swimming, Nature Walks", "December to March"));
 
         // North Western Province Beaches
         destinations.add(new Destination(20, "Kalpitiya", "Sri Lanka",
                 "Famous for dolphin watching and kite surfing. Features a long stretch of pristine beaches and lagoons.",
-                4.7, "/assets/images/destinations/Negombo.jpg", 8.2333, 79.7667, "North Western Province",
+                4.7, "/assets/images/destinations/kalpitiya.jpeg", 8.2333, 79.7667, "North Western Province",
                 "Dolphin Watching, Kite Surfing, Snorkeling, Lagoon Tours", "November to April"));
 
         destinations.add(new Destination(21, "Chilaw", "Sri Lanka",
                 "Known for its fishing industry and beautiful beaches. Features the famous Munneswaram Temple nearby.",
-                4.2, "/assets/images/destinations/surf.jpg", 7.5756, 79.7951, "North Western Province",
+                4.2, "/assets/images/destinations/chilaw.jpeg", 7.5756, 79.7951, "North Western Province",
                 "Fishing, Temple Visits, Beach Activities, Cultural Tours", "November to April"));
 
         // Additional Hidden Gems
-        destinations.add(new Destination(22, "Bentota", "Sri Lanka",
+        destinations.add(new Destination(22, "Benthota", "Sri Lanka",
                 "Popular resort town with water sports and river activities. Perfect blend of beach and river experiences.",
-                4.6, "/assets/images/destinations/diving.jpg", 6.4167, 79.9958, "Southern Province",
+                4.6, "/assets/images/destinations/bentota.jpeg", 6.4167, 79.9958, "Southern Province",
                 "Water Sports, River Safari, Turtle Hatchery, Spa Treatments", "November to April"));
 
         destinations.add(new Destination(23, "Beruwala", "Sri Lanka",
                 "One of the first beach resorts in Sri Lanka with a rich Muslim heritage. Features beautiful mosques and beaches.",
-                4.3, "/assets/images/destinations/image1.jpg", 6.4792, 79.9828, "Western Province",
+                4.3, "/assets/images/destinations/beruwala.jpeg", 6.4792, 79.9828, "Western Province",
                 "Cultural Tours, Beach Activities, Mosque Visits, Water Sports", "November to April"));
 
         destinations.add(new Destination(24, "Ahungalla", "Sri Lanka",
                 "Quiet beach destination perfect for relaxation and turtle watching. Less commercialized than neighboring beaches.",
-                4.4, "/assets/images/destinations/image2.png", 6.3167, 80.0833, "Southern Province",
+                4.4, "/assets/images/destinations/ahungalla.jpg", 6.3167, 80.0833, "Southern Province",
                 "Turtle Watching, Beach Relaxation, Spa Treatments, Swimming", "November to April"));
 
         destinations.add(new Destination(25, "Dikwella", "Sri Lanka",
                 "Features the famous Wewurukannala Vihara temple and beautiful beaches. Great for cultural and beach experiences.",
-                4.3, "/assets/images/destinations/Negombo.jpg", 5.9667, 80.7000, "Southern Province",
+                4.3, "/assets/images/destinations/dikwella.jpeg", 5.9667, 80.7000, "Southern Province",
                 "Temple Visits, Beach Activities, Photography, Cultural Tours", "December to March"));
 
         System.out.println("Initialized " + destinations.size() + " beach destinations in Sri Lanka");
@@ -376,10 +376,10 @@ public class DestinationsController implements Initializable {
 
     private VBox createDestinationCard(Destination destination, boolean isSavedTab) {
         VBox card = new VBox();
-        card.setStyle("-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1); -fx-cursor: hand; -fx-padding: 8; -fx-spacing: 8;");
+        card.setStyle("-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1); -fx-cursor: hand; -fx-padding: 0; -fx-spacing: 0;");
         card.setPrefWidth(280);
 
-        // Image container - Now using actual image as background
+        // Image container - Clean image without any overlays
         StackPane imageContainer = new StackPane();
         imageContainer.setPrefHeight(140);
         imageContainer.setCursor(javafx.scene.Cursor.HAND);
@@ -402,52 +402,13 @@ public class DestinationsController implements Initializable {
 
             // Add the image as background
             imageContainer.getChildren().add(backgroundImage);
-
-            // Add a semi-transparent overlay for better text visibility
-            Rectangle overlay = new Rectangle(280, 140);
-            overlay.setFill(Color.rgb(0, 0, 0, 0.4)); // Semi-transparent black
-            overlay.setArcWidth(8);
-            overlay.setArcHeight(8);
-            imageContainer.getChildren().add(overlay);
         } else {
-            // Fallback to colored background if image can't be loaded
-            Rectangle colorBackground = new Rectangle(280, 140);
-            String provinceColor = getProvinceColor(destination.getProvince());
-            colorBackground.setFill(Color.web(provinceColor));
-            colorBackground.setArcWidth(8);
-            colorBackground.setArcHeight(8);
-            imageContainer.getChildren().add(colorBackground);
-        }
-
-        // Add rating text
-        Label ratingLabel = new Label(String.format("%.1f", destination.getRating()));
-        ratingLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 24; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 2, 0, 0, 1);");
-        imageContainer.getChildren().add(ratingLabel);
-        StackPane.setAlignment(ratingLabel, Pos.CENTER);
-
-        // Province badge (top-left)
-        HBox provinceBadge = createProvinceBadge(destination.getProvince());
-        imageContainer.getChildren().add(provinceBadge);
-        StackPane.setAlignment(provinceBadge, Pos.TOP_LEFT);
-        StackPane.setMargin(provinceBadge, new Insets(8));
-
-        // Add destination name overlay at the bottom
-        Label nameOverlay = new Label(destination.getName());
-        nameOverlay.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 2, 0, 0, 1);");
-        imageContainer.getChildren().add(nameOverlay);
-        StackPane.setAlignment(nameOverlay, Pos.BOTTOM_LEFT);
-        StackPane.setMargin(nameOverlay, new Insets(0, 0, 10, 10));
-
-        // Add saved indicator if this is a saved destination
-        if (isSavedTab) {
-            HBox savedBadge = new HBox();
-            savedBadge.setStyle("-fx-background-color: rgba(245, 158, 11, 0.9); -fx-background-radius: 12; -fx-padding: 4 8;");
-            Label savedLabel = new Label("⭐");
-            savedLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12;");
-            savedBadge.getChildren().add(savedLabel);
-            StackPane.setAlignment(savedBadge, Pos.BOTTOM_RIGHT);
-            StackPane.setMargin(savedBadge, new Insets(0, 10, 10, 0));
-            imageContainer.getChildren().add(savedBadge);
+            // Fallback to a clean neutral background if image can't be loaded
+            Rectangle neutralBackground = new Rectangle(280, 140);
+            neutralBackground.setFill(Color.rgb(240, 240, 240)); // Light gray
+            neutralBackground.setArcWidth(8);
+            neutralBackground.setArcHeight(8);
+            imageContainer.getChildren().add(neutralBackground);
         }
 
         // Add click handler to the image container
@@ -461,9 +422,9 @@ public class DestinationsController implements Initializable {
 
         // Add hover effect to image container
         imageContainer.setOnMouseEntered(e -> {
-            imageContainer.setScaleX(1.05);
-            imageContainer.setScaleY(1.05);
-            imageContainer.setEffect(new javafx.scene.effect.DropShadow(10, Color.rgb(13, 148, 136, 0.8)));
+            imageContainer.setScaleX(1.03);
+            imageContainer.setScaleY(1.03);
+            imageContainer.setEffect(new javafx.scene.effect.DropShadow(8, Color.rgb(13, 148, 136, 0.6)));
         });
 
         imageContainer.setOnMouseExited(e -> {
@@ -472,12 +433,29 @@ public class DestinationsController implements Initializable {
             imageContainer.setEffect(null);
         });
 
-        // Info container
+        // Info container - All details moved here under the image
         VBox infoContainer = new VBox(5);
-        infoContainer.setPadding(new Insets(0, 8, 8, 8));
+        infoContainer.setPadding(new Insets(12, 12, 12, 12));
+        infoContainer.setStyle("-fx-background-color: white; -fx-background-radius: 0 0 8 8;");
 
-        Label countryLabel = new Label(destination.getCountry() + " • " + destination.getProvince());
-        countryLabel.setStyle("-fx-font-size: 12; -fx-text-fill: #6b7280;");
+        // Destination name (moved from image overlay to here)
+        Label nameLabel = new Label(destination.getName());
+        nameLabel.setStyle("-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #111827;");
+
+        // Rating and Province in one line
+        HBox ratingProvinceBox = new HBox(10);
+        ratingProvinceBox.setAlignment(Pos.CENTER_LEFT);
+
+        Label ratingLabel = new Label("★ " + String.format("%.1f", destination.getRating()));
+        ratingLabel.setStyle("-fx-font-size: 12; -fx-text-fill: #0d9488; -fx-font-weight: bold;");
+
+        Label provinceLabel = new Label("• " + destination.getProvince().replace(" Province", ""));
+        provinceLabel.setStyle("-fx-font-size: 12; -fx-text-fill: #6b7280;");
+
+        ratingProvinceBox.getChildren().addAll(ratingLabel, provinceLabel);
+
+        Label countryLabel = new Label(destination.getCountry());
+        countryLabel.setStyle("-fx-font-size: 11; -fx-text-fill: #9ca3af;");
 
         Label activitiesLabel = new Label("Activities: " + destination.getActivities());
         activitiesLabel.setWrapText(true);
@@ -492,7 +470,14 @@ public class DestinationsController implements Initializable {
         Label bestTimeLabel = new Label("Best Time: " + destination.getBestTime());
         bestTimeLabel.setStyle("-fx-font-size: 10; -fx-text-fill: #dc2626; -fx-font-style: italic;");
 
-        infoContainer.getChildren().addAll(countryLabel, activitiesLabel, descriptionLabel, bestTimeLabel);
+        // Add saved indicator if this is a saved destination
+        if (isSavedTab) {
+            Label savedLabel = new Label("⭐ Saved Destination");
+            savedLabel.setStyle("-fx-font-size: 10; -fx-text-fill: #f59e0b; -fx-font-weight: bold;");
+            infoContainer.getChildren().add(savedLabel);
+        }
+
+        infoContainer.getChildren().addAll(nameLabel, ratingProvinceBox, countryLabel, activitiesLabel, descriptionLabel, bestTimeLabel);
 
         // Add remove button for saved destinations
         if (isSavedTab) {
@@ -517,13 +502,13 @@ public class DestinationsController implements Initializable {
 
         // Enhanced hover effects for the card
         card.setOnMouseEntered(e -> {
-            card.setStyle("-fx-background-color: #f0fdfa; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(13, 148, 136, 0.3), 10, 0, 0, 4); -fx-cursor: hand; -fx-padding: 8; -fx-spacing: 8;");
+            card.setStyle("-fx-background-color: #f8fafc; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(13, 148, 136, 0.2), 8, 0, 0, 3); -fx-cursor: hand; -fx-padding: 0; -fx-spacing: 0;");
             card.setScaleX(1.02);
             card.setScaleY(1.02);
         });
 
         card.setOnMouseExited(e -> {
-            card.setStyle("-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1); -fx-cursor: hand; -fx-padding: 8; -fx-spacing: 8;");
+            card.setStyle("-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1); -fx-cursor: hand; -fx-padding: 0; -fx-spacing: 0;");
             card.setScaleX(1.0);
             card.setScaleY(1.0);
         });
@@ -676,17 +661,6 @@ public class DestinationsController implements Initializable {
         alert.showAndWait();
     }
 
-    private String getProvinceGradient(String province) {
-        return switch (province) {
-            case "Western Province" -> "-fx-fill: linear-gradient(to bottom, #ef4444, #dc2626);";
-            case "Southern Province" -> "-fx-fill: linear-gradient(to bottom, #10b981, #059669);";
-            case "Eastern Province" -> "-fx-fill: linear-gradient(to bottom, #3b82f6, #2563eb);";
-            case "Northern Province" -> "-fx-fill: linear-gradient(to bottom, #f59e0b, #d97706);";
-            case "North Western Province" -> "-fx-fill: linear-gradient(to bottom, #8b5cf6, #7c3aed);";
-            default -> "-fx-fill: linear-gradient(to bottom, #6b7280, #4b5563);";
-        };
-    }
-
     private Image loadDestinationImage(String imagePath) {
         try {
             String[] possiblePaths = {
@@ -724,28 +698,15 @@ public class DestinationsController implements Initializable {
         return null;
     }
 
-    private HBox createProvinceBadge(String province) {
-        HBox provinceBadge = new HBox();
-        String provinceColor = getProvinceColor(province);
-        provinceBadge.setStyle(String.format(
-                "-fx-background-color: %s; -fx-background-radius: 12; -fx-padding: 4 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 2, 0, 0, 1);",
-                provinceColor
-        ));
-
-        Label provinceLabel = new Label(province.replace(" Province", ""));
-        provinceLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 10;");
-        provinceBadge.getChildren().add(provinceLabel);
-        return provinceBadge;
-    }
-
-    private HBox createRatingBadge(double rating) {
-        HBox ratingBadge = new HBox();
-        ratingBadge.setStyle("-fx-background-color: rgba(13, 148, 136, 0.95); -fx-background-radius: 12; -fx-padding: 4 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 2, 0, 0, 1);");
-
-        Label ratingLabel = new Label(String.format("%.1f", rating));
-        ratingLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12;");
-        ratingBadge.getChildren().add(ratingLabel);
-        return ratingBadge;
+    private String getProvinceColor(String province) {
+        return switch (province) {
+            case "Western Province" -> "#ef4444";
+            case "Southern Province" -> "#10b981";
+            case "Eastern Province" -> "#3b82f6";
+            case "Northern Province" -> "#f59e0b";
+            case "North Western Province" -> "#8b5cf6";
+            default -> "#6b7280";
+        };
     }
 
     private void filterDestinations(String searchText) {
@@ -1125,17 +1086,6 @@ public class DestinationsController implements Initializable {
             """.formatted(markersJS.toString());
     }
 
-    private String getProvinceColor(String province) {
-        return switch (province) {
-            case "Western Province" -> "#ef4444";
-            case "Southern Province" -> "#10b981";
-            case "Eastern Province" -> "#3b82f6";
-            case "Northern Province" -> "#f59e0b";
-            case "North Western Province" -> "#8b5cf6";
-            default -> "#6b7280";
-        };
-    }
-
     public void selectDestinationFromMap(int destinationId) {
         Destination destination = destinations.stream()
                 .filter(d -> d.getId() == destinationId)
@@ -1275,6 +1225,30 @@ public class DestinationsController implements Initializable {
         );
 
         destinationDetails.getChildren().add(detailsContent);
+    }
+
+    private HBox createRatingBadge(double rating) {
+        HBox ratingBadge = new HBox();
+        ratingBadge.setStyle("-fx-background-color: rgba(13, 148, 136, 0.95); -fx-background-radius: 12; -fx-padding: 4 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 2, 0, 0, 1);");
+
+        Label ratingLabel = new Label(String.format("%.1f", rating));
+        ratingLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12;");
+        ratingBadge.getChildren().add(ratingLabel);
+        return ratingBadge;
+    }
+
+    private HBox createProvinceBadge(String province) {
+        HBox provinceBadge = new HBox();
+        String provinceColor = getProvinceColor(province);
+        provinceBadge.setStyle(String.format(
+                "-fx-background-color: %s; -fx-background-radius: 12; -fx-padding: 4 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 2, 0, 0, 1);",
+                provinceColor
+        ));
+
+        Label provinceLabel = new Label(province.replace(" Province", ""));
+        provinceLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 10;");
+        provinceBadge.getChildren().add(provinceLabel);
+        return provinceBadge;
     }
 
     // JavaScript callback methods for location and directions

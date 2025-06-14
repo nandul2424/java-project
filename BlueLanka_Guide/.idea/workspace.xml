@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5033f2a-47a9-457e-a658-d79af2645b33" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DestinationsPage/DestinationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DestinationsPage/DestinationsController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,6 +88,8 @@
       <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide\src\main\resources\assets\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\asus\OneDrive\Desktop\java project\java-project\BlueLanka_Guide\src\main\resources\assets\images\destinations" />
+      <recent name="C:\Users\asus\OneDrive\Desktop\java project\java-project\BlueLanka_Guide\src\main\resources\assets\images\dashboard" />
       <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide" />
       <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide\src\main\resources\assets\icons" />
     </key>
