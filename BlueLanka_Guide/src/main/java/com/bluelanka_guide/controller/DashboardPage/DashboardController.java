@@ -22,9 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import java.net.URL;
-import java.time.LocalDate;
-import java.util.ResourceBundle;
+
 
 public class DashboardController implements Initializable {
 
@@ -36,11 +34,20 @@ public class DashboardController implements Initializable {
     public Label lblPlaceDescription;
     public HBox hbxExploreContainer;
     
+    
+    
     private final List<StackPane> cityCards = new ArrayList<>(); 
     private int currentIndex = 0; 
     private Timeline timeline;
     
     public HBox hbxDotContainer; 
+    
+    
+    public HBox hbxActivityContainer;
+    public HBox hbxActivityDotContainer;
+    private final List<StackPane> activityCards = new ArrayList<>();
+    private int currentActivityIndex = 0;
+    private Timeline activityTimeline;
     
     
     
@@ -51,6 +58,15 @@ public class DashboardController implements Initializable {
         loadCards();
         setupDots();
         startSlider();
+        
+        loadActivityCards();
+        setupActivityDots();
+        startActivitySlider();
+
+        
+        
+        
+        
     }
 
      private void loadCards() {
@@ -123,4 +139,59 @@ public class DashboardController implements Initializable {
         lblPlaceDescription.setVisible(false);
         lblPlaceName.setVisible(true);
     }
+    
+    // 🔽 Methods for Activities Slider
+
+private void loadActivityCards() {
+    addActivityCard("Surfing", "Ride the waves at Sri Lanka’s top surf spots like Arugam Bay.", "/assets/images/dashboard/surfing.jpg");
+    addActivityCard("Diving", "Explore underwater coral reefs and shipwrecks in Hikkaduwa.", "/assets/images/dashboard/diving.jpg");
+    addActivityCard("Whale Watching", "Spot majestic blue whales off the coast of Mirissa.", "/assets/images/dashboard/whale.jpg");
+    addActivityCard("Sea Turtle Watching","Watch sea turtles nest or hatch along Sri Lanka’s southern shores for a truly magical wildlife encounter.","/assets/images/dashboard/sea_turtle.jpg");
+    addActivityCard("Beach Volleyball", "Enjoy exciting beach games with fellow travelers.", "/assets/images/dashboard/volleyball.jpg");
+}
+
+private void addActivityCard(String title, String description, String imagePath) {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Dashboard/LocationCard.fxml"));
+        StackPane card = loader.load();
+        LocationCardController controller = loader.getController();
+        controller.setCityData(title, description, getClass().getResource(imagePath).toExternalForm());
+        activityCards.add(card);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+private void setupActivityDots() {
+    hbxActivityDotContainer.getChildren().clear();
+    for (int i = 0; i < activityCards.size(); i++) {
+        Circle dot = new Circle(4);
+        dot.getStyleClass().add("dot");
+        hbxActivityDotContainer.getChildren().add(dot);
+    }
+    updateActivityDotIndicator();
+}
+
+private void updateActivityDotIndicator() {
+    for (int i = 0; i < hbxActivityDotContainer.getChildren().size(); i++) {
+        hbxActivityDotContainer.getChildren().get(i).setStyle(i == currentActivityIndex ? "-fx-fill: #000;" : "-fx-fill: #ccc;");
+    }
+}
+
+private void startActivitySlider() {
+    showActivityCard(currentActivityIndex);
+    activityTimeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
+        currentActivityIndex = (currentActivityIndex + 1) % activityCards.size();
+        showActivityCard(currentActivityIndex);
+    }));
+    activityTimeline.setCycleCount(Timeline.INDEFINITE);
+    activityTimeline.play();
+}
+
+private void showActivityCard(int index) {
+    hbxActivityContainer.getChildren().clear();
+    hbxActivityContainer.getChildren().add(activityCards.get(index));
+    updateActivityDotIndicator();
+}
+
 }

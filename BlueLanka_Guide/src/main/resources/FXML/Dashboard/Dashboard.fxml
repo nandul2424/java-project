@@ -31,7 +31,7 @@
       <content>
          <VBox prefHeight="574.0" prefWidth="807.0">
             <children>
-               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Explore" />
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Explore"  styleClass="section_title" />
                <ScrollPane hbarPolicy="NEVER" styleClass="explore_scrollpane" vbarPolicy="NEVER">
                   <content>
                      <HBox fx:id="hbxExploreContainer" prefHeight="147.0" prefWidth="797.0" styleClass="explore_container">
@@ -45,7 +45,21 @@
                 prefHeight="20.0"
                 prefWidth="797.0" />
 
-               <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activities" />
+               <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activities" styleClass="section_title"/>
+               
+               <ScrollPane hbarPolicy="NEVER" styleClass="explore_scrollpane" vbarPolicy="NEVER">
+   <content>
+      <HBox fx:id="hbxActivityContainer" prefHeight="147.0" prefWidth="797.0" styleClass="explore_container"/>
+   </content>
+                </ScrollPane>
+
+                <HBox fx:id="hbxActivityDotContainer"
+                     spacing="6"
+                     alignment="CENTER"
+                     style="-fx-padding: 10;"
+                     prefHeight="20.0"
+                     prefWidth="797.0" />
+
                <HBox layoutX="10.0" layoutY="26.0" prefHeight="290.0" prefWidth="797.0" />
                <Text layoutX="10.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weather" />
                <HBox layoutX="10.0" layoutY="144.0" prefHeight="250.0" prefWidth="807.0" />
