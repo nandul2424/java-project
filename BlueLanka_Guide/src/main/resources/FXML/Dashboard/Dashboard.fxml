@@ -27,9 +27,9 @@
          </children>
       </HBox>
    </HBox>
-   <ScrollPane layoutX="14.0" layoutY="125.0" prefHeight="610.0" prefWidth="858.0" styleClass="scroll_view_container" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.799999999999955">
+   <ScrollPane hbarPolicy="NEVER" layoutX="15.2" layoutY="125.0" prefHeight="673.0" prefWidth="821.0" styleClass="scroll_view_container" vbarPolicy="NEVER" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0">
       <content>
-         <VBox prefHeight="574.0" prefWidth="807.0">
+         <VBox>
             <children>
                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Explore" />
                <ScrollPane hbarPolicy="NEVER" styleClass="explore_scrollpane" vbarPolicy="NEVER">
@@ -39,9 +39,14 @@
                   </content>
                </ScrollPane>
                <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activities" />
-               <HBox layoutX="10.0" layoutY="26.0" prefHeight="290.0" prefWidth="797.0" />
+               <ScrollPane hbarPolicy="NEVER" styleClass="explore_scrollpane" vbarPolicy="NEVER">
+                  <content>
+                     <HBox fx:id="hbxActivityContainer" prefHeight="147.0" prefWidth="798.0" styleClass="explore_container" />
+                  </content>
+               </ScrollPane>
                <Text layoutX="10.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weather" />
-               <HBox layoutX="10.0" layoutY="144.0" prefHeight="250.0" prefWidth="807.0" />
+               <HBox fx:id="hbxWeatherContainer" layoutX="10.0" layoutY="144.0" />
+               <AnchorPane maxHeight="75.0" prefWidth="200.0" />
             </children>
          </VBox>
       </content>

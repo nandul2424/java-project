@@ -106,7 +106,7 @@ public class WeatherController implements Initializable {
             return;
         }
 
-        currentLocation = location;
+        currentLocation = location + ", Sri Lanka";
         fetchWeatherData(location);
     }
 
@@ -114,9 +114,9 @@ public class WeatherController implements Initializable {
     private void handleCurrentLocation() {
         // This would typically use geolocation API
         // For demo purposes, we'll use a default location
-        String defaultLocation = "London";
+        String defaultLocation = "Matara";
         txtSearch.setText(defaultLocation);
-        currentLocation = defaultLocation;
+        currentLocation = defaultLocation + ", Sri Lanka";
         fetchWeatherData(defaultLocation);
     }
 
