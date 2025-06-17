@@ -1,12 +1,21 @@
 package com.bluelanka_guide.controller.TripPlanner;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import javafx.scene.control.cell.PropertyValueFactory;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
 
 public class TripPlannerController implements Initializable{
 
@@ -52,10 +61,52 @@ public class TripPlannerController implements Initializable{
     @FXML
     private CheckBox checkRelaxation, checkSnorkeling, checkDiving, checkFishing;
 
+    // FXML injected toggle groups
+    @FXML private ToggleGroup destinations;
+    @FXML private ToggleGroup experienceType;
+    @FXML private ToggleGroup tripDuration;
+    @FXML private ToggleGroup budgetType;
 
+    private ObservableList<UserTripPlan> tripList = FXCollections.observableArrayList();
 
     public int currentTabIndex = 0;
     public final int TOTAL_TABS = 4;
+
+    UserTripPlan currentTripPlan = new UserTripPlan();
+    private void setupValueListeners() {
+        // Gender selection listener
+        destinations.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
+            currentTripPlan.geographic_region = getRadioButtonValue(newToggle);
+
+        });
+
+        // Size selection listener
+        experienceType.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
+            currentTripPlan.experience_type = getRadioButtonValue(newToggle);
+
+        });
+
+        // Color selection listener
+        tripDuration.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
+            currentTripPlan.trip_duration = getRadioButtonValue(newToggle);
+
+        });
+
+        // Color selection listener
+        budgetType.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
+            currentTripPlan.budget_range = getRadioButtonValue(newToggle);
+
+        });
+    }
+
+    // Helper method to get radio button value from toggle
+    private String getRadioButtonValue(Toggle toggle) {
+        if (toggle != null) {
+            return ((RadioButton) toggle).getText();
+        }
+        return "";
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Set initial tab selection
@@ -76,7 +127,34 @@ public class TripPlannerController implements Initializable{
         if (!mainTabPane.getTabs().isEmpty()) {
             mainTabPane.getTabs().get(0).setDisable(false);
         }
+
+        // load data from json file
+        loadDataFromJSON();
     }
+
+    private void loadDataFromJSON() {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+
+            // Load JSON file from resources or absolute path
+            File jsonFile = new File("src/main/resources/FXML/TripPlanner/data/trip_plan_data.json");
+            // Or from resources:
+            // InputStream inputStream = getClass().getResourceAsStream("/data.json");
+
+            // Parse JSON to List of Person objects
+            List<UserTripPlan> persons = mapper.readValue(jsonFile,
+                    new TypeReference<List<UserTripPlan>>() {});
+
+            // Add to observable list
+            tripList.addAll(persons);
+
+        } catch (IOException e) {
+            System.err.println("Error loading JSON data: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+
 
     public void handleNextButton(ActionEvent actionEvent) {
         if (validateCurrentTab()) {
@@ -108,7 +186,7 @@ public class TripPlannerController implements Initializable{
         }
 
     }
-    // =======================================================================================================================
+    
     private boolean validateCurrentTab() {
         return switch (currentTabIndex) {
             case 0 -> validateDestinations(); // Destination tab

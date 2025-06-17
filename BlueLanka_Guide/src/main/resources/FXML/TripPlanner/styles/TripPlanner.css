@@ -1,37 +1,19 @@
 .background-pane {
-    -fx-background-color: #ffffff !important;
+    -fx-background-image: url("../images/beach.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
 }
-
-.trip_planner_navbar {
-    -fx-background-color: #43cfef !important;
+TabPane {
+    -fx-background-color: transparent;
 }
-
+.section_pane {
+    -fx-background-color: rgba(33, 150, 254, 0.51);
+}
 .navbar_heading {
-    -fx-font-size: 32;
+    -fx-font-size: 48;
     -fx-text-fill: white;
     -fx-font-weight: bold;
-}
+    -fx-text-alignment: center;
 
-.section_header {
-    -fx-font-size: 24;
-    -fx-text-fill: #3a7df8;
-}
-.tab {
-    -fx-text-fill: #3a7df8;
-    -fx-font-size: 18;
-    -fx-border-style: none;
-    -fx-padding-bottom: 10;
-}
-
-.action_button {
-    -fx-background-color: #3a7df8;
-    -fx-padding: 10;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-}
-.action_button:hover {
-    -fx-background-color: #222222;
-}
-.footer_container {
-    -fx-background-color: #43cfef !important;
 }
