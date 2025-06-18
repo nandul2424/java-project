@@ -17,7 +17,7 @@ public class ViewFactoryMain {
     private AnchorPane dashboardView;
     private BorderPane destinationsView;
     private BorderPane travelToolsView;
-    private BorderPane tripPlannerView;
+    private AnchorPane tripPlannerView;
     private AnchorPane settingsView;
 
     public ViewFactoryMain() {
@@ -64,7 +64,7 @@ public class ViewFactoryMain {
         return travelToolsView;
     }
 
-    public BorderPane getTripPlannerView() {
+    public AnchorPane getTripPlannerView() {
         try {
             if (tripPlannerView == null) {
                 tripPlannerView = new FXMLLoader(getClass().getResource("/FXML/TripPlanner/TripPlanner.fxml")).load();

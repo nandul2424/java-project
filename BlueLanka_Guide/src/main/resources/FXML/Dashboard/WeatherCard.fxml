@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="weatherCard" style="-fx-background-color: white; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.DashboardPage.WeatherCardController">
+   <children>
+      <VBox fx:id="currentWeatherCard" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2);" visible="false">
+      <padding>
+          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+      <children>
+          <HBox alignment="CENTER_LEFT" spacing="20.0">
+              <children>
+                  <VBox spacing="5.0">
+                      <children>
+                          <Label fx:id="cityLabel" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="City, Country" />
+                          <Label fx:id="lastUpdatedLabel" style="-fx-font-size: 12px; -fx-text-fill: #666;" text="Last updated: --" />
+                      </children>
+                  </VBox>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <VBox alignment="CENTER" spacing="5.0">
+                      <children>
+                          <ImageView fx:id="weatherIcon" fitHeight="64.0" fitWidth="64.0" preserveRatio="true" />
+                          <Label fx:id="conditionLabel" style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Condition" />
+                      </children>
+                  </VBox>
+              </children>
+          </HBox>
+          <HBox alignment="CENTER_LEFT" spacing="30.0">
+              <children>
+                  <VBox spacing="5.0">
+                      <children>
+                          <Label fx:id="temperatureLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2196F3;" text="--°C" />
+                          <Label fx:id="feelsLikeLabel" style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Feels like: --°C" />
+                      </children>
+                  </VBox>
+                  <GridPane hgap="20.0" vgap="10.0">
+                      <columnConstraints>
+                          <ColumnConstraints />
+                          <ColumnConstraints />
+                      </columnConstraints>
+                      <rowConstraints>
+                          <RowConstraints />
+                          <RowConstraints />
+                          <RowConstraints />
+                      </rowConstraints>
+                      <children>
+                          <Label style="-fx-font-weight: bold;" text="Humidity:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                          <Label fx:id="humidityLabel" text="--%" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                          <Label style="-fx-font-weight: bold;" text="Wind:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                          <Label fx:id="windLabel" text="-- km/h" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                          <Label style="-fx-font-weight: bold;" text="Pressure:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                          <Label fx:id="pressureLabel" text="-- mb" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                      </children>
+                  </GridPane>
+                  <GridPane hgap="20.0" vgap="10.0">
+                      <columnConstraints>
+                          <ColumnConstraints />
+                          <ColumnConstraints />
+                      </columnConstraints>
+                      <rowConstraints>
+                          <RowConstraints />
+                          <RowConstraints />
+                          <RowConstraints />
+                      </rowConstraints>
+                      <children>
+                          <Label style="-fx-font-weight: bold;" text="Visibility:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                          <Label fx:id="visibilityLabel" text="-- km" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                          <Label style="-fx-font-weight: bold;" text="UV Index:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                          <Label fx:id="uvIndexLabel" text="--" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                          <Label style="-fx-font-weight: bold;" text="Air Quality:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                          <Label fx:id="airQualityLabel" text="--" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                      </children>
+                  </GridPane>
+              </children>
+          </HBox>
+      </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</StackPane>

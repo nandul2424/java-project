@@ -87,3 +87,14 @@
     -fx-pref-width: 250;
     -fx-text-alignment: center;
 }
+
+.dot {
+    -fx-fill: #ccc;
+    -fx-stroke: none;
+}
+
+.section_title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-fill: #0b3d91;
+}
