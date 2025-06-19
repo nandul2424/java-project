@@ -7,12 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
-import javafx.util.Duration;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.util.Duration;
 import javafx.scene.shape.Circle;
 import java.net.URL;
@@ -20,10 +16,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.ArrayList;
-import java.util.List;
-
-
 
 
 public class DashboardController implements Initializable {
@@ -44,7 +36,7 @@ public class DashboardController implements Initializable {
     private List<Image> images = new ArrayList<>();
     private int currentImageIndex = 0;
     private Timeline timeline;
-    private final List<StackPane> cityCards = new ArrayList<>();
+    private final List<StackPane> cityCards = new ArrayList<StackPane>();
     private int currentIndex = 0;
     private final List<StackPane> activityCards = new ArrayList<>();
     private int currentActivityIndex = 0;
@@ -54,27 +46,28 @@ public class DashboardController implements Initializable {
      @Override
     public void initialize(URL location, ResourceBundle resources) {
         lblDate.setText(LocalDate.now().toString());
-//        addCityCard("Hikkaduwa", "It's a popular destination for snorkeling, diving, and enjoying the sun. The town ", getClass().getResource("/assets/images/dashboard/hikkaduwa_beach.jpg").toExternalForm());
+        addCityCard("Hikkaduwa", "4.5" , getClass().getResource("/assets/images/dashboard/hikkaduwa.jpg").toExternalForm());
 //        addCityCard("Hikkaduwa", "It's a popular destination for snorkeling, diving, and enjoying the sun. The town ", getClass().getResource("/assets/images/dashboard/hikkaduwa_beach.jpg").toExternalForm());
 //        addCityCard("Hikkaduwa", "It's a popular destination for snorkeling, diving, and enjoying the sun. The town ", getClass().getResource("/assets/images/dashboard/hikkaduwa_beach.jpg").toExternalForm());
 //        addCityCard("Hikkaduwa", "It's a popular destination for snorkeling, diving, and enjoying the sun. The town ", getClass().getResource("/assets/images/dashboard/hikkaduwa_beach.jpg").toExternalForm());
 
-        startImageSlider();
+//        startImageSlider();
 
 //        addActivityCard("Surfing", "Experience the thrill of surfing in Hikkaduwa's waves.", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
 //        addActivityCard("Surfing", "Experience the thrill of surfing in Hikkaduwa's waves.", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
 //        addActivityCard("Surfing", "Experience the thrill of surfing in Hikkaduwa's waves.", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
 
-        addWeatherCard();
+//        addWeatherCard();
     }
 
-    private void addWeatherCard() {
+    private void addCityCard(String cityName, String rating, String imagePath) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Dashboard/WeatherCard.fxml"));
-            StackPane weatherCard = loader.load();
-            WeatherCardController controller = loader.getController();
-            controller.weatherService.getCurrentWeather(lblLocation.getText());
-            hbxWeatherContainer.getChildren().add(weatherCard);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Dashboard/LocationCard.fxml"));
+            StackPane card = loader.load();
+            LocationCardController controller = loader.getController();
+            controller.setCityData(cityName, "4.5", imagePath);
+            cityCards.add(card);
+            hbxExploreContainer.getChildren().add(card);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -91,7 +84,6 @@ public class DashboardController implements Initializable {
             e.printStackTrace();
         }
 
-
         loadCards();
         setupDots();
         startSlider();
@@ -99,11 +91,18 @@ public class DashboardController implements Initializable {
         loadActivityCards();
         setupActivityDots();
         startActivitySlider();
+    }
 
-
-
-
-
+    private void addWeatherCard() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Dashboard/WeatherCard.fxml"));
+            StackPane weatherCard = loader.load();
+            WeatherCardController controller = loader.getController();
+            controller.weatherService.getCurrentWeather(lblLocation.getText());
+            hbxWeatherContainer.getChildren().add(weatherCard);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
      private void loadCards() {
@@ -112,23 +111,6 @@ public class DashboardController implements Initializable {
         addCityCard("Hikkaduwa", "Known for coral reefs and vibrant marine life, ideal for snorkeling.", "/assets/images/dashboard/hikkaduwa.jpg");
         addCityCard("Galle", "A historic city with a Dutch fort, cobblestone streets, and coastal charm.", "/assets/images/dashboard/galle.jpg");
         addCityCard("Trincomalee", "Famous for crystal-clear waters, whale watching, and beautiful beaches.", "/assets/images/dashboard/trincomalee.jpg");
-    }
-
-
-
-
-
-
-     private void addCityCard(String cityName, String description, String imagePath) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Dashboard/LocationCard.fxml"));
-            StackPane card = loader.load();
-            LocationCardController controller = loader.getController();
-            controller.setCityData(cityName, description, getClass().getResource(imagePath).toExternalForm());
-            cityCards.add(card);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
 
@@ -166,16 +148,16 @@ public class DashboardController implements Initializable {
     }
 
 
-    public void showDescription(MouseEvent mouseEvent) {
-        lblPlaceName.setVisible(false);
-        lblPlaceDescription.setVisible(true);
-        lblPlaceDescription.setText("It's a popular destination for snorkeling, diving, and enjoying the sun. The town also has a rich cultural heritage with various temples and local markets.");
-    }
-
-    public void hideDescription(MouseEvent mouseEvent) {
-        lblPlaceDescription.setVisible(false);
-        lblPlaceName.setVisible(true);
-    }
+//    public void showDescription(MouseEvent mouseEvent) {
+//        lblPlaceName.setVisible(false);
+//        lblPlaceDescription.setVisible(true);
+//        lblPlaceDescription.setText("It's a popular destination for snorkeling, diving, and enjoying the sun. The town also has a rich cultural heritage with various temples and local markets.");
+//    }
+//
+//    public void hideDescription(MouseEvent mouseEvent) {
+//        lblPlaceDescription.setVisible(false);
+//        lblPlaceName.setVisible(true);
+//    }
 
     private void startImageSlider() {
         images.add(new Image(getClass().getResource("/Slider_images/1.jpg").toExternalForm()));

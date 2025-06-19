@@ -11,6 +11,7 @@ module com.bluelanka_guide {
     requires annotations;
     requires jdk.jsobject;
     requires com.fasterxml.jackson.databind;
+    requires de.jensd.fx.glyphs.fontawesome;
 
     opens com.bluelanka_guide to javafx.fxml;
     opens com.bluelanka_guide.controller.DestinationsPage to javafx.fxml;
