@@ -46,18 +46,15 @@ public class DashboardController implements Initializable {
      @Override
     public void initialize(URL location, ResourceBundle resources) {
         lblDate.setText(LocalDate.now().toString());
-        addCityCard("Hikkaduwa", "4.5" , getClass().getResource("/assets/images/dashboard/newloc.png").toExternalForm());
-//        addCityCard("Hikkaduwa", "It's a popular destination for snorkeling, diving, and enjoying the sun. The town ", getClass().getResource("/assets/images/dashboard/hikkaduwa_beach.jpg").toExternalForm());
-//        addCityCard("Hikkaduwa", "It's a popular destination for snorkeling, diving, and enjoying the sun. The town ", getClass().getResource("/assets/images/dashboard/hikkaduwa_beach.jpg").toExternalForm());
-//        addCityCard("Hikkaduwa", "It's a popular destination for snorkeling, diving, and enjoying the sun. The town ", getClass().getResource("/assets/images/dashboard/hikkaduwa_beach.jpg").toExternalForm());
+        loadCards();
+        setupDots();
+        startSlider();
+//        addWeatherCard();
 
 //        startImageSlider();
-
-        addActivityCard("Surfing", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
-//        addActivityCard("Surfing", "Experience the thrill of surfing in Hikkaduwa's waves.", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
-//        addActivityCard("Surfing", "Experience the thrill of surfing in Hikkaduwa's waves.", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
-
-//        addWeatherCard();
+//
+//        setupActivityDots();
+//        startActivitySlider();
     }
 
     private void addCityCard(String cityName, String rating, String imagePath) {
@@ -65,9 +62,9 @@ public class DashboardController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Dashboard/LocationCard.fxml"));
             StackPane card = loader.load();
             LocationCardController controller = loader.getController();
-            controller.setCityData(cityName, "4.5", imagePath);
+            controller.setCityData(cityName, rating, imagePath);
             cityCards.add(card);
-            hbxExploreContainer.getChildren().add(card);
+//            hbxExploreContainer.getChildren().add(card);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -83,14 +80,6 @@ public class DashboardController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-//
-//        loadCards();
-//        setupDots();
-//        startSlider();
-//
-//        loadActivityCards();
-//        setupActivityDots();
-//        startActivitySlider();
     }
 
     private void addWeatherCard() {
@@ -106,46 +95,54 @@ public class DashboardController implements Initializable {
     }
 
      private void loadCards() {
-        addCityCard("Negombo", "A coastal city known for its beaches, fresh seafood, and colonial architecture.", "/assets/images/dashboard/negombo.jpg");
-        addCityCard("Arugam Bay", "A world-famous surfing destination with golden beaches and a relaxed vibe.", "/assets/images/dashboard/arugambay.jpg");
-        addCityCard("Hikkaduwa", "Known for coral reefs and vibrant marine life, ideal for snorkeling.", "/assets/images/dashboard/hikkaduwa.jpg");
-        addCityCard("Galle", "A historic city with a Dutch fort, cobblestone streets, and coastal charm.", "/assets/images/dashboard/galle.jpg");
-        addCityCard("Trincomalee", "Famous for crystal-clear waters, whale watching, and beautiful beaches.", "/assets/images/dashboard/trincomalee.jpg");
-    }
+         //location cards
+         addCityCard("Hikkaduwa", "4.5" , getClass().getResource("/assets/images/dashboard/newloc.png").toExternalForm());
+         addCityCard("Negombo", "4.5" , getClass().getResource("/assets/images/dashboard/newloc.png").toExternalForm());
+         addCityCard("Arugam Bay", "4.5" , getClass().getResource("/assets/images/dashboard/newloc.png").toExternalForm());
+         addCityCard("Galle", "4.5" , getClass().getResource("/assets/images/dashboard/newloc.png").toExternalForm());
+         addCityCard("Trincomalee", "4.5" , getClass().getResource("/assets/images/dashboard/newloc.png").toExternalForm());
+
+         //activity cards
+         addActivityCard("Surfing", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
+//         addActivityCard("Diving", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
+//         addActivityCard("Whale Watching", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
+//         addActivityCard("Sea Turtle Watching", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
+//         addActivityCard("Beach Volleyball", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
+     }
 
 
-      private void setupDots() {
-        hbxDotContainer.getChildren().clear();
-        for (int i = 0; i < cityCards.size(); i++) {
+     private void setupDots() {
+         hbxDotContainer.getChildren().clear();
+         for (int i = 0; i < cityCards.size(); i++) {
             Circle dot = new Circle(4);
             dot.getStyleClass().add("dot");
             hbxDotContainer.getChildren().add(dot);
-        }
-        updateDotIndicator();
-    }
+         }
+         updateDotIndicator();
+     }
 
 
       private void updateDotIndicator() {
-        for (int i = 0; i < hbxDotContainer.getChildren().size(); i++) {
-            hbxDotContainer.getChildren().get(i).setStyle(i == currentIndex ? "-fx-fill: #000;" : "-fx-fill: #ccc;");
-        }
-    }
+          for (int i = 0; i < hbxDotContainer.getChildren().size(); i++) {
+              hbxDotContainer.getChildren().get(i).setStyle(i == currentIndex ? "-fx-fill: #000;" : "-fx-fill: #ccc;");
+          }
+      }
 
-       private void startSlider() {
-        showCard(currentIndex);
-        timeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
-            currentIndex = (currentIndex + 1) % cityCards.size();
-            showCard(currentIndex);
-        }));
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
-    }
+      private void startSlider() {
+         showCard(currentIndex);
+         timeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
+             currentIndex = (currentIndex + 1) % cityCards.size();
+             showCard(currentIndex);
+         }));
+         timeline.setCycleCount(Timeline.INDEFINITE);
+         timeline.play();
+      }
 
-       private void showCard(int index) {
-        hbxExploreContainer.getChildren().clear();
-        hbxExploreContainer.getChildren().add(cityCards.get(index));
-        updateDotIndicator();
-    }
+      private void showCard(int index) {
+         hbxExploreContainer.getChildren().clear();
+         hbxExploreContainer.getChildren().add(cityCards.get(index));
+         updateDotIndicator();
+      }
 
 
 //    public void showDescription(MouseEvent mouseEvent) {
@@ -176,15 +173,6 @@ public class DashboardController implements Initializable {
         timeline.play();
     }
 
-    // 🔽 Methods for Activities Slider
-
-private void loadActivityCards() {
-    addActivityCard("Surfing", "Ride the waves at Sri Lanka’s top surf spots like Arugam Bay.", "/assets/images/dashboard/surfing.jpg");
-    addActivityCard("Diving", "Explore underwater coral reefs and shipwrecks in Hikkaduwa.", "/assets/images/dashboard/diving.jpg");
-    addActivityCard("Whale Watching", "Spot majestic blue whales off the coast of Mirissa.", "/assets/images/dashboard/whale.jpg");
-    addActivityCard("Sea Turtle Watching","Watch sea turtles nest or hatch along Sri Lanka’s southern shores for a truly magical wildlife encounter.","/assets/images/dashboard/sea_turtle.jpg");
-    addActivityCard("Beach Volleyball", "Enjoy exciting beach games with fellow travelers.", "/assets/images/dashboard/volleyball.jpg");
-}
 
 //private void addActivityCard(String title, String description, String imagePath) {
 //    try {
