@@ -46,14 +46,14 @@ public class DashboardController implements Initializable {
      @Override
     public void initialize(URL location, ResourceBundle resources) {
         lblDate.setText(LocalDate.now().toString());
-        addCityCard("Hikkaduwa", "4.5" , getClass().getResource("/assets/images/dashboard/hikkaduwa.jpg").toExternalForm());
+        addCityCard("Hikkaduwa", "4.5" , getClass().getResource("/assets/images/dashboard/newloc.png").toExternalForm());
 //        addCityCard("Hikkaduwa", "It's a popular destination for snorkeling, diving, and enjoying the sun. The town ", getClass().getResource("/assets/images/dashboard/hikkaduwa_beach.jpg").toExternalForm());
 //        addCityCard("Hikkaduwa", "It's a popular destination for snorkeling, diving, and enjoying the sun. The town ", getClass().getResource("/assets/images/dashboard/hikkaduwa_beach.jpg").toExternalForm());
 //        addCityCard("Hikkaduwa", "It's a popular destination for snorkeling, diving, and enjoying the sun. The town ", getClass().getResource("/assets/images/dashboard/hikkaduwa_beach.jpg").toExternalForm());
 
 //        startImageSlider();
 
-//        addActivityCard("Surfing", "Experience the thrill of surfing in Hikkaduwa's waves.", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
+        addActivityCard("Surfing", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
 //        addActivityCard("Surfing", "Experience the thrill of surfing in Hikkaduwa's waves.", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
 //        addActivityCard("Surfing", "Experience the thrill of surfing in Hikkaduwa's waves.", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
 
@@ -83,14 +83,14 @@ public class DashboardController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        loadCards();
-        setupDots();
-        startSlider();
-
-        loadActivityCards();
-        setupActivityDots();
-        startActivitySlider();
+//
+//        loadCards();
+//        setupDots();
+//        startSlider();
+//
+//        loadActivityCards();
+//        setupActivityDots();
+//        startActivitySlider();
     }
 
     private void addWeatherCard() {

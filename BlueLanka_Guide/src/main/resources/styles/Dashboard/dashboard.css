@@ -63,11 +63,12 @@
     -fx-spacing: 20;
     -fx-border-radius: 25;
     -fx-background-radius: 20;
+    -fx-pref-height: 550;
 }
 
 .explore_scrollpane{
     -fx-background-color: tranparent;
-    -fx-pref-height: 375;
+/*    -fx-pref-height: 375;*/
 }
 
 .place_name{

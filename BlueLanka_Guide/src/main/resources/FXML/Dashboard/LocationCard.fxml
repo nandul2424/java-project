@@ -2,20 +2,24 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="300.0"
-           styleClass="location_card_container" stylesheets="@../../styles/Dashboard/locationCard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.DashboardPage.LocationCardController">
+<?import javafx.scene.shape.Rectangle?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: black;" styleClass="location_card_container" stylesheets="@../../styles/Dashboard/locationCard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.DashboardPage.LocationCardController">
    <children>
-      <ImageView fx:id="imgVwLocation" fitHeight="539.0" fitWidth="340.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-39.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-40.0" AnchorPane.topAnchor="0.0">
-         <image>
-            <Image url="@../../../../../../../../../Downloads/Compressed/20250619_1920_image.png" />
-         </image>
-      </ImageView>
+      <Pane styleClass="location_card_container" AnchorPane.bottomAnchor="-39.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-40.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="imgVwLocation" fitHeight="500.0" fitWidth="300.0" pickOnBounds="true">
+               <clip>
+                  <Rectangle arcHeight="25" arcWidth="25" height="500" width="300" />
+               </clip>
+            </ImageView>
+         </children>
+      </Pane>
       <HBox alignment="BOTTOM_LEFT" layoutX="46.0" layoutY="302.0" prefHeight="447.0" prefWidth="300.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox alignment="BOTTOM_LEFT" prefHeight="500.0" prefWidth="310.0">

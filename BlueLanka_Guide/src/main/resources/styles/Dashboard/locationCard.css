@@ -1,5 +1,6 @@
 .location_card_container{
     -fx-border-radius: 20;
+    -fx-background-radius: 20;
 }
 
 .location_label{
