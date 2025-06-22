@@ -37,14 +37,18 @@
                         <content>
                             <VBox>
                                 <HBox fx:id="hbxExploreContainer" prefHeight="147.0" prefWidth="797.0" styleClass="explore_container"/>
-                                <HBox fx:id="hbxDotContainer" alignment="CENTER" spacing="8.0" styleClass="dot_container" />
+                                <HBox fx:id="hbxDotContainerLocation" alignment="CENTER" spacing="8.0" styleClass="dot_container" />
                             </VBox>
                         </content>
                     </ScrollPane>
                     <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activities" />
                     <ScrollPane hbarPolicy="NEVER" styleClass="explore_scrollpane" vbarPolicy="NEVER">
                         <content>
-                            <HBox fx:id="hbxActivityContainer" prefHeight="147.0" prefWidth="798.0" styleClass="explore_container" />
+                            <VBox>
+                                <HBox fx:id="hbxActivityContainer" prefHeight="147.0" prefWidth="798.0" styleClass="explore_container" />
+                                <HBox fx:id="hbxDotContainerActivity" alignment="CENTER" spacing="8.0"
+                                      styleClass="dot_container" />
+                            </VBox>
                         </content>
                     </ScrollPane>
                     <Text layoutX="10.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weather" />

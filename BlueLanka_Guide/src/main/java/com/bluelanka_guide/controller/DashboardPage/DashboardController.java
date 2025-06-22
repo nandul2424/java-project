@@ -30,8 +30,8 @@ public class DashboardController implements Initializable {
     public HBox hbxActivityContainer;
     public HBox hbxWeatherContainer;
     public ImageView imageSlider;
-    public HBox hbxDotContainer;
-    public HBox hbxActivityDotContainer;
+    public HBox hbxDotContainerLocation;
+    public HBox hbxDotContainerActivity;
 
     private List<Image> images = new ArrayList<>();
     private int currentImageIndex = 0;
@@ -47,14 +47,12 @@ public class DashboardController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         lblDate.setText(LocalDate.now().toString());
         loadCards();
-        setupDots();
-        startSlider();
-//        addWeatherCard();
+        setupLocationDots();
+        setupActivityDots();
 
-//        startImageSlider();
-//
-//        setupActivityDots();
-//        startActivitySlider();
+        startLocationSlider();
+        startActivitySlider();
+//        addWeatherCard();
     }
 
     private void addCityCard(String cityName, String rating, String imagePath) {
@@ -70,13 +68,14 @@ public class DashboardController implements Initializable {
         }
     }
 
-    private void addActivityCard(String activityName, String description, String imageUrl) {
+    private void addActivityCard(String activityName, String rating, String imageUrl) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Dashboard/ActivityCard.fxml"));
             StackPane card = loader.load();
             ActivityCardController controller = loader.getController();
-            controller.setActivityData(activityName, description, imageUrl);
-            hbxActivityContainer.getChildren().add(card);
+            controller.setActivityData(activityName, rating, imageUrl);
+            activityCards.add(card);
+//            hbxActivityContainer.getChildren().add(card);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -104,31 +103,30 @@ public class DashboardController implements Initializable {
 
          //activity cards
          addActivityCard("Surfing", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
-//         addActivityCard("Diving", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
-//         addActivityCard("Whale Watching", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
-//         addActivityCard("Sea Turtle Watching", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
-//         addActivityCard("Beach Volleyball", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
+         addActivityCard("Diving", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
+         addActivityCard("Whale Watching", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
+         addActivityCard("Sea Turtle Watching", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
+         addActivityCard("Beach Volleyball", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
      }
 
 
-     private void setupDots() {
-         hbxDotContainer.getChildren().clear();
+     private void setupLocationDots() {
+         hbxDotContainerLocation.getChildren().clear();
          for (int i = 0; i < cityCards.size(); i++) {
             Circle dot = new Circle(4);
             dot.getStyleClass().add("dot");
-            hbxDotContainer.getChildren().add(dot);
+            hbxDotContainerLocation.getChildren().add(dot);
          }
-         updateDotIndicator();
+         updateLocationDotIndicator();
      }
 
-
-      private void updateDotIndicator() {
-          for (int i = 0; i < hbxDotContainer.getChildren().size(); i++) {
-              hbxDotContainer.getChildren().get(i).setStyle(i == currentIndex ? "-fx-fill: #000;" : "-fx-fill: #ccc;");
+      private void updateLocationDotIndicator() {
+          for (int i = 0; i < hbxDotContainerLocation.getChildren().size(); i++) {
+              hbxDotContainerLocation.getChildren().get(i).setStyle(i == currentIndex ? "-fx-fill: #000;" : "-fx-fill: #ccc;");
           }
       }
 
-      private void startSlider() {
+      private void startLocationSlider() {
          showCard(currentIndex);
          timeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
              currentIndex = (currentIndex + 1) % cityCards.size();
@@ -141,7 +139,9 @@ public class DashboardController implements Initializable {
       private void showCard(int index) {
          hbxExploreContainer.getChildren().clear();
          hbxExploreContainer.getChildren().add(cityCards.get(index));
-         updateDotIndicator();
+         hbxExploreContainer.getChildren().add(cityCards.get(index+1));
+//         hbxExploreContainer.getChildren().add(cityCards.get(index+2));
+         updateLocationDotIndicator();
       }
 
 
@@ -155,67 +155,69 @@ public class DashboardController implements Initializable {
 //        lblPlaceDescription.setVisible(false);
 //        lblPlaceName.setVisible(true);
 //    }
-
-    private void startImageSlider() {
-        images.add(new Image(getClass().getResource("/Slider_images/1.jpg").toExternalForm()));
-        images.add(new Image(getClass().getResource("/Slider_images/2.jpg").toExternalForm()));
-        images.add(new Image(getClass().getResource("/Slider_images/3.jpg").toExternalForm()));
-        images.add(new Image(getClass().getResource("/Slider_images/4.jpg").toExternalForm()));
-
-
-        imageSlider.setImage(images.get(0)); // First image
-
-        timeline = new Timeline(new KeyFrame(Duration.seconds(3), e -> {
-            currentImageIndex = (currentImageIndex + 1) % images.size();
-            imageSlider.setImage(images.get(currentImageIndex));
-        }));
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
-    }
-
-
-//private void addActivityCard(String title, String description, String imagePath) {
-//    try {
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Dashboard/LocationCard.fxml"));
-//        StackPane card = loader.load();
-//        LocationCardController controller = loader.getController();
-//        controller.setCityData(title, description, getClass().getResource(imagePath).toExternalForm());
-//        activityCards.add(card);
-//    } catch (Exception e) {
-//        e.printStackTrace();
+//
+//    private void startImageSlider() {
+//        images.add(new Image(getClass().getResource("/Slider_images/1.jpg").toExternalForm()));
+//        images.add(new Image(getClass().getResource("/Slider_images/2.jpg").toExternalForm()));
+//        images.add(new Image(getClass().getResource("/Slider_images/3.jpg").toExternalForm()));
+//        images.add(new Image(getClass().getResource("/Slider_images/4.jpg").toExternalForm()));
+//
+//
+//        imageSlider.setImage(images.get(0)); // First image
+//
+//        timeline = new Timeline(new KeyFrame(Duration.seconds(3), e -> {
+//            currentImageIndex = (currentImageIndex + 1) % images.size();
+//            imageSlider.setImage(images.get(currentImageIndex));
+//        }));
+//        timeline.setCycleCount(Timeline.INDEFINITE);
+//        timeline.play();
 //    }
-//}
 
-private void setupActivityDots() {
-    hbxActivityDotContainer.getChildren().clear();
-    for (int i = 0; i < activityCards.size(); i++) {
-        Circle dot = new Circle(4);
-        dot.getStyleClass().add("dot");
-        hbxActivityDotContainer.getChildren().add(dot);
+
+    //private void addActivityCard(String title, String description, String imagePath) {
+    //    try {
+    //        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Dashboard/LocationCard.fxml"));
+    //        StackPane card = loader.load();
+    //        LocationCardController controller = loader.getController();
+    //        controller.setCityData(title, description, getClass().getResource(imagePath).toExternalForm());
+    //        activityCards.add(card);
+    //    } catch (Exception e) {
+    //        e.printStackTrace();
+    //    }
+    //}
+
+    private void setupActivityDots() {
+        hbxDotContainerActivity.getChildren().clear();
+        for (int i = 0; i < activityCards.size(); i++) {
+            Circle dot = new Circle(4);
+            dot.getStyleClass().add("dot");
+            hbxDotContainerActivity.getChildren().add(dot);
+        }
+        updateActivityDotIndicator();
     }
-    updateActivityDotIndicator();
-}
 
-private void updateActivityDotIndicator() {
-    for (int i = 0; i < hbxActivityDotContainer.getChildren().size(); i++) {
-        hbxActivityDotContainer.getChildren().get(i).setStyle(i == currentActivityIndex ? "-fx-fill: #000;" : "-fx-fill: #ccc;");
+    private void updateActivityDotIndicator() {
+        for (int i = 0; i < hbxDotContainerActivity.getChildren().size(); i++) {
+            hbxDotContainerActivity.getChildren().get(i).setStyle(i == currentActivityIndex ? "-fx-fill: #000;" : "-fx-fill: #ccc;");
+        }
     }
-}
 
-private void startActivitySlider() {
-    showActivityCard(currentActivityIndex);
-    activityTimeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
-        currentActivityIndex = (currentActivityIndex + 1) % activityCards.size();
+    private void startActivitySlider() {
         showActivityCard(currentActivityIndex);
-    }));
-    activityTimeline.setCycleCount(Timeline.INDEFINITE);
-    activityTimeline.play();
-}
+        activityTimeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
+            currentActivityIndex = (currentActivityIndex + 1) % activityCards.size();
+            showActivityCard(currentActivityIndex);
+        }));
+        activityTimeline.setCycleCount(Timeline.INDEFINITE);
+        activityTimeline.play();
+    }
 
-private void showActivityCard(int index) {
-    hbxActivityContainer.getChildren().clear();
-    hbxActivityContainer.getChildren().add(activityCards.get(index));
-    updateActivityDotIndicator();
-}
+    private void showActivityCard(int index) {
+        hbxActivityContainer.getChildren().clear();
+        hbxActivityContainer.getChildren().add(activityCards.get(index));
+        hbxActivityContainer.getChildren().add(activityCards.get(index+1));
+//        hbxActivityContainer.getChildren().add(activityCards.get(index+2));
+        updateActivityDotIndicator();
+    }
 
 }
