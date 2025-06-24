@@ -10,15 +10,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ActivityCardController implements Initializable {
-    public StackPane activityCard;
-    public ImageView imageView;
-    public Label lblActivityName;
-    public Label lblActivityDescription;
+    public ImageView imgVwLocation;
+    public Label lblActivity;
+    public Label lblRating;
 
     public void setActivityData(String activityName, String activityDescription, String imageUrl) {
-        lblActivityName.setText(activityName);
-        lblActivityDescription.setText(activityDescription);
-        imageView.setImage(new Image(imageUrl));
+        lblActivity.setText(activityName);
+        lblRating.setText(activityDescription);
+        imgVwLocation.setImage(new Image(imageUrl));
     }
 
     @Override

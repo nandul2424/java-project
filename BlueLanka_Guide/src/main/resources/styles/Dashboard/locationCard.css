@@ -1,0 +1,20 @@
+.location_card_container{
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+}
+
+.location_label{
+    -fx-font-size: 24;
+    -fx-padding: 0 0 10 15;
+    -fx-text-fill: #FFEEEE;
+}
+
+.location_card_container FontAwesomeIconView{
+    -fx-fill: #c1b8b8;
+}
+
+.rating_label{
+    -fx-font-size: 24;
+    -fx-text-fill: #c1b8b8;
+    -fx-padding: 0 15 10 0;
+}

@@ -2,8 +2,10 @@ package com.bluelanka_guide.controller;
 
 
 import com.bluelanka_guide.models.Model;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,27 +16,25 @@ import javafx.stage.Stage;
 
 import java.awt.event.ActionEvent;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController implements Initializable {
 
     @FXML
     private Button loginbtn_id;
-
     @FXML
     private Label msg1id;
-
     @FXML
     private PasswordField passwordtext;
     @FXML
     private Button cancelbtn_id;
     @FXML
     private Button registerbtn_id;
-
-
     @FXML
     private TextField usernametext;
 
@@ -117,5 +117,10 @@ public class LoginController {
             throw new RuntimeException(e);
         }
 
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Platform.runLater(() ->usernametext.requestFocus());
     }
 }

@@ -10,73 +10,55 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="dashboard_container" stylesheets="@../../styles/dashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.DashboardPage.DashboardController">
-   <ImageView fx:id="imageSlider" fitWidth="800" fitHeight="500" layoutX="50" layoutY="60" preserveRatio="true" />
-
-<HBox layoutX="62.0" layoutY="14.0" prefHeight="80.0" prefWidth="810.0" styleClass="top_section_container" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-      <VBox prefHeight="80.0" prefWidth="434.0">
-         <Label fx:id="lblDate" styleClass="date" text="2025-05-25" />
-         <Label fx:id="lblGreeting" layoutX="10.0" layoutY="10.0" styleClass="user" text="Good Morning User" />
-      </VBox>
-      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../assets/icons/location.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="lblLocation" styleClass="location" text="Matara" />
-         </children>
-      </HBox>
-   </HBox>
-   <ScrollPane hbarPolicy="NEVER" layoutX="15.2" layoutY="125.0" prefHeight="673.0" prefWidth="821.0" styleClass="scroll_view_container" vbarPolicy="NEVER" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0">
-      <content>
-         <VBox>
+<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="dashboard_container"
+            stylesheets="@../../styles/Dashboard/dashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.DashboardPage.DashboardController">
+    <HBox layoutX="62.0" layoutY="14.0" prefHeight="80.0" prefWidth="810.0" styleClass="top_section_container" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <VBox prefHeight="80.0" prefWidth="434.0">
+            <Label fx:id="lblDate" styleClass="date" text="2025-05-25" />
+            <Label fx:id="lblGreeting" layoutX="10.0" layoutY="10.0" styleClass="user" text="Good Morning User" />
+        </VBox>
+        <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
             <children>
-               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Explore"  styleClass="section_title" />
-               <ScrollPane hbarPolicy="NEVER" styleClass="explore_scrollpane" vbarPolicy="NEVER">
-                  <content>
-                     <HBox fx:id="hbxExploreContainer" prefHeight="147.0" prefWidth="797.0" styleClass="explore_container">
-               </HBox>
-                  </content>
-               </ScrollPane>
-               <HBox fx:id="hbxDotContainer"
-                spacing="6"
-                alignment="CENTER"
-                style="-fx-padding: 10;"
-                prefHeight="20.0"
-                prefWidth="797.0" />
-
-               <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activities" styleClass="section_title"/>
-
-               <ScrollPane hbarPolicy="NEVER" styleClass="explore_scrollpane" vbarPolicy="NEVER">
-   <content>
-      <HBox fx:id="hbxActivityContainer" prefHeight="147.0" prefWidth="797.0" styleClass="explore_container"/>
-   </content>
-                </ScrollPane>
-
-                <HBox fx:id="hbxActivityDotContainer"
-                     spacing="6"
-                     alignment="CENTER"
-                     style="-fx-padding: 10;"
-                     prefHeight="20.0"
-                     prefWidth="797.0" />
-
-               <HBox layoutX="10.0" layoutY="26.0" prefHeight="290.0" prefWidth="797.0" />
-               <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activities" />
-               <ScrollPane hbarPolicy="NEVER" styleClass="explore_scrollpane" vbarPolicy="NEVER">
-                  <content>
-                     <HBox fx:id="hbxActivityContainer" prefHeight="147.0" prefWidth="798.0" styleClass="explore_container" />
-                  </content>
-               </ScrollPane>
-               <Text layoutX="10.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weather" />
-               <HBox fx:id="hbxWeatherContainer" layoutX="10.0" layoutY="144.0" />
-               <AnchorPane maxHeight="75.0" prefWidth="200.0" />
+                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/icons/location.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="lblLocation" styleClass="location" text="Matara" />
             </children>
-         </VBox>
-      </content>
-      <padding>
-         <Insets left="6.0" right="6.0" />
-      </padding>
-   </ScrollPane>
+        </HBox>
+    </HBox>
+    <ScrollPane hbarPolicy="NEVER" layoutX="15.2" layoutY="125.0" prefHeight="673.0" prefWidth="821.0" styleClass="scroll_view_container" vbarPolicy="NEVER" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0">
+        <content>
+            <VBox>
+                <children>
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Explore" />
+                    <ScrollPane hbarPolicy="NEVER" styleClass="explore_scrollpane" vbarPolicy="NEVER">
+                        <content>
+                            <VBox>
+                                <HBox fx:id="hbxExploreContainer" prefHeight="147.0" prefWidth="797.0" styleClass="explore_container"/>
+                                <HBox fx:id="hbxDotContainerLocation" alignment="CENTER" spacing="8.0" styleClass="dot_container" />
+                            </VBox>
+                        </content>
+                    </ScrollPane>
+                    <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activities" />
+                    <ScrollPane hbarPolicy="NEVER" styleClass="explore_scrollpane" vbarPolicy="NEVER">
+                        <content>
+                            <VBox>
+                                <HBox fx:id="hbxActivityContainer" prefHeight="147.0" prefWidth="798.0" styleClass="explore_container" />
+                                <HBox fx:id="hbxDotContainerActivity" alignment="CENTER" spacing="8.0"
+                                      styleClass="dot_container" />
+                            </VBox>
+                        </content>
+                    </ScrollPane>
+                    <Text layoutX="10.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weather" />
+                    <HBox fx:id="hbxWeatherContainer" layoutX="10.0" layoutY="144.0" />
+                    <AnchorPane maxHeight="75.0" prefWidth="200.0" />
+                </children>
+            </VBox>
+        </content>
+        <padding>
+            <Insets left="6.0" right="6.0" />
+        </padding>
+    </ScrollPane>
 </AnchorPane>

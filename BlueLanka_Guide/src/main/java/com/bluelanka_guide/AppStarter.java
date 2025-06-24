@@ -10,7 +10,7 @@ public class AppStarter extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-    //    Model.getInstance().getViewFactoryMain().showLoginWindow();
+//        Model.getInstance().getViewFactoryMain().showLoginWindow();
         Model.getInstance().getViewFactoryMain().showMainWindow();
     }
 }
