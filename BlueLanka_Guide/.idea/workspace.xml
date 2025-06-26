@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5033f2a-47a9-457e-a658-d79af2645b33" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/data/trip_plan_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/data/trip_plan_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/UserTripPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/UserTripPlan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +59,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -134,7 +136,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1745946042792</updated>
-      <workItem from="1750948790699" duration="961000" />
+      <workItem from="1750948790699" duration="10379000" />
     </task>
     <servers />
   </component>

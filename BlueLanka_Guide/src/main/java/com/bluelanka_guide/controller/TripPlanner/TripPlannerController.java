@@ -2,14 +2,11 @@ package com.bluelanka_guide.controller.TripPlanner;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
@@ -17,9 +14,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
-import javafx.scene.control.cell.PropertyValueFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.core.type.TypeReference;
 
 public class TripPlannerController implements Initializable{
 
@@ -65,14 +60,15 @@ public class TripPlannerController implements Initializable{
     @FXML
     private CheckBox checkRelaxation, checkSnorkeling, checkDiving, checkFishing;
 
+
     // FXML injected toggle groups
     @FXML private ToggleGroup destinations;
     @FXML private ToggleGroup experienceType;
     @FXML private ToggleGroup tripDuration;
     @FXML private ToggleGroup budgetType;
-    private List<User> userData;
+    private List<UserTripPlan> userData;
 
-    private ObservableList<UserTripPlan> tripList = FXCollections.observableArrayList();
+
 
     public int currentTabIndex = 0;
     public final int TOTAL_TABS = 4;
@@ -133,32 +129,7 @@ public class TripPlannerController implements Initializable{
             mainTabPane.getTabs().get(0).setDisable(false);
         }
 
-        // load data from json file
-        loadDataFromJSON();
     }
-
-    private void loadDataFromJSON() {
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-
-            // Load JSON file from resources or absolute path
-            File jsonFile = new File("src/main/resources/FXML/TripPlanner/data/trip_plan_data.json");
-            // Or from resources:
-            // InputStream inputStream = getClass().getResourceAsStream("/data.json");
-
-            // Parse JSON to List of Person objects
-            List<UserTripPlan> persons = mapper.readValue(jsonFile,
-                    new TypeReference<List<UserTripPlan>>() {});
-
-            // Add to observable list
-            tripList.addAll(persons);
-
-        } catch (IOException e) {
-            System.err.println("Error loading JSON data: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
-
 
 
     public void handleNextButton(ActionEvent actionEvent) {
@@ -291,7 +262,7 @@ public class TripPlannerController implements Initializable{
         if(radBudgetLuxury.isSelected()) tripData.append("- Luxury Budget\n");
 
         // Show generated trip plan (you can replace this with actual trip generation logic)
-        //showAlert("Trip Plan Generated", tripData.toString());
+        showAlert("Trip Plan Generated", tripData.toString());
 
         loadJsonFromResources();
     }
@@ -328,6 +299,7 @@ public class TripPlannerController implements Initializable{
                 JsonNode rootNode = mapper.readTree(inputStream);
                 userData = parseJsonData(rootNode);
                 System.out.println("JSON data loaded from resources. Records: " + userData.size());
+                handleSearch(userData);
             } else {
                 System.err.println("JSON file not found in resources");
 
@@ -340,54 +312,53 @@ public class TripPlannerController implements Initializable{
     }
 
     // Parse JSON data into User objects
-    private List<User> parseJsonData(JsonNode rootNode) {
-        List<User> users = new ArrayList<>();
+    private List<UserTripPlan> parseJsonData(JsonNode rootNode) {
+        List<UserTripPlan> userTripPlan = new ArrayList<>();
 
         try {
-            // If JSON is an array of users
+            // If JSON is an array of tripPlan
             if (rootNode.isArray()) {
-                for (JsonNode userNode : rootNode) {
-                    User user = createUserFromJson(userNode);
-                    if (user != null) {
-                        users.add(user);
+                for (JsonNode useTripPlan : rootNode) {
+                    UserTripPlan TripPlan = createTripFromJson(useTripPlan);
+                    if (TripPlan != null) {
+                        userTripPlan.add(TripPlan);
                     }
                 }
             }
             // If JSON has a "users" array property
-            else if (rootNode.has("users")) {
-                JsonNode usersArray = rootNode.get("users");
-                for (JsonNode userNode : usersArray) {
-                    User user = createUserFromJson(userNode);
-                    if (user != null) {
-                        users.add(user);
-                    }
-                }
+            else if (rootNode.isEmpty()) {
+                System.out.println("Empty JSON data");
             }
-            // If JSON is a single user object
             else {
-                User user = createUserFromJson(rootNode);
-                if (user != null) {
-                    users.add(user);
-                }
+                System.out.println("Invalid JSON data");
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return users;
+        return userTripPlan;
     }
 
     // Create User object from JSON node
-    private User createUserFromJson(JsonNode userNode) {
+    private UserTripPlan createTripFromJson(JsonNode userNode) {
         try {
-            String name = userNode.has("name") ? userNode.get("name").asText() : "";
-            String email = userNode.has("email") ? userNode.get("email").asText() : "";
-            String id = userNode.has("id") ? userNode.get("id").asText() : "";
-            String phone = userNode.has("phone") ? userNode.get("phone").asText() : "";
+            String geographic_region = userNode.has("geographic_region") ? userNode.get("geographic_region").asText() : "";
+            String experience_type = userNode.has("experience_type") ? userNode.get("experience_type").asText() : "";
+            String trip_duration = userNode.has("trip_duration") ? userNode.get("trip_duration").asText() : "";
+            String sea_activities = userNode.has("sea_activities") ? userNode.get("sea_activities").asText() : "";
+            String budget_range = userNode.has("budget_range") ? userNode.get("budget_range").asText() : "";
+            String title = userNode.has("title") ? userNode.get("title").asText() : "";
+            String description = userNode.has("id") ? userNode.get("id").asText() : "";
+            String[] itinerary = userNode.get("itinerary").asText().split(",");
+            String estimated_cost = userNode.has("estimated_cost") ? userNode.get("estimated_cost").asText() : "";
+            String accommodation = userNode.has("accommodation") ? userNode.get("accommodation").asText() : "";
+            String transportation = userNode.has("transportation") ? userNode.get("transportation").asText() : "";
+            String meals = userNode.has("meals") ? userNode.get("meals").asText() : "";
+            String[] activities = userNode.get("activities").asText().split(",");
 
-            return new User(name, email, id, phone);
-        } catch (Exception e) {
+            return new UserTripPlan(geographic_region, experience_type,trip_duration, sea_activities, budget_range, title, description, itinerary, estimated_cost, accommodation, transportation, meals, activities);
+        } catch (RuntimeException e) {
             e.printStackTrace();
             return null;
         }
@@ -395,42 +366,35 @@ public class TripPlannerController implements Initializable{
 
     // Search button click handler
     @FXML
-    private void handleSearch(ActionEvent event) {
-//        String inputName = nameField.getText().trim();
-//        String inputEmail = emailField.getText().trim();
-//
-//        if (inputName.isEmpty() && inputEmail.isEmpty()) {
-//
-//            return;
-//        }
-//
-//        List<User> matches = findMatches(inputName, inputEmail);
-//        displayResults(matches);
-    }
+    private void handleSearch(List<UserTripPlan> userTripPlan) {
+        RadioButton destinationToggleGroup = (RadioButton) destinations.getSelectedToggle();
+        String destinationGroupValue = destinationToggleGroup.getText();
+        System.out.println(destinationGroupValue);
 
-    // Find matching users
-    private List<User> findMatches(String name, String email) {
-        List<User> matches = new ArrayList<>();
+        RadioButton experienceTypeToggleGroup = (RadioButton) experienceType.getSelectedToggle();
+        String experienceGroupValue = experienceTypeToggleGroup.getText();
+        System.out.println(experienceGroupValue);
 
-        if (userData == null || userData.isEmpty()) {
-            return matches;
-        }
+        RadioButton tripDurationToggleGroup = (RadioButton) tripDuration.getSelectedToggle();
+        String durationGroupValue = tripDurationToggleGroup.getText();
+        System.out.println(durationGroupValue);
 
-        for (User user : userData) {
-            boolean nameMatch = name.isEmpty() ||
-                    (user.getName() != null && user.getName().toLowerCase().contains(name.toLowerCase()));
+        RadioButton budgetTypeToggleGroup = (RadioButton) budgetType.getSelectedToggle();
+        String budgetGroupValue = budgetTypeToggleGroup.getText();
+        System.out.println(budgetGroupValue);
 
-            boolean emailMatch = email.isEmpty() ||
-                    (user.getEmail() != null && user.getEmail().toLowerCase().equals(email.toLowerCase()));
-
-            // Match if both conditions are satisfied (AND logic)
-            if (nameMatch && emailMatch) {
-                matches.add(user);
+        for (UserTripPlan useTripPlan : userTripPlan) {
+            System.out.println(useTripPlan.geographic_region);
+            if(destinationGroupValue.equalsIgnoreCase(useTripPlan.geographic_region) && experienceGroupValue.equalsIgnoreCase(useTripPlan.experience_type) && durationGroupValue.equalsIgnoreCase(useTripPlan.trip_duration) && budgetGroupValue.equalsIgnoreCase(useTripPlan.budget_range)) {
+                System.out.println(useTripPlan.estimated_cost);
+            }
+            else {
+                continue;
             }
         }
 
-        return matches;
     }
+
 
     // Display search results
     private void displayResults(List<User> matches) {
