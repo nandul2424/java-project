@@ -1,5 +1,4 @@
-{
-  "trip_plans": [
+[
     {
       "id": 1,
       "geographic_region": "Mirissa",
@@ -671,15 +670,4 @@
       "meals": "Healthy vegetarian meals and herbal teas",
       "activities": ["Beach yoga", "Sea therapy", "Meditation", "Temple visits", "Ayurvedic consultation"]
     }
-  ],
-  "metadata": {
-    "total_plans": 30,
-    "regions_covered": 7,
-    "experience_types_covered": 4,
-    "duration_types_covered": 4,
-    "activity_types_covered": 4,
-    "budget_ranges_covered": 3,
-    "currency": "LKR (Sri Lankan Rupees)",
-    "last_updated": "2025-06-01"
-  }
-}
+]

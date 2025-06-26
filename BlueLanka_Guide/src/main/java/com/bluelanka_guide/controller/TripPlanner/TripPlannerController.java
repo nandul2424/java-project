@@ -1,5 +1,6 @@
 package com.bluelanka_guide.controller.TripPlanner;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,9 +10,12 @@ import javafx.scene.control.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+
 
 import javafx.scene.control.cell.PropertyValueFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -66,6 +70,7 @@ public class TripPlannerController implements Initializable{
     @FXML private ToggleGroup experienceType;
     @FXML private ToggleGroup tripDuration;
     @FXML private ToggleGroup budgetType;
+    private List<User> userData;
 
     private ObservableList<UserTripPlan> tripList = FXCollections.observableArrayList();
 
@@ -286,8 +291,9 @@ public class TripPlannerController implements Initializable{
         if(radBudgetLuxury.isSelected()) tripData.append("- Luxury Budget\n");
 
         // Show generated trip plan (you can replace this with actual trip generation logic)
-        showAlert("Trip Plan Generated", tripData.toString());
+        //showAlert("Trip Plan Generated", tripData.toString());
 
+        loadJsonFromResources();
     }
 
 
@@ -310,6 +316,138 @@ public class TripPlannerController implements Initializable{
             nextActionButton.setVisible(true);
             GenerateActionButton.setVisible(false);
             nextActionButton.setDisable(false);
+        }
+    }
+
+    private  void loadJsonFromResources() {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            InputStream inputStream = getClass().getResourceAsStream("/FXML/TripPlanner/data/trip_plan_data.json");
+            System.out.println(inputStream);
+            if (inputStream != null) {
+                JsonNode rootNode = mapper.readTree(inputStream);
+                userData = parseJsonData(rootNode);
+                System.out.println("JSON data loaded from resources. Records: " + userData.size());
+            } else {
+                System.err.println("JSON file not found in resources");
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+    }
+
+    // Parse JSON data into User objects
+    private List<User> parseJsonData(JsonNode rootNode) {
+        List<User> users = new ArrayList<>();
+
+        try {
+            // If JSON is an array of users
+            if (rootNode.isArray()) {
+                for (JsonNode userNode : rootNode) {
+                    User user = createUserFromJson(userNode);
+                    if (user != null) {
+                        users.add(user);
+                    }
+                }
+            }
+            // If JSON has a "users" array property
+            else if (rootNode.has("users")) {
+                JsonNode usersArray = rootNode.get("users");
+                for (JsonNode userNode : usersArray) {
+                    User user = createUserFromJson(userNode);
+                    if (user != null) {
+                        users.add(user);
+                    }
+                }
+            }
+            // If JSON is a single user object
+            else {
+                User user = createUserFromJson(rootNode);
+                if (user != null) {
+                    users.add(user);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return users;
+    }
+
+    // Create User object from JSON node
+    private User createUserFromJson(JsonNode userNode) {
+        try {
+            String name = userNode.has("name") ? userNode.get("name").asText() : "";
+            String email = userNode.has("email") ? userNode.get("email").asText() : "";
+            String id = userNode.has("id") ? userNode.get("id").asText() : "";
+            String phone = userNode.has("phone") ? userNode.get("phone").asText() : "";
+
+            return new User(name, email, id, phone);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // Search button click handler
+    @FXML
+    private void handleSearch(ActionEvent event) {
+//        String inputName = nameField.getText().trim();
+//        String inputEmail = emailField.getText().trim();
+//
+//        if (inputName.isEmpty() && inputEmail.isEmpty()) {
+//
+//            return;
+//        }
+//
+//        List<User> matches = findMatches(inputName, inputEmail);
+//        displayResults(matches);
+    }
+
+    // Find matching users
+    private List<User> findMatches(String name, String email) {
+        List<User> matches = new ArrayList<>();
+
+        if (userData == null || userData.isEmpty()) {
+            return matches;
+        }
+
+        for (User user : userData) {
+            boolean nameMatch = name.isEmpty() ||
+                    (user.getName() != null && user.getName().toLowerCase().contains(name.toLowerCase()));
+
+            boolean emailMatch = email.isEmpty() ||
+                    (user.getEmail() != null && user.getEmail().toLowerCase().equals(email.toLowerCase()));
+
+            // Match if both conditions are satisfied (AND logic)
+            if (nameMatch && emailMatch) {
+                matches.add(user);
+            }
+        }
+
+        return matches;
+    }
+
+    // Display search results
+    private void displayResults(List<User> matches) {
+        if (matches.isEmpty()) {
+
+        } else if (matches.size() == 1) {
+            User user = matches.get(0);
+
+        } else {
+            StringBuilder result = new StringBuilder("Multiple matches found:\n");
+            for (int i = 0; i < Math.min(matches.size(), 3); i++) {
+                User user = matches.get(i);
+                result.append(String.format("%d. %s (%s)\n", i + 1, user.getName(), user.getEmail()));
+            }
+            if (matches.size() > 3) {
+                result.append(String.format("... and %d more", matches.size() - 3));
+            }
         }
     }
 
