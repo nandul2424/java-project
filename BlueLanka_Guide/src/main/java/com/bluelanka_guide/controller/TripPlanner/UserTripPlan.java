@@ -25,7 +25,7 @@ public class UserTripPlan {
         this.experience_type = experience_type;
         this.trip_duration = trip_duration;
         this.sea_activities = sea_activities;
-        this.budget_range = transportation;
+        this.budget_range = budget_range;
         this.title = title;
         this.description = description;
         this.itinerary = itinerary;

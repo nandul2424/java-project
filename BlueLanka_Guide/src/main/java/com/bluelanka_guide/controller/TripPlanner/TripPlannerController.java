@@ -369,29 +369,35 @@ public class TripPlannerController implements Initializable{
     private void handleSearch(List<UserTripPlan> userTripPlan) {
         RadioButton destinationToggleGroup = (RadioButton) destinations.getSelectedToggle();
         String destinationGroupValue = destinationToggleGroup.getText();
-        System.out.println(destinationGroupValue);
+        //System.out.println(destinationGroupValue);
 
         RadioButton experienceTypeToggleGroup = (RadioButton) experienceType.getSelectedToggle();
         String experienceGroupValue = experienceTypeToggleGroup.getText();
-        System.out.println(experienceGroupValue);
+        //System.out.println(experienceGroupValue);
 
         RadioButton tripDurationToggleGroup = (RadioButton) tripDuration.getSelectedToggle();
         String durationGroupValue = tripDurationToggleGroup.getText();
-        System.out.println(durationGroupValue);
+        //System.out.println(durationGroupValue);
 
         RadioButton budgetTypeToggleGroup = (RadioButton) budgetType.getSelectedToggle();
         String budgetGroupValue = budgetTypeToggleGroup.getText();
-        System.out.println(budgetGroupValue);
+        System.out.println(destinationGroupValue + experienceGroupValue + durationGroupValue + budgetGroupValue);
 
         for (UserTripPlan useTripPlan : userTripPlan) {
-            System.out.println(useTripPlan.geographic_region);
+            System.out.println(useTripPlan.geographic_region + useTripPlan.experience_type + useTripPlan.trip_duration + useTripPlan.budget_range);
+             //&& experienceGroupValue.equalsIgnoreCase(useTripPlan.experience_type) && durationGroupValue.equalsIgnoreCase(useTripPlan.trip_duration) && budgetGroupValue.equalsIgnoreCase(useTripPlan.budget_range)
             if(destinationGroupValue.equalsIgnoreCase(useTripPlan.geographic_region) && experienceGroupValue.equalsIgnoreCase(useTripPlan.experience_type) && durationGroupValue.equalsIgnoreCase(useTripPlan.trip_duration) && budgetGroupValue.equalsIgnoreCase(useTripPlan.budget_range)) {
-                System.out.println(useTripPlan.estimated_cost);
+                System.out.println(" ===> " + useTripPlan.estimated_cost);
+                DialogBoxes dialogBoxes = new DialogBoxes();
+                dialogBoxes.showProgressDialog();
+
+                return;
             }
             else {
                 continue;
             }
         }
+        System.out.println("Can't find destination Trip Plan Yet !");
 
     }
 
