@@ -79,14 +79,14 @@
                            <Label styleClass="section_header" text="How long would you like your trip to be ?" />
                            <TitledPane text="Trip Duration">
                                <VBox spacing="10">
-                                   <RadioButton fx:id="radDayTrip" text="Day Trip (1 day)" >
+                                   <RadioButton fx:id="radDayTrip" text="Day Trip" >
                                        <toggleGroup>
                                            <ToggleGroup fx:id="tripDuration" />
                                        </toggleGroup>
                                    </RadioButton>
-                                   <RadioButton fx:id="radWeekend" text="Weekend Gateway (2-3 days)" toggleGroup="$tripDuration"/>
-                                   <RadioButton fx:id="radWeek" text="Week-long Vacation(4-7 days)" toggleGroup="$tripDuration" />
-                                   <RadioButton fx:id="radExtended" text="Extended Journey (8+ days)" toggleGroup="$tripDuration" />
+                                   <RadioButton fx:id="radWeekend" text="Weekend Gateway" toggleGroup="$tripDuration"/>
+                                   <RadioButton fx:id="radWeek" text="Week-long Vacation" toggleGroup="$tripDuration" />
+                                   <RadioButton fx:id="radExtended" text="Extended Journey" toggleGroup="$tripDuration" />
                                </VBox>
 
                            </TitledPane>
