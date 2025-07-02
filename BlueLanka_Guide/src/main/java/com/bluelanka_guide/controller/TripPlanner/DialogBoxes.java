@@ -55,9 +55,5 @@ public class DialogBoxes {
         // Show dialog non-blocking
         dialog.show();
 
-        // Simulate progress updates
-        // You would typically do this from a background thread
-        // dialog.updateProgress(0.5, "50% complete");
-        // dialog.close(); // Close when done
     }
 }

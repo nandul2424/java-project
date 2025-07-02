@@ -388,8 +388,8 @@ public class TripPlannerController implements Initializable{
              //&& experienceGroupValue.equalsIgnoreCase(useTripPlan.experience_type) && durationGroupValue.equalsIgnoreCase(useTripPlan.trip_duration) && budgetGroupValue.equalsIgnoreCase(useTripPlan.budget_range)
             if(destinationGroupValue.equalsIgnoreCase(useTripPlan.geographic_region) && experienceGroupValue.equalsIgnoreCase(useTripPlan.experience_type) && durationGroupValue.equalsIgnoreCase(useTripPlan.trip_duration) && budgetGroupValue.equalsIgnoreCase(useTripPlan.budget_range)) {
                 System.out.println(" ===> " + useTripPlan.estimated_cost);
-                DialogBoxes dialogBoxes = new DialogBoxes();
-                dialogBoxes.showProgressDialog();
+                AnimatedDialogUsage dialogBoxes = new AnimatedDialogUsage();
+                dialogBoxes.showSlideNotification(useTripPlan.estimated_cost);
 
                 return;
             }

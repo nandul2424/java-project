@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e5033f2a-47a9-457e-a658-d79af2645b33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/AnimatedDialogUsage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/AnimatedDialogUsage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/DialogBoxes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/DialogBoxes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/UserTripPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/UserTripPlan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/data/trip_plan_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/data/trip_plan_data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,12 +41,12 @@
     &quot;assignee&quot;: &quot;iSiRaH&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Erangamadhushan/javaOOP-project.git",
-    "accountId": "b24630e1-9b7d-47bf-864f-fe78260e0fbf"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Erangamadhushan/javaOOP-project.git&quot;,
+    &quot;accountId&quot;: &quot;b24630e1-9b7d-47bf-864f-fe78260e0fbf&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_10_module-info.class" root0="SKIP_INSPECTION" />
     <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_3_module-info.class" root0="SKIP_INSPECTION" />
@@ -72,32 +73,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AppStarter.executor": "Debug",
-    "Application.DestinationsController.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.MapIntegration.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Eranga/Github/OOP Project/javaOOP-project/BlueLanka_Guide",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AppStarter.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.DestinationsController.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MapIntegration.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Eranga/Github/OOP Project/javaOOP-project/BlueLanka_Guide&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.bluelanka_guide.models.WeatherModel" />
@@ -136,7 +137,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1745946042792</updated>
-      <workItem from="1750948790699" duration="14594000" />
+      <workItem from="1750948790699" duration="15552000" />
+      <workItem from="1751477709108" duration="2576000" />
     </task>
     <servers />
   </component>

@@ -23,9 +23,9 @@ public class AnimatedDialogUsage {
         dialog.showAndWait();
     }
 
-    public void showSlideNotification() {
+    public void showSlideNotification(String cost) {
         SlideNotificationDialog dialog = new SlideNotificationDialog(
-                "Operation completed successfully!",
+                "Estimate cost of your selected trip plan" + cost,
                 SlideNotificationDialog.NotificationType.SUCCESS
         );
         dialog.show(); // Non-blocking, auto-closes
