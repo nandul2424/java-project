@@ -102,11 +102,11 @@ public class DashboardController implements Initializable {
          addCityCard("Trincomalee", "4.5" , getClass().getResource("/assets/images/dashboard/newloc.png").toExternalForm());
 
          //activity cards
-         addActivityCard("Surfing", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
-         addActivityCard("Diving", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
-         addActivityCard("Whale Watching", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
-         addActivityCard("Sea Turtle Watching", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
-         addActivityCard("Beach Volleyball", "4.8", getClass().getResource("/assets/images/surf.jpg").toExternalForm());
+         addActivityCard("Surfing", "4.8", getClass().getResource("/assets/images/dashboard/activities/surf.png").toExternalForm());
+         addActivityCard("Diving", "4.8", getClass().getResource("/assets/images/dashboard/activities/diving.png").toExternalForm());
+         addActivityCard("Whale Watching", "4.8", getClass().getResource("/assets/images/dashboard/activities/whale_watching.png").toExternalForm());
+         addActivityCard("Sea Turtle Watching", "4.8", getClass().getResource("/assets/images/dashboard/activities/turtle_watching.png").toExternalForm());
+         addActivityCard("Beach Volleyball", "4.8", getClass().getResource("/assets/images/dashboard/activities/beach_volleyball.png").toExternalForm());
      }
 
 

@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5033f2a-47a9-457e-a658-d79af2645b33" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/ActivityCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/ActivityCardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/LocationCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/LocationCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DestinationsPage/DestinationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DestinationsPage/DestinationsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryTravelTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryTravelTools.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Dashboard/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Dashboard/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Dashboard/LocationCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Dashboard/LocationCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Slider_images/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Slider_images/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Slider_images/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Slider_images/4.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +94,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "isira",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/USER/Desktop/Java Tutorials/java-project/BlueLanka_Guide",
+    "last_opened_file_path": "C:/Users/USER/Desktop/Java Tutorials/java-project/BlueLanka_Guide/src/main/resources/assets/images/dashboard/activities",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -95,6 +107,7 @@
       <recent name="com.bluelanka_guide.models.WeatherModel" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide\src\main\resources\assets\images\dashboard\activities" />
       <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide\src\main\resources\assets\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">

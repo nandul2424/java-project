@@ -283,6 +283,10 @@ public class DestinationsController implements Initializable {
         System.out.println("Initialized " + destinations.size() + " beach destinations in Sri Lanka");
     }
 
+    private List<Destination> getDestinations(){
+        return destinations;
+    }
+
     private void populateDestinationList() {
         if (popularDestinationList == null) {
             System.err.println("popularDestinationList is null!");
