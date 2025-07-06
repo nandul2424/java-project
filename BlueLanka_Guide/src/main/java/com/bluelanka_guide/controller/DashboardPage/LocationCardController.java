@@ -18,8 +18,6 @@ public class LocationCardController implements Initializable {
     public Label lblLocation;
     public Label lblRating;
 
-//    Destination destination =
-
     public void setCityData(String cityName, String rating, String imageUrl) {
         lblLocation.setText(cityName);
         imgVwLocation.setImage(new Image(imageUrl));
@@ -28,7 +26,7 @@ public class LocationCardController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        System.out.println(Model.getInstance().getDestinationManager().getDestinationsList().size());
     }
 
     public void goToDestinations(MouseEvent mouseEvent) {

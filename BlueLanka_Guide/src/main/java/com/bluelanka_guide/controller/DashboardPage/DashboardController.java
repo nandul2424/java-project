@@ -1,5 +1,8 @@
 package com.bluelanka_guide.controller.DashboardPage;
 
+import com.bluelanka_guide.controller.DestinationsPage.DestinationManager;
+import com.bluelanka_guide.controller.DestinationsPage.DestinationsController;
+import com.bluelanka_guide.models.Model;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +14,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 import javafx.scene.shape.Circle;
+
+import javax.print.attribute.standard.Destination;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -42,6 +47,7 @@ public class DashboardController implements Initializable {
     private int currentActivityIndex = 0;
     private Timeline activityTimeline;
 
+    DestinationManager destinationManager = Model.getInstance().getDestinationManager();
 
      @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -95,11 +101,9 @@ public class DashboardController implements Initializable {
 
      private void loadCards() {
          //location cards
-         addCityCard("Hikkaduwa", "4.5" , getClass().getResource("/assets/images/dashboard/newloc.png").toExternalForm());
-         addCityCard("Negombo", "4.5" , getClass().getResource("/assets/images/dashboard/newloc.png").toExternalForm());
-         addCityCard("Arugam Bay", "4.5" , getClass().getResource("/assets/images/dashboard/newloc.png").toExternalForm());
-         addCityCard("Galle", "4.5" , getClass().getResource("/assets/images/dashboard/newloc.png").toExternalForm());
-         addCityCard("Trincomalee", "4.5" , getClass().getResource("/assets/images/dashboard/newloc.png").toExternalForm());
+         for(DestinationsController.Destination d: destinationManager.getDestinationsList()){
+             addCityCard(d.getName(), String.valueOf(d.getRating()) , getClass().getResource(d.getImagePath()).toExternalForm());
+         }
 
          //activity cards
          addActivityCard("Surfing", "4.8", getClass().getResource("/assets/images/dashboard/activities/surf.png").toExternalForm());
