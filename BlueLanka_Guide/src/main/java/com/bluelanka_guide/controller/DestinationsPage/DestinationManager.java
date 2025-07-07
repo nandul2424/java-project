@@ -114,6 +114,10 @@ public class DestinationManager {
         return destinationsList;
     }
 
+    public DestinationsController.Destination getSelectedDestination(int currentIndex){
+        return destinationsList.get(currentIndex);
+    }
+
     public void setDestinationsList(List<DestinationsController.Destination> destinationsList) {
         this.destinationsList = destinationsList;
     }
