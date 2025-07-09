@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: black;" styleClass="location_card_container" stylesheets="@../../styles/Dashboard/locationCard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.DashboardPage.LocationCardController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#goToDestinations" prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: black;" styleClass="location_card_container" stylesheets="@../../styles/Dashboard/locationCard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.DashboardPage.LocationCardController">
    <children>
       <Pane styleClass="location_card_container" AnchorPane.bottomAnchor="-39.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-40.0" AnchorPane.topAnchor="0.0">
          <children>

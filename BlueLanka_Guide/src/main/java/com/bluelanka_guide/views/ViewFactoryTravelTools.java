@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -181,6 +182,7 @@ public class ViewFactoryTravelTools {
         }
         Stage stage = new Stage();
         stage.setTitle("BlueLanka Guide");
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/assets/images/logo.png"))));
         stage.setScene(scene);
         stage.show();
     }
