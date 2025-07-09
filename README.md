@@ -30,6 +30,7 @@ Essential utilities that assist tourists during their journey:
 - **Unit Converter**
 - **Travel Checklist**
 - **Emergency Contacts**
+- **Language Translator**
 
 ---
 
