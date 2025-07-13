@@ -52,6 +52,8 @@ TabPane {
 }
 .tab {
     -fx-padding:10 20;
+    -fx-background-color: #98c9ec;
+    -fx-font-size:16;
 }
 .tabs {
     -fx-background-color: transparent;

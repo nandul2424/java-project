@@ -68,44 +68,41 @@
            <center>
                <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE">
                    <Tab fx:id="destinationsTab" styleClass="tab" text="Destination">
-                       <ScrollPane style="-fx-background-color: transparent;">
-                           <HBox>
-                               <VBox spacing="15" styleClass="content-container">
-                                   <padding>
-                                       <Insets bottom="20" left="20" right="20" top="20" />
-                                   </padding>
-                                   <Label styleClass="section_header" text="Select your preferred Destinations" />
-                                   <TitledPane styleClass="tabs" text="Geographic Regions" HBox.hgrow="ALWAYS">
-                                       <VBox prefHeight="181.0" prefWidth="317.0" spacing="10">
-                                           <RadioButton fx:id="checkMirissa" text="Mirissa">
-                                               <toggleGroup>
-                                                   <ToggleGroup fx:id="destinations" />
-                                               </toggleGroup>
-                                           </RadioButton>
-                                           <RadioButton fx:id="checkUnawatuna" text="Unawatuna" toggleGroup="$destinations" />
-                                           <RadioButton fx:id="checkArugambay" text="Arugam Bay" toggleGroup="$destinations" />
-                                           <RadioButton fx:id="checkHikkaduwa" text="Hikkaduwa" toggleGroup="$destinations" />
-                                           <RadioButton fx:id="checkTangalle" text="Tangalle" toggleGroup="$destinations" />
-                                           <RadioButton fx:id="checkBentota" text="Bentota" toggleGroup="$destinations" />
-                                           <RadioButton fx:id="checkKalpitiya" text="Kalpitiya" toggleGroup="$destinations" />
-                                       </VBox>
-
-                                   </TitledPane>
-                                   <TitledPane prefHeight="148.0" prefWidth="314.0" text="Experience Type" HBox.hgrow="ALWAYS">
-                                       <VBox spacing="10">
-                                           <RadioButton fx:id="radCoastal" text="Coastal Exploration">
-                                               <toggleGroup>
-                                                   <ToggleGroup fx:id="experienceType" />
-                                               </toggleGroup>
-                                           </RadioButton>
-                                           <RadioButton fx:id="radOpenSea" text="Open Sea Adventure" toggleGroup="$experienceType" />
-                                           <RadioButton fx:id="radIslandHopping" text="Island Hopping" toggleGroup="$experienceType" />
-                                           <RadioButton fx:id="radMixed" text="Mixed Experience" toggleGroup="$experienceType" />
-                                       </VBox>
-                                   </TitledPane>
+                       <VBox spacing="15" styleClass="content-container">
+                           <padding>
+                               <Insets bottom="20" left="20" right="20" top="20" />
+                           </padding>
+                           <Label styleClass="section_header" text="Select your preferred Destinations" />
+                           <TitledPane styleClass="tabs" text="Geographic Regions" HBox.hgrow="ALWAYS">
+                               <VBox prefHeight="181.0" prefWidth="317.0" spacing="10">
+                                   <RadioButton fx:id="checkMirissa" text="Mirissa">
+                                       <toggleGroup>
+                                           <ToggleGroup fx:id="destinations" />
+                                       </toggleGroup>
+                                   </RadioButton>
+                                   <RadioButton fx:id="checkUnawatuna" text="Unawatuna" toggleGroup="$destinations" />
+                                   <RadioButton fx:id="checkArugambay" text="Arugam Bay" toggleGroup="$destinations" />
+                                   <RadioButton fx:id="checkHikkaduwa" text="Hikkaduwa" toggleGroup="$destinations" />
+                                   <RadioButton fx:id="checkTangalle" text="Tangalle" toggleGroup="$destinations" />
+                                   <RadioButton fx:id="checkBentota" text="Bentota" toggleGroup="$destinations" />
+                                   <RadioButton fx:id="checkKalpitiya" text="Kalpitiya" toggleGroup="$destinations" />
                                </VBox>
-                           </HBox>
-                       </ScrollPane>
+
+                           </TitledPane>
+                           <TitledPane prefHeight="148.0" prefWidth="314.0" text="Experience Type" HBox.hgrow="ALWAYS">
+                               <VBox spacing="10">
+                                   <RadioButton fx:id="radCoastal" text="Coastal Exploration">
+                                       <toggleGroup>
+                                           <ToggleGroup fx:id="experienceType" />
+                                       </toggleGroup>
+                                   </RadioButton>
+                                   <RadioButton fx:id="radOpenSea" text="Open Sea Adventure" toggleGroup="$experienceType" />
+                                   <RadioButton fx:id="radIslandHopping" text="Island Hopping" toggleGroup="$experienceType" />
+                                   <RadioButton fx:id="radMixed" text="Mixed Experience" toggleGroup="$experienceType" />
+                               </VBox>
+                           </TitledPane>
+                       </VBox>
+
                    </Tab>
                    <Tab fx:id="durationTab" styleClass="tab" text="Duration">
                        <VBox spacing="15" styleClass="countent-container">
@@ -129,7 +126,6 @@
                        </VBox>
                    </Tab>
                    <Tab fx:id="activitiesTab" styleClass="tab" text="Activities">
-                       <ScrollPane fitToWidth="true">
                            <VBox spacing="15" styleClass="content-container">
                                <padding>
                                    <Insets bottom="20" left="20" right="20" top="20" />
@@ -150,7 +146,7 @@
                                    </VBox>
                                </HBox>
                            </VBox>
-                       </ScrollPane>
+
                    </Tab>
                    <Tab fx:id="budgetTab" styleClass="tab" text="Budget Scheduling">
                        <VBox spacing="15" styleClass="content-container">
