@@ -4,7 +4,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.StackPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,9 +13,9 @@ public class ActivityCardController implements Initializable {
     public Label lblActivity;
     public Label lblRating;
 
-    public void setActivityData(String activityName, String activityDescription, String imageUrl) {
+    public void setActivityData(String activityName, String activityRating, String imageUrl) {
         lblActivity.setText(activityName);
-        lblRating.setText(activityDescription);
+        lblRating.setText(activityRating);
         imgVwLocation.setImage(new Image(imageUrl));
     }
 

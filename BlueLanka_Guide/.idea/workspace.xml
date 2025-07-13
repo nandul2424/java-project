@@ -4,9 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5033f2a-47a9-457e-a658-d79af2645b33" name="Changes" comment="">
+    <list default="true" id="aa7da2a7-aa82-40ad-881b-bc0b5e5e737f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DestinationsPage/DestinationManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/images/dashboard/activities/beach_volleyball.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/images/dashboard/activities/diving.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/images/dashboard/activities/surf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/images/dashboard/activities/turtle_watching.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/images/dashboard/activities/whale_watching.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/ActivityCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/ActivityCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/LocationCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DashboardPage/LocationCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DestinationsPage/DestinationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/DestinationsPage/DestinationsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryTravelTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/views/ViewFactoryTravelTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Dashboard/LocationCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Dashboard/LocationCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Slider_images/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Slider_images/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Slider_images/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Slider_images/4.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,28 +90,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.AppStarter.executor": "Debug",
-    "Application.DestinationsController.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.MapIntegration.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "div",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Eranga/Github/OOP Project/javaOOP-project/BlueLanka_Guide",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
-    "vue.rearranger.settings.migration": "true"
+    "git-widget-placeholder": "Merging main"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -101,6 +98,7 @@
       <recent name="com.bluelanka_guide.models.WeatherModel" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide\src\main\resources\assets\images\dashboard\activities" />
       <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide\src\main\resources\assets\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -118,14 +116,6 @@
       </method>
     </configuration>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -135,9 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1745946042792</updated>
       <workItem from="1750948790699" duration="15552000" />
-      <workItem from="1751477709108" duration="3021000" />
-      <workItem from="1751728568324" duration="118000" />
-      <workItem from="1752427776835" duration="5750000" />
+      <workItem from="1751477709108" duration="2576000" />
     </task>
     <servers />
   </component>

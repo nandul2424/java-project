@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -131,6 +132,7 @@ public class ViewFactoryMain {
         }
         Stage stage = new Stage();
         stage.setTitle("BlueLanka Guide");
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/assets/images/logo.png"))));
         stage.setScene(scene);
         stage.show();
     }
