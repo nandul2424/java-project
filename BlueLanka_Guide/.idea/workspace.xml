@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e5033f2a-47a9-457e-a658-d79af2645b33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/AnimatedDialogUsage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/AnimatedDialogUsage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/DialogBoxes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/DialogBoxes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/data/trip_plan_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/data/trip_plan_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/TripPlanner.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/TripPlanner.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/tripPlanning.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +137,9 @@
       <option name="presentableId" value="Default" />
       <updated>1745946042792</updated>
       <workItem from="1750948790699" duration="15552000" />
-      <workItem from="1751477709108" duration="2576000" />
+      <workItem from="1751477709108" duration="3021000" />
+      <workItem from="1751728568324" duration="118000" />
+      <workItem from="1752427776835" duration="2371000" />
     </task>
     <servers />
   </component>

@@ -17,3 +17,28 @@ TabPane {
     -fx-text-alignment: center;
 
 }
+
+.action_next_button {
+    -fx-background-color: #2101ff;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20;
+    -fx-text-fill: #ffffff;
+}
+
+.action_prev_button {
+    -fx-background-color: #2101ff;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20;
+    -fx-text-fill: #ffffff;
+}
+
+.action_generate_button {
+    -fx-background-color: #2101ff;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20;
+    -fx-text-fill: #ffffff;
+}
+
+.tabs {
+    -fx-background-color: transparent;
+}
