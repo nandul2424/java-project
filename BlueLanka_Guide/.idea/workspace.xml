@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/TripPlanner.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/TripPlanner.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/tripPlanning.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +138,7 @@
       <workItem from="1750948790699" duration="15552000" />
       <workItem from="1751477709108" duration="3021000" />
       <workItem from="1751728568324" duration="118000" />
-      <workItem from="1752427776835" duration="2371000" />
+      <workItem from="1752427776835" duration="5005000" />
     </task>
     <servers />
   </component>

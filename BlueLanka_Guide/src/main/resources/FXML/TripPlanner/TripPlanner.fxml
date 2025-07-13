@@ -15,15 +15,54 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.TextArea?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="812.0" prefWidth="1300.0" styleClass="background-pane" stylesheets="@styles/TripPlanner.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TripPlanner.TripPlannerController">
    <children>
-       <BorderPane layoutX="309.0" prefHeight="711.0" prefWidth="689.0" styleClass="section_pane">
+       <BorderPane layoutX="0" prefHeight="711.0" prefWidth="410.0">
+           <top>
+               <HBox prefHeight="122.0" prefWidth="948.0" styleClass="trip_planner_navbar" BorderPane.alignment="CENTER">
+                   <padding>
+                       <Insets bottom="50" left="50" right="50" top="50" />
+                   </padding>
+                   <Label styleClass="navbar_heading" text="BlueLanka Trip Planning " textAlignment="CENTER" />
+               </HBox>
+           </top>
+           <center>
+               <VBox>
+                   <HBox>
+                       <padding>
+                           <Insets bottom="20" left="20" right="20" top="20"/>
+                       </padding>
+                       <Label styleClass="main_description" text="Planning the perfect trip shouldn't be overwhelming. Our intuitive trip planner application puts the power of seamless travel organization right at your fingertips. Whether you're dreaming of a weekend getaway or an epic multi-city adventure, we've got you covered."/>
+                   </HBox>
+                   <HBox>
+                       <padding>
+                           <Insets bottom="40" left="40" right="40" top="40"/>
+                       </padding>
+                       <VBox>
+                           <HBox>
+                               <Label styleClass="journey_start" text="Start Your Journey Today" textAlignment="CENTER"/>
+                           </HBox>
+
+                           <HBox>
+                               <padding>
+                                   <Insets bottom="40" left="20" right="20" top="40"/>
+                               </padding>
+                               <Label styleClass="main_description" text="Ready to turn your travel dreams into well-organized reality? Join thousands of happy travelers who've discovered the joy of stress-free trip planning. Your next adventure is just a few clicks away."/>
+                           </HBox>
+                       </VBox>
+                   </HBox>
+               </VBox>
+           </center>
+
+       </BorderPane>
+       <BorderPane layoutX="410.0" prefHeight="711.0" prefWidth="689.0" styleClass="section_pane">
            <top>
                <HBox prefHeight="122.0" prefWidth="948.0" styleClass="trip_planner_navbar" BorderPane.alignment="CENTER">
                    <padding>
                        <Insets bottom="30" left="30" right="30" top="30" />
                    </padding>
-                   <Label styleClass="navbar_heading" text="BlueLanka Trip Planning " textAlignment="LEFT" />
+                   <Label styleClass="navbar_heading" text="BlueLanka Trip Planning "  />
                </HBox>
            </top>
            <center>
