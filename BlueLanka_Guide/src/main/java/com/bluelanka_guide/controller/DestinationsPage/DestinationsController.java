@@ -25,7 +25,7 @@ import java.util.ResourceBundle;
 
 public class DestinationsController implements Initializable {
 
-    static class Destination {
+    public static class Destination {
         private final int id;
         private final String name;
         private final String country;
@@ -281,6 +281,10 @@ public class DestinationsController implements Initializable {
                 "Temple Visits, Beach Activities, Photography, Cultural Tours", "December to March"));
 
         System.out.println("Initialized " + destinations.size() + " beach destinations in Sri Lanka");
+    }
+
+    private List<Destination> getDestinationsList(){
+        return destinations;
     }
 
     private void populateDestinationList() {
