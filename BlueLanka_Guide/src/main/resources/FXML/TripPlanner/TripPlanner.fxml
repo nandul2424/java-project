@@ -18,7 +18,7 @@
 <?import javafx.scene.control.TextArea?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="812.0" prefWidth="1300.0" styleClass="background-pane" stylesheets="@styles/TripPlanner.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TripPlanner.TripPlannerController">
    <children>
-       <BorderPane layoutX="0" prefHeight="711.0" prefWidth="410.0">
+       <BorderPane layoutX="0" prefHeight="812.0" prefWidth="410.0">
            <top>
                <HBox prefHeight="122.0" prefWidth="948.0" styleClass="trip_planner_navbar" BorderPane.alignment="CENTER">
                    <padding>
@@ -56,7 +56,7 @@
            </center>
 
        </BorderPane>
-       <BorderPane layoutX="410.0" prefHeight="711.0" prefWidth="689.0" styleClass="section_pane">
+       <BorderPane layoutX="410.0" prefHeight="812.0" prefWidth="890.0" styleClass="section_pane">
            <top>
                <HBox prefHeight="122.0" prefWidth="948.0" styleClass="trip_planner_navbar" BorderPane.alignment="CENTER">
                    <padding>
