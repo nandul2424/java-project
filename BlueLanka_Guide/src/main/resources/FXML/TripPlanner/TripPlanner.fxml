@@ -56,7 +56,7 @@
            </center>
 
        </BorderPane>
-       <BorderPane layoutX="410.0" prefHeight="812.0" prefWidth="890.0" styleClass="section_pane">
+       <BorderPane layoutX="410.0" prefHeight="800.0" prefWidth="880.0" styleClass="section_pane">
            <top>
                <HBox prefHeight="122.0" prefWidth="948.0" styleClass="trip_planner_navbar" BorderPane.alignment="CENTER">
                    <padding>
@@ -102,11 +102,8 @@
                                            <RadioButton fx:id="radIslandHopping" text="Island Hopping" toggleGroup="$experienceType" />
                                            <RadioButton fx:id="radMixed" text="Mixed Experience" toggleGroup="$experienceType" />
                                        </VBox>
-
                                    </TitledPane>
-
                                </VBox>
-
                            </HBox>
                        </ScrollPane>
                    </Tab>

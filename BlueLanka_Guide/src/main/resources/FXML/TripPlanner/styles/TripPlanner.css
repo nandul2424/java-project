@@ -50,7 +50,9 @@ TabPane {
     -fx-padding: 10 20;
     -fx-text-fill: #ffffff;
 }
-
+.tab {
+    -fx-padding:10 20;
+}
 .tabs {
     -fx-background-color: transparent;
 }
