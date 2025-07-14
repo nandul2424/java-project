@@ -60,7 +60,7 @@
 }
 
 .explore_container{
-    -fx-spacing: 20;
+    -fx-spacing: 60;
     -fx-border-radius: 25;
     -fx-background-radius: 20;
     -fx-pref-height: 550;
