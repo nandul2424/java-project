@@ -164,7 +164,8 @@ public class ViewFactoryTravelTools {
             return null;
         }
     }
-
+/*
+    //no need
     public void showTravelToolsWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/TravelToolsWindow.fxml"));
         TravelToolsWindowController controller = new TravelToolsWindowController();
@@ -186,4 +187,6 @@ public class ViewFactoryTravelTools {
         stage.setScene(scene);
         stage.show();
     }
+
+ */
 }

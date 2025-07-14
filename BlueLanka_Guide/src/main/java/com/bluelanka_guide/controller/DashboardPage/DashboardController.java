@@ -52,6 +52,7 @@ public class DashboardController implements Initializable {
      @Override
     public void initialize(URL location, ResourceBundle resources) {
         lblDate.setText(LocalDate.now().toString());
+        setLocation();
         loadCards();
         setupLocationDots();
         setupActivityDots();
@@ -60,6 +61,8 @@ public class DashboardController implements Initializable {
         startActivitySlider();
 //        addWeatherCard();
     }
+
+    private void setLocation() {}
 
     private void addCityCard(String cityName, String rating, String imagePath) {
         try {
@@ -144,7 +147,7 @@ public class DashboardController implements Initializable {
          hbxExploreContainer.getChildren().clear();
          hbxExploreContainer.getChildren().add(cityCards.get(index));
          hbxExploreContainer.getChildren().add(cityCards.get(index+1));
-//         hbxExploreContainer.getChildren().add(cityCards.get(index+2));
+         hbxExploreContainer.getChildren().add(cityCards.get(index+2));
          updateLocationDotIndicator();
       }
 
@@ -220,7 +223,7 @@ public class DashboardController implements Initializable {
         hbxActivityContainer.getChildren().clear();
         hbxActivityContainer.getChildren().add(activityCards.get(index));
         hbxActivityContainer.getChildren().add(activityCards.get(index+1));
-//        hbxActivityContainer.getChildren().add(activityCards.get(index+2));
+        hbxActivityContainer.getChildren().add(activityCards.get(index+2));
         updateActivityDotIndicator();
     }
 
