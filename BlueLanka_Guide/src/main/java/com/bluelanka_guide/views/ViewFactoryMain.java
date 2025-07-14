@@ -133,6 +133,7 @@ public class ViewFactoryMain {
         Stage stage = new Stage();
         stage.setTitle("BlueLanka Guide");
         stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/assets/images/logo.png"))));
+        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
     }

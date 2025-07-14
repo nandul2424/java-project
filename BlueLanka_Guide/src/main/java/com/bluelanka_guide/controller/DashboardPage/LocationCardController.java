@@ -9,7 +9,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 
-import javax.print.attribute.standard.Destination;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -26,7 +25,7 @@ public class LocationCardController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println(Model.getInstance().getDestinationManager().getDestinationsList().size());
+//        System.out.println(Model.getInstance().getDestinationManager().getDestinationsList().size());
     }
 
     public void goToDestinations(MouseEvent mouseEvent) {

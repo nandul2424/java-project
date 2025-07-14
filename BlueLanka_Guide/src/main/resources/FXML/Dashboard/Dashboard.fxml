@@ -10,9 +10,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="dashboard_container"
-            stylesheets="@../../styles/Dashboard/dashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.DashboardPage.DashboardController">
-    <HBox layoutX="62.0" layoutY="14.0" prefHeight="80.0" prefWidth="810.0" styleClass="top_section_container" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="dashboard_container" stylesheets="@../../styles/Dashboard/dashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.DashboardPage.DashboardController">
+    <HBox layoutX="62.0" layoutY="14.0" prefHeight="80.0" styleClass="top_section_container" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
         <VBox prefHeight="80.0" prefWidth="434.0">
             <Label fx:id="lblDate" styleClass="date" text="2025-05-25" />
             <Label fx:id="lblGreeting" layoutX="10.0" layoutY="10.0" styleClass="user" text="Good Morning User" />
@@ -30,24 +29,23 @@
     </HBox>
     <ScrollPane hbarPolicy="NEVER" layoutX="15.2" layoutY="125.0" prefHeight="673.0" prefWidth="821.0" styleClass="scroll_view_container" vbarPolicy="NEVER" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0">
         <content>
-            <VBox>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1312.0" prefWidth="1040.0">
                 <children>
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Explore" />
-                    <ScrollPane hbarPolicy="NEVER" styleClass="explore_scrollpane" vbarPolicy="NEVER">
+                    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="650.0" styleClass="explore_scrollpane" vbarPolicy="NEVER">
                         <content>
                             <VBox>
-                                <HBox fx:id="hbxExploreContainer" prefHeight="147.0" prefWidth="797.0" styleClass="explore_container"/>
+                                <HBox fx:id="hbxExploreContainer" prefHeight="147.0" prefWidth="797.0" styleClass="explore_container" />
                                 <HBox fx:id="hbxDotContainerLocation" alignment="CENTER" spacing="8.0" styleClass="dot_container" />
                             </VBox>
                         </content>
                     </ScrollPane>
                     <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activities" />
-                    <ScrollPane hbarPolicy="NEVER" styleClass="explore_scrollpane" vbarPolicy="NEVER">
+                    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="650.0" styleClass="explore_scrollpane" vbarPolicy="NEVER">
                         <content>
                             <VBox>
                                 <HBox fx:id="hbxActivityContainer" prefHeight="147.0" prefWidth="798.0" styleClass="explore_container" />
-                                <HBox fx:id="hbxDotContainerActivity" alignment="CENTER" spacing="8.0"
-                                      styleClass="dot_container" />
+                                <HBox fx:id="hbxDotContainerActivity" alignment="CENTER" spacing="8.0" styleClass="dot_container" />
                             </VBox>
                         </content>
                     </ScrollPane>
