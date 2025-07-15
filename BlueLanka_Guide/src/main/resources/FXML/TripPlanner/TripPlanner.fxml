@@ -72,7 +72,7 @@
                             <padding>
                                 <Insets bottom="20" left="20" right="20" top="20" />
                             </padding>
-                            <Label styleClass="section_header" text="Select your preferred Destinations" />
+                            <Label  style="-fx-text-fill:#ffffff;-fx-font-size:20" text="Select your preferred Destinations" />
                             <TitledPane styleClass="tabs" text="Geographic Regions" HBox.hgrow="ALWAYS">
                                 <VBox prefHeight="181.0" prefWidth="317.0" spacing="10">
                                     <RadioButton fx:id="checkMirissa" text="Mirissa">
@@ -89,7 +89,7 @@
                                 </VBox>
 
                             </TitledPane>
-                            <TitledPane prefHeight="148.0" prefWidth="314.0" text="Experience Type" HBox.hgrow="ALWAYS">
+                            <TitledPane styleClass="tabs" prefHeight="148.0" prefWidth="314.0" text="Experience Type" HBox.hgrow="ALWAYS">
                                 <VBox spacing="10">
                                     <RadioButton fx:id="radCoastal" text="Coastal Exploration">
                                         <toggleGroup>
@@ -110,7 +110,7 @@
                                 <Insets bottom="20" left="20" right="20" top="20" />
                             </padding>
                             <Label style="-fx-text-fill:#ffffff;-fx-font-size:20" styleClass="section_header" text="How long would you like your trip to be ?" />
-                            <TitledPane text="Trip Duration">
+                            <TitledPane styleClass="tabs" text="Trip Duration">
                                 <VBox spacing="10">
                                     <RadioButton fx:id="radDayTrip" text="Day Trip">
                                         <toggleGroup>
@@ -123,6 +123,20 @@
                                 </VBox>
 
                             </TitledPane>
+                            <VBox>
+                                <VBox>
+                                    <padding>
+                                        <Insets top="30" bottom="30"/>
+                                    </padding>
+                                    <Label style="-fx-text-fill:#ffffff;-fx-font-size:18; -fx-wrap-text: true;" text="Select your preferred trip length to get personalized recommendations and itinerary suggestions."/>
+                                </VBox>
+                                <VBox>
+                                    <padding>
+                                        <Insets top="30" bottom="5"/>
+                                    </padding>
+                                    <Label style="-fx-text-fill:#ffffff;-fx-font-size:18; -fx-wrap-text: true;" text="Your selection helps us recommend the perfect activities, destinations, and experiences that fit your schedule and travel style."/>
+                                </VBox>
+                            </VBox>
                         </VBox>
                     </Tab>
                     <Tab fx:id="activitiesTab" styleClass="tab" text="Activities">
@@ -131,7 +145,7 @@
                                 <Insets bottom="20" left="20" right="20" top="20" />
                             </padding>
 
-                            <Label styleClass="section_header" text="What activities are you interested in ?" />
+                            <Label style="-fx-text-fill:#ffffff;-fx-font-size:20" text="What activities are you interested in ?" />
                             <HBox prefWidth="400" spacing="20">
                                 <VBox spacing="10" HBox.hgrow="ALWAYS">
                                     <TitledPane prefWidth="400" text="Sea Activities">
@@ -153,7 +167,7 @@
                             <padding>
                                 <Insets bottom="20" left="20" right="20" top="20" />
                             </padding>
-                            <TitledPane text="What's your budget range ?">
+                            <TitledPane styleClass="tabs" text="What's your budget range ?">
                                 <VBox spacing="15">
                                     <RadioButton fx:id="radBudgetFriendly" text="Budget-friendly">
                                         <toggleGroup>

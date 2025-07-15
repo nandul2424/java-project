@@ -57,4 +57,5 @@ TabPane {
 }
 .tabs {
     -fx-background-color: transparent;
+    -fx-max-width: 400px;
 }
