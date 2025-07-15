@@ -207,6 +207,11 @@ public class TripPlannerController implements Initializable{
         return true;
     }
     private boolean validateBudget() {
+        boolean validateBudget = radBudgetFriendly.isSelected() || radBudgetModerate.isSelected() || radBudgetLuxury.isSelected();
+        if (!validateBudget) {
+            showAlert("Validation Error", "Please select your budget friendly.");
+            return false;
+        }
         return true;
     }
 
@@ -389,7 +394,7 @@ public class TripPlannerController implements Initializable{
             if(destinationGroupValue.equalsIgnoreCase(useTripPlan.geographic_region) && experienceGroupValue.equalsIgnoreCase(useTripPlan.experience_type) && durationGroupValue.equalsIgnoreCase(useTripPlan.trip_duration) && budgetGroupValue.equalsIgnoreCase(useTripPlan.budget_range)) {
                 System.out.println(" ===> " + useTripPlan.estimated_cost);
                 AnimatedDialogUsage dialogBoxes = new AnimatedDialogUsage();
-                dialogBoxes.showSlideNotification(useTripPlan.estimated_cost);
+                dialogBoxes.showPulseLoading(useTripPlan.estimated_cost);
 
                 return;
             }

@@ -41,12 +41,15 @@ public class AnimatedDialogUsage {
         });
     }
 
-    public void showPulseLoading() {
-        PulseLoadingDialog dialog = new PulseLoadingDialog("Processing your request...");
+    public void showPulseLoading(String cost) {
+        PulseLoadingDialog dialog = new PulseLoadingDialog("Processing your request... \n Estimate trip plan is : " + cost);
         dialog.show();
 
         // Simulate work and close after 3 seconds
-        Timeline closeTimer = new Timeline(new KeyFrame(Duration.seconds(3), e -> dialog.close()));
+        Timeline closeTimer = new Timeline(new KeyFrame(Duration.seconds(30), e -> dialog.close()));
         closeTimer.play();
+
+
+
     }
 }
