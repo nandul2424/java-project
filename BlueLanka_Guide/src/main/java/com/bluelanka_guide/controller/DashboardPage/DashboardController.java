@@ -3,21 +3,22 @@ package com.bluelanka_guide.controller.DashboardPage;
 import com.bluelanka_guide.controller.DestinationsPage.DestinationManager;
 import com.bluelanka_guide.controller.DestinationsPage.DestinationsController;
 import com.bluelanka_guide.models.Model;
+import com.bluelanka_guide.services.CurrentLocation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 import javafx.scene.shape.Circle;
 
-import javax.print.attribute.standard.Destination;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -28,13 +29,9 @@ public class DashboardController implements Initializable {
     public Label lblDate;
     public Label lblGreeting;
     public Label lblLocation;
-    public ImageView imageLocHikkaduwa;
-    public Label lblPlaceName;
-    public Label lblPlaceDescription;
     public HBox hbxExploreContainer;
     public HBox hbxActivityContainer;
     public HBox hbxWeatherContainer;
-    public ImageView imageSlider;
     public HBox hbxDotContainerLocation;
     public HBox hbxDotContainerActivity;
 
@@ -51,7 +48,7 @@ public class DashboardController implements Initializable {
 
      @Override
     public void initialize(URL location, ResourceBundle resources) {
-        lblDate.setText(LocalDate.now().toString());
+        setDateLocation();
         setLocation();
         loadCards();
         setupLocationDots();
@@ -60,6 +57,21 @@ public class DashboardController implements Initializable {
         startLocationSlider();
         startActivitySlider();
 //        addWeatherCard();
+    }
+
+    private void setDateLocation() {
+        LocalTime time = LocalTime.now();
+        lblDate.setText(LocalDate.now().toString());
+        if(time.isAfter(LocalTime.of(6,0)) && time.isBefore(LocalTime.of(12,0))){
+            lblGreeting.setText("Good Morning !");
+        } else if (time.isAfter(LocalTime.of(12,0)) && time.isBefore(LocalTime.of(15,0))) {
+            lblGreeting.setText("Good Afternoon !");
+        } else if (time.isAfter(LocalTime.of(15,0)) && time.isBefore(LocalTime.of(19,0))) {
+            lblGreeting.setText("Good Evening !");
+        }else {
+            lblGreeting.setText("Good Night !");
+        }
+        lblLocation.setText(Model.getInstance().getCurrentLocation().getLocation());
     }
 
     private void setLocation() {}
@@ -227,4 +239,11 @@ public class DashboardController implements Initializable {
         updateActivityDotIndicator();
     }
 
+    public int getCurrentImageIndex() {
+        return currentImageIndex;
+    }
+
+    public void setCurrentImageIndex(int currentImageIndex) {
+        this.currentImageIndex = currentImageIndex;
+    }
 }
