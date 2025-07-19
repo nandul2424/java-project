@@ -8,6 +8,21 @@
     -fx-font-weight: 600;
 }
 
+.currency_container VBox{
+    -fx-alignment: center;
+    -fx-spacing: 60;
+    -fx-min-width: 800;
+}
+
+.currency_container HBox{
+    -fx-alignment: center;
+    -fx-spacing: 100;
+}
+
+.errr_lbl_hbx{
+    -fx-pref-height: 60;
+}
+
 .back_button{
     -fx-background-color: transparent;
     -fx-padding: 0;
@@ -53,7 +68,7 @@
 
 .convert_button{
     -fx-background-color: #3907ED;
-    -fx-text-fill: #000000;
+    -fx-text-fill: #FFFFFF;
     -fx-font-family: "Poppins";
     -fx-font-size: 20px;
     -fx-padding: 10px 30px;
@@ -62,8 +77,8 @@
 }
 
 .convert_button:hover{
-    -fx-background-color: #2B0BB4;
-    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #3907ED;
     -fx-cursor: hand;
 }
 

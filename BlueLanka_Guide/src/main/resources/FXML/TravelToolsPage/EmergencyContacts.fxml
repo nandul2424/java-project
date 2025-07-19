@@ -18,226 +18,230 @@
          </ImageView>
       </graphic></Button>
    <Text layoutX="75.2" layoutY="62.9" strokeType="OUTSIDE" strokeWidth="0.0" text="Emergency Contacts" AnchorPane.leftAnchor="75.2" AnchorPane.topAnchor="31.4" />
-   <HBox alignment="CENTER" layoutX="87.0" layoutY="105.0" prefHeight="56.0" prefWidth="0.0" styleClass="headings" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="120.0">
-      <VBox prefHeight="0.0" prefWidth="236.0" styleClass="heading_vbox">
-         <children>
-            <Label text="Emergency Service">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="29.0" layoutY="10.0" prefHeight="0.0" prefWidth="236.0" styleClass="heading_vbox">
-         <children>
-            <Label text="Contact Number">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-   </HBox>
-   <HBox alignment="CENTER" layoutX="15.0" layoutY="158.0" prefHeight="49.0" prefWidth="0.0" styleClass="content_first" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="13.799999999999955" AnchorPane.topAnchor="176.0">
+   <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="120.0">
       <children>
-         <VBox prefHeight="0.0" prefWidth="236.0">
+         <HBox alignment="CENTER" prefHeight="56.0" prefWidth="0.0" styleClass="headings">
+            <VBox prefHeight="0.0" prefWidth="236.0" styleClass="heading_vbox">
+               <children>
+                  <Label text="Emergency Service">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="29.0" layoutY="10.0" prefHeight="0.0" prefWidth="236.0" styleClass="heading_vbox">
+               <children>
+                  <Label text="Contact Number">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="49.0" prefWidth="0.0" styleClass="content_first">
             <children>
-               <Label contentDisplay="CENTER" text="Police Emergency Hotline">
-                  <font>
-                     <Font size="16.0" />
-                  </font>
-               </Label>
+               <VBox prefHeight="0.0" prefWidth="236.0">
+                  <children>
+                     <Label contentDisplay="CENTER" text="Police Emergency Hotline">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+               <VBox prefHeight="0.0" prefWidth="236.0">
+                  <children>
+                     <Label text="118/ 119">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
             </children>
-         </VBox>
-         <VBox prefHeight="0.0" prefWidth="236.0">
-            <children>
-               <Label text="118/ 119">
-                  <font>
-                     <Font size="16.0" />
-                  </font>
-               </Label>
-            </children>
-         </VBox>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="49.0" prefWidth="0.0" styleClass="content_second">
+            <VBox layoutX="13.0" layoutY="10.0" prefHeight="0.0" prefWidth="236.0">
+               <children>
+                  <Label contentDisplay="CENTER" text="Ambulance / Fire &amp; rescue">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label text="110">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="49.0" prefWidth="0.0" styleClass="content_first">
+            <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label contentDisplay="CENTER" text="Tourist Police">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label text="011-2421052">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="49.0" prefWidth="0.0" styleClass="content_second">
+            <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label contentDisplay="CENTER" text="Police Emergency">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label text="011-2433333">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="49.0" prefWidth="0.0" styleClass="content_first">
+            <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label contentDisplay="CENTER" text="Government Information Center">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label text="1919">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="49.0" prefWidth="0.0" styleClass="content_second">
+            <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label contentDisplay="CENTER" text="Fire &amp; Ambulance Service">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label text="011-2422222">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="49.0" prefWidth="0.0" styleClass="content_first">
+            <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label contentDisplay="CENTER" text="Emergency Police Mobile Squad">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label text="011-5717171">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="49.0" prefWidth="0.0" styleClass="content_second">
+            <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label contentDisplay="CENTER" text="Police Emergency">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label text="011-2433333">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="49.0" prefWidth="0.0" styleClass="content_first">
+            <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label contentDisplay="CENTER" text="Flight Information – All Airlines">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label text="011-2263047">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="49.0" prefWidth="0.0" styleClass="content_second">
+            <VBox prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label contentDisplay="CENTER" text="Tourism Ministry">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
+               <children>
+                  <Label text="1912">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </HBox>
       </children>
-   </HBox>
-   <HBox alignment="CENTER" layoutX="37.0" layoutY="220.0" prefHeight="49.0" prefWidth="0.0" styleClass="content_second" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="225.0">
-      <VBox layoutX="13.0" layoutY="10.0" prefHeight="0.0" prefWidth="236.0">
-         <children>
-            <Label contentDisplay="CENTER" text="Ambulance / Fire &amp; rescue">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label text="110">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-   </HBox>
-   <HBox alignment="CENTER" layoutX="25.0" layoutY="186.0" prefHeight="49.0" prefWidth="0.0" styleClass="content_first" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="274.0">
-      <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label contentDisplay="CENTER" text="Tourist Police">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label text="011-2421052">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-   </HBox>
-   <HBox alignment="CENTER" layoutX="14.0" layoutY="336.0" prefHeight="49.0" prefWidth="0.0" styleClass="content_second" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.799999999999955" AnchorPane.topAnchor="323.0">
-      <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label contentDisplay="CENTER" text="Police Emergency">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label text="011-2433333">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-   </HBox>
-   <HBox alignment="CENTER" layoutX="24.0" layoutY="284.0" prefHeight="49.0" prefWidth="0.0" styleClass="content_first" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="372.0">
-      <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label contentDisplay="CENTER" text="Government Information Center">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label text="1919">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-   </HBox>
-   <HBox alignment="CENTER" layoutX="24.0" layoutY="333.0" prefHeight="49.0" prefWidth="0.0" styleClass="content_second" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="421.0">
-      <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label contentDisplay="CENTER" text="Fire &amp; Ambulance Service">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label text="011-2422222">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-   </HBox>
-   <HBox alignment="CENTER" layoutX="24.0" layoutY="382.0" prefHeight="49.0" prefWidth="0.0" styleClass="content_first" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="470.0">
-      <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label contentDisplay="CENTER" text="Emergency Police Mobile Squad">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label text="011-5717171">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-   </HBox>
-   <HBox alignment="CENTER" layoutX="24.0" layoutY="431.0" prefHeight="49.0" prefWidth="0.0" styleClass="content_second" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="519.0">
-      <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label contentDisplay="CENTER" text="Police Emergency">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label text="011-2433333">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-   </HBox>
-   <HBox alignment="CENTER" layoutX="24.0" layoutY="480.0" prefHeight="49.0" prefWidth="0.0" styleClass="content_first" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="568.0">
-      <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label contentDisplay="CENTER" text="Flight Information – All Airlines">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="256.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label text="011-2263047">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-   </HBox>
-   <HBox alignment="CENTER" layoutX="15.0" layoutY="618.0" prefHeight="49.0" prefWidth="0.0" styleClass="content_second" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="617.0">
-      <VBox prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label contentDisplay="CENTER" text="Tourism Ministry">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-      <VBox layoutX="13.0" layoutY="10.0" prefHeight="200.0" prefWidth="222.0">
-         <children>
-            <Label text="1912">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-   </HBox>
+   </VBox>
 </AnchorPane>

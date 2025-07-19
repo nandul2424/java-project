@@ -8,6 +8,15 @@
     -fx-font-weight: 600;
 }
 
+.travel_essentials_container VBox{
+    -fx-min-width: 1150;
+    -fx-spacing: 100;
+}
+
+.travel_essentials_container HBox{
+    -fx-spacing: 150;
+}
+
 .travel_essentials_container Button{
     -fx-pref-height: 145;
     -fx-pref-width: 235;
