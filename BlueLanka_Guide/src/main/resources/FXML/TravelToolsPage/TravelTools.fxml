@@ -6,16 +6,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxWidth="1080.0" minWidth="800.0" prefWidth="800.0" styleClass="travel_essentials_container" stylesheets="@../../styles/TravelTools/travelEssentials.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TravelToolsPage.TravelToolsController">
+<AnchorPane styleClass="travel_essentials_container" stylesheets="@../../styles/TravelTools/travelEssentials.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TravelToolsPage.TravelToolsController">
     <Text layoutX="155.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travel Essentials" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="25.0" />
-   <VBox alignment="CENTER" minHeight="650.0" minWidth="600.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="100.0">
+   <VBox alignment="CENTER" minHeight="650.0" minWidth="600.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0">
       <children>
-         <HBox alignment="CENTER" minWidth="600.0" prefHeight="100.0" prefWidth="200.0">
-            <children>
-                <Button fx:id="btnMenuEmergencyContacts" minWidth="100.0" mnemonicParsing="false" text="Emergency Contacts" textAlignment="CENTER" />
-                <Button fx:id="btnMenuLanguageTranslator" mnemonicParsing="false" text="Language Translator" textAlignment="CENTER" />
-            </children>
-         </HBox>
          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
             <children>
                 <Button fx:id="btnMenuCurrencyConverter" mnemonicParsing="false" text="Currency Converter" textAlignment="CENTER" />
@@ -26,6 +20,12 @@
             <children>
                 <Button fx:id="btnMenuUnitConverter" mnemonicParsing="false" text="Unit Converter" textAlignment="CENTER" />
                 <Button fx:id="btnMenuChecklist" mnemonicParsing="false" text="Checklist" textAlignment="CENTER" />
+            </children>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Button fx:id="btnMenuEmergencyContacts" minWidth="100.0" mnemonicParsing="false" text="Emergency Contacts" textAlignment="CENTER" />
+                <Button fx:id="btnMenuLanguageTranslator" mnemonicParsing="false" text="Language Translator" textAlignment="CENTER" />
             </children>
          </HBox>
       </children>

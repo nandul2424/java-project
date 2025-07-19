@@ -8,6 +8,21 @@
     -fx-font-weight: 600;
 }
 
+.currency_container VBox{
+    -fx-alignment: center;
+    -fx-spacing: 60;
+    -fx-min-width: 800;
+}
+
+.currency_container HBox{
+    -fx-alignment: center;
+    -fx-spacing: 100;
+}
+
+.errr_lbl_hbx{
+    -fx-pref-height: 60;
+}
+
 .back_button{
     -fx-background-color: transparent;
     -fx-padding: 0;
