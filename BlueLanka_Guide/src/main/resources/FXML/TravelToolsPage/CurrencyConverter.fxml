@@ -7,6 +7,8 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="750.0" prefWidth="500.0" styleClass="currency_container" stylesheets="@../../styles/TravelTools/currencyConverter.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TravelToolsPage.CurrencyConverterController">
@@ -16,20 +18,41 @@
             <Image url="@../../assets/icons/back.png" />
          </ImageView>
       </graphic></Button>
-   <TextField fx:id="txtFromAmount" layoutX="61.0" layoutY="316.0" prefWidth="150.0" AnchorPane.leftAnchor="60.0" />
-   <ComboBox fx:id="cmbFromCurrency" layoutX="61.0" layoutY="204.0" prefWidth="150.0" AnchorPane.leftAnchor="60.0" />
-   <ComboBox fx:id="cmbToCurrency" layoutX="324.0" layoutY="204.0" prefWidth="150.0" AnchorPane.rightAnchor="60.0" />
-   <Label fx:id="lblToAmount" layoutX="343.0" layoutY="322.0" prefHeight="18.0" prefWidth="150.0" text="" AnchorPane.rightAnchor="60.0" />
-   <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="230.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@../../assets/icons/Arrow.png" />
-   </ImageView>
-   <Button fx:id="btnSwap" layoutX="232.0" layoutY="206.0" mnemonicParsing="false" styleClass="swap_button">
-      <graphic>
-         <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@../../assets/icons/Swap.png" />
-         </ImageView>
-      </graphic></Button>
    <Text layoutX="75.2" layoutY="62.9" strokeType="OUTSIDE" strokeWidth="0.0" text="Currency Converter" AnchorPane.leftAnchor="75.2" AnchorPane.topAnchor="31.4" />
-   <Button fx:id="btnConvert" layoutX="178.0" layoutY="424.0" mnemonicParsing="false" styleClass="convert_button" text="Convert" />
-   <Label fx:id="lblError" layoutX="15.2" layoutY="513.0" prefHeight="40.0" prefWidth="471.0" styleClass="error_lbl" textAlignment="CENTER" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+   <VBox prefHeight="190.0" prefWidth="101.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="120.0">
+      <children>
+         <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <ComboBox fx:id="cmbFromCurrency" prefWidth="150.0" />
+               <Button fx:id="btnSwap" mnemonicParsing="false" styleClass="swap_button">
+                  <graphic>
+                     <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../assets/icons/Swap.png" />
+                     </ImageView>
+                  </graphic>
+               </Button>
+               <ComboBox fx:id="cmbToCurrency" prefWidth="150.0" />
+            </children>
+         </HBox>
+         <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <TextField fx:id="txtFromAmount" prefWidth="150.0" />
+               <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../../assets/icons/Arrow.png" />
+               </ImageView>
+               <TextField fx:id="txtToAmount" editable="false" prefWidth="150.0" />
+            </children>
+         </HBox>
+         <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <Button fx:id="btnConvert" mnemonicParsing="false" styleClass="convert_button" text="Convert" />
+            </children>
+         </HBox>
+         <HBox prefHeight="100.0" prefWidth="200.0" styleClass="errr_lbl_hbx">
+            <children>
+               <Label fx:id="lblError" minWidth="500.0" prefHeight="40.0" styleClass="error_lbl" textAlignment="CENTER" />
+            </children>
+         </HBox>
+      </children>
+   </VBox>
 </AnchorPane>

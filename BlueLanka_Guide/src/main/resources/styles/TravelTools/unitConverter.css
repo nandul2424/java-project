@@ -8,6 +8,10 @@
     -fx-font-weight: 600;
 }
 
+.unit_converter_container .VBox{
+    -fx-spacing: 40;
+}
+
 .back_button{
     -fx-background-color: transparent;
     -fx-padding: 0;
