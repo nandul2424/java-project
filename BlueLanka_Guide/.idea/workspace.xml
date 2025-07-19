@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5033f2a-47a9-457e-a658-d79af2645b33" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/CheckItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/CheckItem.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/Checklist.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/Checklist.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/EmergencyContacts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/EmergencyContacts.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/Weather.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TravelToolsPage/Weather.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/icons/Delete.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/icons/Delete.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/TravelTools/checklist.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/TravelTools/checklist.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/TravelTools/currencyConverter.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/TravelTools/currencyConverter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/TravelTools/emergencyContacts.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/TravelTools/emergencyContacts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/cssdialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsonSchemas.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logindetails.db" beforeDir="false" afterPath="$PROJECT_DIR$/logindetails.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/AnimatedDialogUsage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/AnimatedDialogUsage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bluelanka_guide/controller/TripPlanner/TripPlannerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/TripPlanner.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/TripPlanner.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/TripPlanner.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/TripPlanner/styles/tripPlanning.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "isira",
+    "git-widget-placeholder": "Merging isira",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/USER/Desktop/Java projects/java-project/BlueLanka_Guide/src/main/resources/assets/icons",
     "project.structure.last.edited": "Modules",
