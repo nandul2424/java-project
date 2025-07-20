@@ -59,4 +59,7 @@
             <Insets left="6.0" right="6.0" />
         </padding>
     </ScrollPane>
+   <padding>
+      <Insets left="70.0" top="25.0" />
+   </padding>
 </AnchorPane>
