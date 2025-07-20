@@ -12,10 +12,10 @@
    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
       <children>
          <VBox prefHeight="100.0" prefWidth="100.0" styleClass="logo_container">
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="99.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@../assets/images/logo.png" />
             </ImageView>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Safe Sea" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="BlueLanka Guide" />
          </VBox>
          <Line endX="14.0" startX="236.0" />
          <VBox prefHeight="297.0" prefWidth="221.0" styleClass="pages_buttons_container">

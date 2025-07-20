@@ -142,7 +142,7 @@ public class ViewFactoryMain {
         stage.setTitle("BlueLanka Guide");
         stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/assets/images/logo.png"))));
         stage.setMaximized(true);
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.setScene(scene);
         stage.show();
     }
