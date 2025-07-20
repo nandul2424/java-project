@@ -67,7 +67,7 @@
 }
 
 .explore_scrollpane{
-    -fx-background-color: tranparent;
+    -fx-background-color: transparent;
 /*    -fx-pref-height: 375;*/
 }
 

@@ -10,6 +10,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class ViewFactoryMain {
 
     private final StringProperty mainMenuSelectedItem;
@@ -111,9 +113,15 @@ public class ViewFactoryMain {
         return signUpView;
     }
 
-    public void showLoginWindow(){
+    public void showLoginWindow() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Login.fxml"));
-        createStage(loader);
+        Scene scene = new Scene(loader.load());
+        Stage stage = new Stage();
+        stage.setTitle("BlueLanka Guide");
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/assets/images/logo.png"))));
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void showMainWindow(){
@@ -134,6 +142,7 @@ public class ViewFactoryMain {
         stage.setTitle("BlueLanka Guide");
         stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/assets/images/logo.png"))));
         stage.setMaximized(true);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

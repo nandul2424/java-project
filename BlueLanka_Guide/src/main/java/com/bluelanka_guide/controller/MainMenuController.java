@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -13,7 +14,7 @@ public class MainMenuController implements Initializable {
     public Button btnDestinations;
     public Button btnTravelTools;
     public Button btnTripPlanner;
-    public Button btnSettings;
+//    public Button btnSettings;
     public Button btnLogout;
     public Button btnExit;
 
@@ -23,8 +24,14 @@ public class MainMenuController implements Initializable {
         btnDestinations.setOnAction(event -> onDestination());
         btnTravelTools.setOnAction(event -> onTraveltools());
         btnTripPlanner.setOnAction(event -> onTripPlanner());
-        btnSettings.setOnAction(event -> onSettings());
-        btnLogout.setOnAction(event -> onLogout());
+//        btnSettings.setOnAction(event -> onSettings());
+        btnLogout.setOnAction(event -> {
+            try {
+                onLogout();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
         btnExit.setOnAction(event -> onExit());
     }
 
@@ -34,15 +41,15 @@ public class MainMenuController implements Initializable {
         stage.close();
     }
 
-    private void onLogout() {
+    private void onLogout() throws IOException {
         Stage stage = (Stage) btnLogout.getScene().getWindow();
         stage.close();
         Model.getInstance().getViewFactoryMain().showLoginWindow();
     }
 
-    private void onSettings() {
-        Model.getInstance().getViewFactoryMain().getMainMenuSelectedItem().set("Settings");
-    }
+//    private void onSettings() {
+//        Model.getInstance().getViewFactoryMain().getMainMenuSelectedItem().set("Settings");
+//    }
 
     private void onTripPlanner() {
         Model.getInstance().getViewFactoryMain().getMainMenuSelectedItem().set("TripPlanner");
