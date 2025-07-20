@@ -18,10 +18,10 @@ public class CurrencyConverterController implements Initializable {
     public TextField txtFromAmount;
     public ComboBox<String> cmbFromCurrency;
     public ComboBox<String> cmbToCurrency;
-    public Label lblToAmount;
     public Button btnConvert;
     public Label lblError;
     public Button btnSwap;
+    public TextField txtToAmount;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -71,7 +71,7 @@ public class CurrencyConverterController implements Initializable {
                     lblError.setText("Please enter a valid number");
 //                    System.out.println(e.getMessage());
                     txtFromAmount.clear();
-                    lblToAmount.setText("");
+                    txtToAmount.setText("");
                     return;
                 }
 
@@ -79,7 +79,7 @@ public class CurrencyConverterController implements Initializable {
                 double doubleToAmount = rate * doubleFromAmount;
 
                 String strToAmount = String.format("%.2f", doubleToAmount);
-                lblToAmount.setText(strToAmount);
+                txtToAmount.setText(strToAmount);
 
                 lblError.setText("");
             });
@@ -96,7 +96,7 @@ public class CurrencyConverterController implements Initializable {
 
         } catch (Exception e) {
             lblError.setText("Error: "+ e.getMessage());
-            lblToAmount.setText("");
+            txtToAmount.setText("");
             txtFromAmount.clear();
         }
     }

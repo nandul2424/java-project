@@ -12,6 +12,7 @@
 -fx-padding: 6 15;
 -fx-border-radius: 20;
 -fx-background-radius: 20;
+-fx-text-fill: #ffffff;
 -fx-font-size: 18;
 -fx-font-weight: 600;
 }
@@ -26,7 +27,7 @@
 }
 
 .add_new_button{
-    -fx-background-color: #04FF09;
+    -fx-background-color: #0758ed;
 }
 
 .remove_all_button{
@@ -40,4 +41,9 @@
 .checklist_container .list-cell{
     -fx-pref-width: 470;
     -fx-background-color: #AAE3FF;
+    -fx-alignment: center;
+}
+
+.checklist_container HBox{
+    -fx-spacing: 350;
 }

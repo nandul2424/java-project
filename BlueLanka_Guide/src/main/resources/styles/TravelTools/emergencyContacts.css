@@ -18,7 +18,7 @@
 }
 
 .emergency_contacts_container VBox{
-    -fx-pref-width: 236;
+    -fx-pref-width: 300;
     -fx-padding: 0 0 0 20;
     -fx-alignment: center-left;
 }
@@ -37,8 +37,10 @@
 
 .emergency_contacts_container .content_first{
     -fx-background-color: #BFF6FF;
+    -fx-spacing: 40;
 }
 
 .emergency_contacts_container .content_second{
     -fx-background-color: #B9CEEF;
+    -fx-spacing: 40;
 }
