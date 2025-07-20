@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e5033f2a-47a9-457e-a658-d79af2645b33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +18,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -43,20 +44,12 @@
     &quot;accountId&quot;: &quot;e4bc78a5-e5b2-4af7-a9d3-70d0d0e7d9df&quot;
   }
 }</component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_10_module-info.class" root0="SKIP_INSPECTION" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_3_module-info.class" root0="SKIP_INSPECTION" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_4_module-info.class" root0="SKIP_INSPECTION" />
-  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -69,24 +62,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AppStarter.executor": "Run",
-    "Application.DestinationsController.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.MapIntegration.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Naveesha",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/USER/Desktop/Java Tutorials/java-project/BlueLanka_Guide",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AppStarter.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DestinationsController.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MapIntegration.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;janith&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/Desktop/Java Tutorials/java-project/BlueLanka_Guide/src/main/resources/assets/icons&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.bluelanka_guide.models.WeatherModel" />
@@ -95,11 +88,13 @@
       <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide\src\main\resources\assets\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\asus\OneDrive\Desktop\java project\java-project\BlueLanka_Guide\src\main\resources\assets\images\destinations" />
+      <recent name="C:\Users\asus\OneDrive\Desktop\java project\java-project\BlueLanka_Guide\src\main\resources\assets\images\dashboard" />
       <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide" />
       <recent name="C:\Users\USER\Desktop\Java Tutorials\java-project\BlueLanka_Guide\src\main\resources\assets\icons" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AppStarter">
     <configuration name="AppStarter" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.bluelanka_guide.AppStarter" />
       <module name="BlueLanka_Guide" />
@@ -107,6 +102,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DestinationsController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bluelanka_guide.controller.DestinationsPage.DestinationsController" />
+      <module name="BlueLanka_Guide" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bluelanka_guide.controller.DestinationsPage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapIntegration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bluelanka_guide.controller.DestinationsPage.MapIntegration" />
+      <module name="BlueLanka_Guide" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bluelanka_guide.controller.DestinationsPage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MapIntegration" />
+        <item itemvalue="Application.DestinationsController" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
