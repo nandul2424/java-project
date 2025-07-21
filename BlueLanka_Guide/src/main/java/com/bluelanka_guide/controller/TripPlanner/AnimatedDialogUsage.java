@@ -17,8 +17,8 @@ public class AnimatedDialogUsage {
 
     public void showFadeScaleDialog() {
         FadeScaleDialog dialog = new FadeScaleDialog(
-                "Modern Dialog",
-                "This dialog has a beautiful fade and scale animation!"
+                "Something went wrong",
+                "According to the request data trip plan is not found !"
         );
         dialog.showAndWait();
     }
