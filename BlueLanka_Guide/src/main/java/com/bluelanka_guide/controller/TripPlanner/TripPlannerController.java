@@ -267,7 +267,7 @@ public class TripPlannerController implements Initializable{
         if(radBudgetLuxury.isSelected()) tripData.append("- Luxury Budget\n");
 
         // Show generated trip plan (you can replace this with actual trip generation logic)
-        showAlert("Trip Plan Generated", tripData.toString());
+        //showAlert("Trip Plan Generated", tripData.toString());
 
         loadJsonFromResources();
     }
@@ -386,10 +386,10 @@ public class TripPlannerController implements Initializable{
 
         RadioButton budgetTypeToggleGroup = (RadioButton) budgetType.getSelectedToggle();
         String budgetGroupValue = budgetTypeToggleGroup.getText();
-        System.out.println(destinationGroupValue + experienceGroupValue + durationGroupValue + budgetGroupValue);
+        //System.out.println(destinationGroupValue + experienceGroupValue + durationGroupValue + budgetGroupValue);
 
         for (UserTripPlan useTripPlan : userTripPlan) {
-            System.out.println(useTripPlan.geographic_region + useTripPlan.experience_type + useTripPlan.trip_duration + useTripPlan.budget_range);
+            //System.out.println(useTripPlan.geographic_region + useTripPlan.experience_type + useTripPlan.trip_duration + useTripPlan.budget_range);
              //&& experienceGroupValue.equalsIgnoreCase(useTripPlan.experience_type) && durationGroupValue.equalsIgnoreCase(useTripPlan.trip_duration) && budgetGroupValue.equalsIgnoreCase(useTripPlan.budget_range)
             if(destinationGroupValue.equalsIgnoreCase(useTripPlan.geographic_region) && experienceGroupValue.equalsIgnoreCase(useTripPlan.experience_type) && durationGroupValue.equalsIgnoreCase(useTripPlan.trip_duration) && budgetGroupValue.equalsIgnoreCase(useTripPlan.budget_range)) {
                 System.out.println(" ===> " + useTripPlan.estimated_cost);
@@ -399,7 +399,11 @@ public class TripPlannerController implements Initializable{
                 return;
             }
             else {
-                continue;
+
+                AnimatedDialogUsage dialogBoxes = new AnimatedDialogUsage();
+                dialogBoxes.showFadeScaleDialog();
+
+                return;
             }
         }
         System.out.println("Can't find destination Trip Plan Yet !");
