@@ -144,6 +144,7 @@ public class SignupController {
             root = fxmlLoader.load();
             Stage stage = (Stage) login_reg_id.getScene().getWindow();
             stage.setScene(new Scene(root));
+            stage.setResizable(false);
             stage.setTitle("Login Page");
             stage.show();
         } catch (IOException e) {

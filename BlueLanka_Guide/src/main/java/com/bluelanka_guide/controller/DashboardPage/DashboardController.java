@@ -56,7 +56,7 @@ public class DashboardController implements Initializable {
 
         startLocationSlider();
         startActivitySlider();
-//        addWeatherCard();
+        // addWeatherCard();
     }
 
     private void setDateLocation() {

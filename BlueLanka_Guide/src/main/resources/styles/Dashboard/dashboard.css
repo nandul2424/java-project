@@ -1,10 +1,10 @@
 .dashboard_container{
-    -fx-background-color: #DBF9FA;
+    -fx-background-color: #ABDCFF;
 }
 
 /* Top section styles */
 .top_section_container{
-    -fx-spacing: 400;
+    -fx-spacing: 500;
 }
 
 .top_section_container VBox{
@@ -40,6 +40,7 @@
 /* Scroll section styles */
 .scroll_view_container {
     -fx-background-color: transparent;
+    -fx-padding: 20 0 0 10;
 }
 
 .scroll_view_container .viewport {
@@ -67,7 +68,7 @@
 }
 
 .explore_scrollpane{
-    -fx-background-color: tranparent;
+    -fx-background-color: transparent;
 /*    -fx-pref-height: 375;*/
 }
 

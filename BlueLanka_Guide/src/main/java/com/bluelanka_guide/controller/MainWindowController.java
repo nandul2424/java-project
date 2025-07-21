@@ -16,9 +16,9 @@ public class MainWindowController implements Initializable {
             ((observable, oldValue, newValue) -> {
                 System.out.println(newValue);
                 switch (newValue){
-                    case "Settings":
-                        mainWindow.setCenter(Model.getInstance().getViewFactoryMain().getSettingsView());
-                        break;
+//                    case "Settings":
+//                        mainWindow.setCenter(Model.getInstance().getViewFactoryMain().getSettingsView());
+//                        break;
                     case "Destinations":
                         mainWindow.setCenter(Model.getInstance().getViewFactoryMain().getDestinationsView());
                         break;
