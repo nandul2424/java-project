@@ -14,7 +14,7 @@
 
 <BorderPane fx:id="body1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.LoginController">
     <right>
-        <AnchorPane prefHeight="500.0" prefWidth="374.0" style="-fx-background-color: lightblue;"
+        <AnchorPane prefHeight="500.0" prefWidth="374.0" style="-fx-background-color: #ABDCFF;"
                     BorderPane.alignment="CENTER">
             <Label alignment="CENTER" layoutX="1.0" layoutY="62.0" prefHeight="18.0" prefWidth="346.0" text="LOGIN"
                    textAlignment="JUSTIFY" textFill="#0a034e">

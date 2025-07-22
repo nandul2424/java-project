@@ -56,7 +56,7 @@ public class DashboardController implements Initializable {
 
         startLocationSlider();
         startActivitySlider();
-        // addWeatherCard();
+//        addWeatherCard();
     }
 
     private void setDateLocation() {
@@ -162,48 +162,6 @@ public class DashboardController implements Initializable {
          hbxExploreContainer.getChildren().add(cityCards.get(index+2));
          updateLocationDotIndicator();
       }
-
-
-//    public void showDescription(MouseEvent mouseEvent) {
-//        lblPlaceName.setVisible(false);
-//        lblPlaceDescription.setVisible(true);
-//        lblPlaceDescription.setText("It's a popular destination for snorkeling, diving, and enjoying the sun. The town also has a rich cultural heritage with various temples and local markets.");
-//    }
-//
-//    public void hideDescription(MouseEvent mouseEvent) {
-//        lblPlaceDescription.setVisible(false);
-//        lblPlaceName.setVisible(true);
-//    }
-//
-//    private void startImageSlider() {
-//        images.add(new Image(getClass().getResource("/Slider_images/1.jpg").toExternalForm()));
-//        images.add(new Image(getClass().getResource("/Slider_images/2.jpg").toExternalForm()));
-//        images.add(new Image(getClass().getResource("/Slider_images/3.jpg").toExternalForm()));
-//        images.add(new Image(getClass().getResource("/Slider_images/4.jpg").toExternalForm()));
-//
-//
-//        imageSlider.setImage(images.get(0)); // First image
-//
-//        timeline = new Timeline(new KeyFrame(Duration.seconds(3), e -> {
-//            currentImageIndex = (currentImageIndex + 1) % images.size();
-//            imageSlider.setImage(images.get(currentImageIndex));
-//        }));
-//        timeline.setCycleCount(Timeline.INDEFINITE);
-//        timeline.play();
-//    }
-
-
-    //private void addActivityCard(String title, String description, String imagePath) {
-    //    try {
-    //        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Dashboard/LocationCard.fxml"));
-    //        StackPane card = loader.load();
-    //        LocationCardController controller = loader.getController();
-    //        controller.setCityData(title, description, getClass().getResource(imagePath).toExternalForm());
-    //        activityCards.add(card);
-    //    } catch (Exception e) {
-    //        e.printStackTrace();
-    //    }
-    //}
 
     private void setupActivityDots() {
         hbxDotContainerActivity.getChildren().clear();
